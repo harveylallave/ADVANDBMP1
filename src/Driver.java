@@ -627,7 +627,7 @@ public class Driver extends Application{
         String db       = "mco1_db";
         String url      = "jdbc:mysql://localhost/" + db + "?useSSL=false";
         String user     = "root";
-        String pass     = "1234";
+        String pass     = "hopekook";
 
         try {
             Class.forName(driver);
