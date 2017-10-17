@@ -86,51 +86,6 @@ public class Driver extends Application{
         mainPane.setCenter(initCenterVBox());
     }
 
-    public VBox initRightVBox()
-    {
-        VBox vBox = new VBox();
-        vBox.setId("vBoxRight");
-
-        GridPane gridPane = new GridPane();
-        gridPane.setId("rightGridPane");
-        gridPane.getStyleClass().add("grid-pane");
-
-        query.setText("");
-        query.setPadding(new Insets(0,0,0,30));
-
-        final Pane emptyPane = new Pane();
-        emptyPane.setMinHeight(30);
-
-        Button button = new Button("Repeat");
-        button.setOnAction(e -> {
-            nQueryExec += 1;
-            String queryNumText = queryNum.getText();
-            VBox tempvBox = new VBox();
-            tempvBox.getChildren().add(new Label());
-            table = new TableView <>();
-
-            switch (queryNumText.charAt(queryNumText.length() - 1)){
-                case '0': break;
-                case '1': updateTableQuery1(tempvBox);
-                          break;
-                case '2': updateTableQuery2(tempvBox);
-                          break;
-                case '3': updateTableQuery3(tempvBox);
-                          break;
-                default : System.out.println("Repeating Query #" + queryNumText.charAt(queryNumText.length() - 1));
-            }
-        });
-
-        GridPane.setConstraints(query    	    	, 1, 0);
-        GridPane.setConstraints(emptyPane  	    	, 0, 1);
-        GridPane.setConstraints(button      		, 1, 3);
-
-        gridPane.getChildren().addAll(query, emptyPane, button);
-
-        vBox.getChildren().addAll(gridPane);
-        return vBox;
-    }
-
     public VBox initCenterVBox()
     {
         VBox vBox = new VBox();
