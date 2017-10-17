@@ -141,17 +141,6 @@ public class Driver extends Application{
         final Pane emptyPane = new Pane();
         emptyPane.setMinHeight(30);
 
-
-        NumberAxis xAxis = new NumberAxis();
-        xAxis.setLabel("Execution Number");
-
-        NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Time Processed");
-
-        graphArea = new LineChart(xAxis, yAxis);
-        graphArea.setId("graphArea");
-        graphArea.setLegendVisible(false);
-
         Button button = new Button("Repeat");
         button.setOnAction(e -> {
             nQueryExec += 1;
@@ -174,10 +163,9 @@ public class Driver extends Application{
 
         GridPane.setConstraints(query    	    	, 1, 0);
         GridPane.setConstraints(emptyPane  	    	, 0, 1);
-        GridPane.setConstraints(graphArea    		, 1, 2);
         GridPane.setConstraints(button      		, 1, 3);
 
-        gridPane.getChildren().addAll(query, emptyPane, graphArea, button);
+        gridPane.getChildren().addAll(query, emptyPane, button);
 
         vBox.getChildren().addAll(gridPane);
         return vBox;
@@ -256,7 +244,18 @@ public class Driver extends Application{
             hBox.setAlignment(Pos.CENTER);
             hBox.getChildren().addAll(queryIcon,queryChoiceBox);
             vBox.getChildren().add(0, queryNum);
-            vBox.getChildren().add(hBox);
+            vBox.getChildren().add(1, hBox);
+
+            NumberAxis xAxis = new NumberAxis();
+            xAxis.setLabel("Execution Number");
+
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Time Processed");
+
+            graphArea = new LineChart(xAxis, yAxis);
+            graphArea.setId("graphArea");
+            graphArea.setLegendVisible(false);
+            vBox.getChildren().add(graphArea);
         }
 //        book.setOnAction(e -> {
 //            ObservableList<Route> routeSelected, allRoutes;
@@ -428,7 +427,7 @@ public class Driver extends Application{
         table.getColumns().addAll(pubColumn, addressColumn);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        vBox.getChildren().add(1, table);
+        vBox.getChildren().add(2, table);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
         System.out.println("GOTTEN PROCESS TIME == " + processTime + " || " + nQueryExec);
@@ -468,7 +467,7 @@ public class Driver extends Application{
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
         dataSeries1.getData().add(new XYChart.Data( nQueryExec, processTime));
 
-        vBox.getChildren().add(1, table);
+        vBox.getChildren().add(2, table);
     }
 
 
@@ -497,7 +496,7 @@ public class Driver extends Application{
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
         dataSeries1.getData().add(new XYChart.Data( nQueryExec, processTime));
 
-        vBox.getChildren().add(1, table);
+        vBox.getChildren().add(2, table);
     }
 
     public ObservableList<ArrayList<String>> getQuery1()

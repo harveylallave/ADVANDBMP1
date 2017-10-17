@@ -11,34 +11,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="476" column="88" lean-forward="false" selection-start-line="476" selection-start-column="88" selection-end-line="476" selection-end-column="88" />
+            <state relative-caret-position="460">
+              <caret line="498" column="32" lean-forward="false" selection-start-line="498" selection-start-column="32" selection-end-line="498" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1842#1872#0" expanded="true" />
                 <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
                 <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
-                <element signature="e#8734#8767#0" expanded="false" />
+                <element signature="e#8744#8777#0" expanded="false" />
                 <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
-                <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
-                <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
+                <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
                 <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
                 <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-                <element signature="e#24404#24461#0" expanded="false" />
-                <marker date="1508237549747" expanded="true" signature="5639:6862" ph="..." />
-                <marker date="1508237549747" expanded="true" signature="19368:19581" ph="SELECT Publi... publisher" />
-                <marker date="1508237549747" expanded="true" signature="19678:20410" ph="..." />
-                <marker date="1508237549747" expanded="true" signature="20666:20797" ph="SELECT Borro... borrower" />
-                <marker date="1508237549747" expanded="true" signature="20666:20798" ph="SELECT Borro... borrower" />
-                <marker date="1508237549747" expanded="true" signature="21899:22297" ph="SELECT CONCA... borrower" />
-                <marker date="1508237549747" expanded="true" signature="25050:25711" ph="SELECT l.lan... landmarks" />
-                <marker date="1508237549747" expanded="true" signature="25789:26912" ph="SELECT l.lan... landmarks" />
+                <element signature="e#24414#24471#0" expanded="false" />
+                <marker date="1508241160158" expanded="true" signature="5262:6485" ph="..." />
+                <marker date="1508241160158" expanded="true" signature="19378:19591" ph="SELECT Publi... publisher" />
+                <marker date="1508241160158" expanded="true" signature="19688:20420" ph="..." />
+                <marker date="1508241160158" expanded="true" signature="20676:20807" ph="SELECT Borro... borrower" />
+                <marker date="1508241160158" expanded="true" signature="20676:20808" ph="SELECT Borro... borrower" />
+                <marker date="1508241160158" expanded="true" signature="21909:22307" ph="SELECT CONCA... borrower" />
+                <marker date="1508241160158" expanded="true" signature="25060:25721" ph="SELECT l.lan... landmarks" />
+                <marker date="1508241160158" expanded="true" signature="25799:26922" ph="SELECT l.lan... landmarks" />
               </folding>
             </state>
           </provider>
@@ -47,7 +46,7 @@
       <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/Style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3161">
+            <state relative-caret-position="1885">
               <caret line="65" column="45" lean-forward="false" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
               <folding>
                 <marker date="1508237507338" expanded="false" signature="3998:4355" ph="..." />
@@ -98,6 +97,9 @@
       <replace>graphArea</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -139,6 +141,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,16 +173,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../udc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -314,11 +316,12 @@
       <updated>1507996296713</updated>
       <workItem from="1507996300387" duration="8000" />
       <workItem from="1507996380091" duration="38975000" />
+      <workItem from="1508239054180" duration="1307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38983000" />
+    <option name="totallyTimeSpent" value="40290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="2574" height="1379" extended-state="0" />
@@ -326,14 +329,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -364,11 +367,60 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1842#1872#0" expanded="true" />
+            <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="e#8744#8777#0" expanded="false" />
+            <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
+            <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
+            <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
+            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
+            <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#24414#24471#0" expanded="false" />
+            <marker date="1508241160158" expanded="true" signature="5262:6485" ph="..." />
+            <marker date="1508241160158" expanded="true" signature="19378:19591" ph="SELECT Publi... publisher" />
+            <marker date="1508241160158" expanded="true" signature="19688:20420" ph="..." />
+            <marker date="1508241160158" expanded="true" signature="20676:20807" ph="SELECT Borro... borrower" />
+            <marker date="1508241160158" expanded="true" signature="20676:20808" ph="SELECT Borro... borrower" />
+            <marker date="1508241160158" expanded="true" signature="21909:22307" ph="SELECT CONCA... borrower" />
+            <marker date="1508241160158" expanded="true" signature="25060:25721" ph="SELECT l.lan... landmarks" />
+            <marker date="1508241160158" expanded="true" signature="25799:26922" ph="SELECT l.lan... landmarks" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1885">
+          <caret line="65" column="45" lean-forward="false" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+          <folding>
+            <marker date="1508237507338" expanded="false" signature="3998:4355" ph="..." />
+            <marker date="1508237507338" expanded="true" signature="3999:4203" ph="..." />
+            <marker date="1508237507338" expanded="true" signature="3999:4354" ph="..." />
+            <marker date="1508237507338" expanded="false" signature="4455:6614" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ADVANDB.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -390,7 +442,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/Style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3161">
+        <state relative-caret-position="1885">
           <caret line="65" column="45" lean-forward="false" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
           <folding>
             <marker date="1508237507338" expanded="false" signature="3998:4355" ph="..." />
@@ -403,30 +455,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="476" column="88" lean-forward="false" selection-start-line="476" selection-start-column="88" selection-end-line="476" selection-end-column="88" />
+        <state relative-caret-position="460">
+          <caret line="498" column="32" lean-forward="false" selection-start-line="498" selection-start-column="32" selection-end-line="498" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1842#1872#0" expanded="true" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
-            <element signature="e#8734#8767#0" expanded="false" />
+            <element signature="e#8744#8777#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
-            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
-            <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
+            <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#24404#24461#0" expanded="false" />
-            <marker date="1508237549747" expanded="true" signature="5639:6862" ph="..." />
-            <marker date="1508237549747" expanded="true" signature="19368:19581" ph="SELECT Publi... publisher" />
-            <marker date="1508237549747" expanded="true" signature="19678:20410" ph="..." />
-            <marker date="1508237549747" expanded="true" signature="20666:20797" ph="SELECT Borro... borrower" />
-            <marker date="1508237549747" expanded="true" signature="20666:20798" ph="SELECT Borro... borrower" />
-            <marker date="1508237549747" expanded="true" signature="21899:22297" ph="SELECT CONCA... borrower" />
-            <marker date="1508237549747" expanded="true" signature="25050:25711" ph="SELECT l.lan... landmarks" />
-            <marker date="1508237549747" expanded="true" signature="25789:26912" ph="SELECT l.lan... landmarks" />
+            <element signature="e#24414#24471#0" expanded="false" />
+            <marker date="1508241160158" expanded="true" signature="5262:6485" ph="..." />
+            <marker date="1508241160158" expanded="true" signature="19378:19591" ph="SELECT Publi... publisher" />
+            <marker date="1508241160158" expanded="true" signature="19688:20420" ph="..." />
+            <marker date="1508241160158" expanded="true" signature="20676:20807" ph="SELECT Borro... borrower" />
+            <marker date="1508241160158" expanded="true" signature="20676:20808" ph="SELECT Borro... borrower" />
+            <marker date="1508241160158" expanded="true" signature="21909:22307" ph="SELECT CONCA... borrower" />
+            <marker date="1508241160158" expanded="true" signature="25060:25721" ph="SELECT l.lan... landmarks" />
+            <marker date="1508241160158" expanded="true" signature="25799:26922" ph="SELECT l.lan... landmarks" />
           </folding>
         </state>
       </provider>
