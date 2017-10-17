@@ -216,8 +216,8 @@ public class Driver extends Application{
                     graphArea.getData().add(dataSeries1);
                     nQueryExec = 1;
 
-                    if (vBox.getChildren().get(1) instanceof TableView)
-                        vBox.getChildren().remove(1);
+                    if (vBox.getChildren().get(2) instanceof TableView)
+                        vBox.getChildren().remove(2);
 
                     table = new TableView <>();
                     switch ((Integer)number2){
