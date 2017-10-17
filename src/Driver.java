@@ -294,7 +294,7 @@ public class Driver extends Application{
     private void restartProfiling()
     {
 
-        Statement st    = null;
+        Statement st = null;
         try {
 
             st = conn.createStatement();
@@ -308,8 +308,7 @@ public class Driver extends Application{
             System.out.println("SQLException: " + e.getMessage());
             System.out.println("SQLState: "		+ e.getSQLState());
             System.out.println("VendorError: "  + e.getErrorCode());
-        }// catch (ClassNotFoundException e){
-
+        }
     }
 
     private BigDecimal getQueryProcessTime(int i)
@@ -439,7 +438,6 @@ public class Driver extends Application{
 
     public ObservableList<ArrayList<String>> getQuery1()
     {
-
         //Connection conn = getConnection();	called at the start
         Statement st    = null;
         ResultSet rs    = null;

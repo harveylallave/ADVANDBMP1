@@ -3,8 +3,9 @@
     /*-fx-background-image: url("http://the-alpha-group.biz/wp-content/uploads/2016/04/background_square_greenblue-1024x576.jpg");*/
     /*-fx-background-repeat: no-repeat;*/
     /*-fx-background-size: 100% 100%;*/
-    -fx-background-color: linear-gradient(to top, #13547a 0%, #80d0c7 100%);
+    -fx-background-color: linear-gradient(to top, #f5f7fa 0%, #c3cfe2 100%);
     -fx-font-size		 : 14;
+    -fx-font-family: Helvetica;
 }
 
 
@@ -13,7 +14,6 @@
     -fx-background-blend-mode: soft-light,screen;
     -fx-pref-width		 : 300;
     -fx-alignment        : center;
-
 }
 
 .vBoxCenter{
@@ -21,22 +21,8 @@
     -fx-pref-width		 : 700;
     -fx-alignment        : center;
 }
-
-#subVBox{
-    -fx-alignment        : center;
-}
-
-#subVBox > .button{
-    -fx-background-color  : rgba(158, 110, 74, 0.5);
-    -fx-pref-width		  : 250;
-}
-
 .grid-pane{
     -fx-alignment        : center;
-}
-
-.spinner, .spinner > .text-field{
-    -fx-background-color  : rgba(158, 110, 74, 0.5);
 }
 
 .choice-box .label{
@@ -74,15 +60,14 @@
 }
 
 #graphArea .label{
-    -fx-text-fill: whitesmoke;
+    -fx-text-fill: #57737A;
 }
 
-.spinner > .text-field, #rightGridPane > .spinner > .text-field,
 #graphArea, .graphArea > .scroll-pane {
     -fx-background-color  : null;
 }
 
-.choice-box .text, .spinner .label, .grid-pane .button .text, .grid-pane .label, #rightGridPane > .choice-box > .label,
+.choice-box .text, .grid-pane .button .text, .grid-pane .label, #rightGridPane > .choice-box > .label,
 #rightGridPane .text{
     -fx-text-fill		  : white;
     -fx-prompt-text-fill  : white;
@@ -102,16 +87,7 @@
 }
 
 .choice-box{
-    -fx-mark-color       : wheat;
-}
-
-.grid-pane > .spinner > .button{    /*NOT WORKING WTFF WHAT TYPE OF BUTTON???????????*/
-    -fx-text-fill		 : wheat;
-    -fx-mark-color       : wheat;
-    -fx-prompt-text-fill : lightGray;
-    -fx-opacity          : 1.0;
-    -fx-border-radius     : 0 0 0 0;
-    -fx-background-radius : 0 0 0 0;
+    -fx-mark-color       : #4E6E58;
 }
 
 #guideLabel{
@@ -123,7 +99,7 @@
 #headerLabel{
     -fx-font-weight		 : bold;
     -fx-font-size		 : 40;
-    -fx-text-fill		 : #965929;
+    -fx-text-fill		 : #DAFF7D;
 }
 
 
@@ -144,56 +120,27 @@
 .check-box *.box
 {
     -fx-background-radius: 0, 0, 0, 0;
-    -fx-effect: dropshadow( one-pass-box , black, 0, 2.0 , 3.5, 3.5);
+
 }
 
 
 .headerText{
     -fx-font-size		 : 25;
-    -fx-text-fill		 : #97EAD2;
+    -fx-text-fill		 : #558B6E;
     -fx-font-weight      : bold;
+    -fx-padding: 0 0 10 0;
+    -fx-effect: dropshadow(one-pass-box , #2B4141, 0, 1.0 , 1.5, 1.5);
 }
 
 .guideText{
     -fx-font-style		 : italic;
     -fx-font-size		 : 13;
-    -fx-text-fill		 : wheat;
+    -fx-text-fill		 : #DAFF7D;
 }
-
-/* Menu Part */
-
-.menu-bar, .context-menu, .menu-item:focused, .menu:focused,
-.menu-bar:selected, .menu:selected
-{
-    -fx-background-color : rgba(0, 0, 0, 0.25);
-}
-
-.menu{
-    -fx-background-color: rgba(0, 0, 0, 0);
-}
-
-
-.menu .label{
-    -fx-text-fill: rgba(255, 255, 255, 0.73);
-}
-
-.menu .label:hover, .menu-item:hover .label, .menu:focused{
-    -fx-text-fill: white;
-}
-
-
-.title{
-    -fx-background-color : black;
-    -fx-text-fill	 	 : #D8D8D8;
-}
-
 
 /* TableView Part*/
 .table-view{
-    -fx-padding 		 : 100 100 100 100;
-    -fx-control-inner-background: transparent
-    derive(#1d1d1d, 80%)
-    transparent;
+    -fx-padding 		 : 20 10 10 10;
     -fx-background-color: transparent
     derive(#1d1d1d, 80%)
     transparent;
@@ -202,7 +149,7 @@
 }
 
 .table-view .column-header-background {
-    -fx-background-color: transparent;
+    -fx-background-color: #2B4141;
 }
 
 .table-view .column-header, .table-view .filler {
@@ -223,9 +170,7 @@
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected {
-    -fx-background-color: transparent
-    derive(#1d1d1d, 20%)
-    transparent;
+    -fx-background-color: rgba(78, 110, 88, 0.30);
 }
 
 .table-view .table-row-cell{
@@ -237,7 +182,7 @@
 */
 .table-view .scroll-bar:horizontal ,
 .table-view  .scroll-bar:vertical{
-    -fx-background-color:transparent;
+    /*-fx-background-color:transparent;*/
 }
 
 /* The increment and decrement button CSS class of scrollbar */
@@ -274,22 +219,10 @@
 .button{
 	-fx-text-fill		 : #FFFFFF;
 	-fx-pref-width		 : 100;
-	-fx-background-color : derive(peru,-20%) transparent transparent transparent;
+	-fx-background-color : #ED6A5A;
 	-fx-background-radius: 15, 15, 45, 45;
 	
 }
-
-/*
-.scroll-bar:vertical {
-    -fx-opacity: 5;
-    -fx-padding:-9;
-}
-
-.scroll-bar:horizontal {
-    -fx-opacity: 5;
-    -fx-padding:-9;
-}
-*/
 
 .text-field {
     -fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, -fx-control-inner-background;
@@ -327,4 +260,31 @@
 .separator:vertical > .line {
     -fx-background-color: null;
     -fx-border-color:  transparent derive(-fx-background,-20%) transparent transparent;
+}
+
+/* Menu */
+
+.menu-bar, .context-menu, .menu-item:focused, .menu:focused,
+.menu-bar:selected, .menu:selected
+{
+    -fx-background-color : rgba(0, 0, 0, 0.25);
+}
+
+.menu{
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+
+.menu .label{
+    -fx-text-fill: rgba(255, 255, 255, 0.73);
+}
+
+.menu .label:hover, .menu-item:hover .label, .menu:focused{
+    -fx-text-fill: white;
+}
+
+
+.title{
+    -fx-background-color : black;
+    -fx-text-fill	 	 : #D8D8D8;
 }
