@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.math.BigDecimal;
@@ -26,16 +27,8 @@ import java.util.ArrayList;
 //import javafx.scene.control.Rating;
 
 
-/* To compile:
-				"javac -cp mysql-connector-java-5.1.40-bin.jar; " + className.java
-   To run:
-				"java -cp mysql-connector-java-5.1.40-bin.jar; " + className
-*/
-
 public class Driver extends Application{
-    Scene login,
-            rider,
-            driver;
+    Scene home;
 
     String firstName,
             lastName;
@@ -76,54 +69,21 @@ public class Driver extends Application{
         conn = getConnection();
         initMainScreen();
 
-
-        login = new Scene(mainPane, 1000, 600);
-        login.getStylesheets().add("View/Style.css");
+        home = new Scene(mainPane, 1000, 600);
+        home.getStylesheets().add("View/Style.css");
 
         primaryStage.setTitle("ADVANDB - MP1");
         primaryStage.setOnCloseRequest(e -> terminateProgram());
         primaryStage.getIcons().add(new Image ("View/Images/uberLogo.png"));
-        primaryStage.setScene(login);
+        primaryStage.setScene(home);
         primaryStage.show();
     }
 
     public void initMainScreen()
     {
         mainPane.getChildren().remove(mainPane.getCenter());
-        mainPane.setRight(initRightVBox());
+//        mainPane.setRight(initRightVBox());
         mainPane.setCenter(initCenterVBox());
-        mainPane.setTop(initTopBar());
-    }
-
-    public MenuBar initTopBar()
-    {
-
-        //Menu
-        Menu menu = new Menu("_Menu");
-        Menu machine = new Menu("Ma_chine");
-
-        //Initializing menu items
-        MenuItem exit      = new MenuItem("_Exit");
-        MenuItem about     = new MenuItem("_About");
-        MenuItem restart   = new MenuItem("_Restart");
-
-        machine.getItems().addAll(/*semaphoreMenuItem, lockMenuItem, */restart);
-        menu.getItems().addAll(machine, new SeparatorMenuItem(), about, exit);
-
-        MenuBar menuBar = new MenuBar();
-        menuBar.getMenus().addAll(menu);
-
-        exit.setOnAction(e -> terminateProgram());
-
-
-        restart.setOnAction(e -> {
-//            stopAllThreads();
-//            trains.clear();
-//            initScreen1();
-        });
-
-
-        return menuBar;
     }
 
     public VBox initRightVBox()
@@ -174,6 +134,8 @@ public class Driver extends Application{
     public VBox initCenterVBox()
     {
         VBox vBox = new VBox();
+        HBox hBox;
+
         vBox.getStyleClass().add("vBoxCenter");
 
         Pane field = new Pane();
@@ -181,8 +143,7 @@ public class Driver extends Application{
 
         if(conn == null){
             vBox.getChildren().add(new Label("Unable to connect to the database, check getConnection()"));
-        }
-        else {
+        } else {
             ImageView queryIcon = new ImageView("View/Images/queryIcon.png");
             queryIcon.setFitHeight(25);
             queryIcon.setFitWidth(25);
@@ -235,14 +196,35 @@ public class Driver extends Application{
                 }
             });
 
-
             queryNum.setText("Query #" + 0);
             queryNum.getStyleClass().add("headerText");
             queryNum.setAlignment(Pos.BASELINE_LEFT);
 
-            HBox hBox = new HBox(10);
+            hBox = new HBox(10);
             hBox.setAlignment(Pos.CENTER);
-            hBox.getChildren().addAll(queryIcon,queryChoiceBox);
+
+            Button button = new Button("Run");
+
+            button.setOnAction(e -> {
+                nQueryExec += 1;
+                String queryNumText = queryNum.getText();
+                VBox tempvBox = new VBox();
+                tempvBox.getChildren().add(new Label());
+                table = new TableView <>();
+
+                switch (queryNumText.charAt(queryNumText.length() - 1)){
+                    case '0': break;
+                    case '1': updateTableQuery1(tempvBox);
+                        break;
+                    case '2': updateTableQuery2(tempvBox);
+                        break;
+                    case '3': updateTableQuery3(tempvBox);
+                        break;
+                    default : System.out.println("Repeating Query #" + queryNumText.charAt(queryNumText.length() - 1));
+                }
+            });
+
+            hBox.getChildren().addAll(queryIcon,queryChoiceBox,button);
             vBox.getChildren().add(0, queryNum);
             vBox.getChildren().add(1, hBox);
 
@@ -410,6 +392,7 @@ public class Driver extends Application{
     private void updateTableQuery1(VBox vBox)
     {
         TableColumn<ArrayList<String>, String> pubColumn = new TableColumn<>("Publisher");
+
         pubColumn.setMinWidth(100);
         pubColumn.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
@@ -753,7 +736,7 @@ public class Driver extends Application{
 //        };
 //    }
     /*****************************************************************************************/
-	
+
 	/* Numeric Validation Limit the  characters to maxLength AND to ONLY DigitS *************************************/
 //    public EventHandler<KeyEvent> numeric_Validation(final Integer max_Length) {
 //        return new EventHandler<KeyEvent>() {

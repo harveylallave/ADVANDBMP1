@@ -1,14 +1,16 @@
 .root{
-    -fx-background-image: url("Images/bgStars.gif");
-    /*http://33.media.tumblr.com/09560bc985519eb66963083f09afaaba/tumblr_n8fiv9gsuX1rzq9k2o1_500.gif*/
+    /*-fx-background-color: #0D0221;*/
+    /*-fx-background-image: url("http://the-alpha-group.biz/wp-content/uploads/2016/04/background_square_greenblue-1024x576.jpg");*/
     /*-fx-background-repeat: no-repeat;*/
     /*-fx-background-size: 100% 100%;*/
+    -fx-background-color: linear-gradient(to top, #13547a 0%, #80d0c7 100%);
     -fx-font-size		 : 14;
 }
 
 
 #vBoxRight{
-    -fx-background-color : rgba(100, 100, 100, 0.25);
+    -fx-background-color : rgba(67, 67, 67, 0.25);
+    -fx-background-blend-mode: soft-light,screen;
     -fx-pref-width		 : 300;
     -fx-alignment        : center;
 
@@ -148,7 +150,7 @@
 
 .headerText{
     -fx-font-size		 : 25;
-    -fx-text-fill		 : wheat;
+    -fx-text-fill		 : #97EAD2;
     -fx-font-weight      : bold;
 }
 
