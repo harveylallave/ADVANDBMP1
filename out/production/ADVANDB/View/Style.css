@@ -1,0 +1,328 @@
+.root{
+    -fx-background-image: url("Images/bgStars.gif");
+    /*http://33.media.tumblr.com/09560bc985519eb66963083f09afaaba/tumblr_n8fiv9gsuX1rzq9k2o1_500.gif*/
+    /*-fx-background-repeat: no-repeat;*/
+    /*-fx-background-size: 100% 100%;*/
+    -fx-font-size		 : 14;
+}
+
+
+#vBoxRight{
+    -fx-background-color : rgba(100, 100, 100, 0.25);
+    -fx-pref-width		 : 300;
+    -fx-alignment        : center;
+
+}
+
+.vBoxCenter{
+    -fx-background-color : rgba(150, 150, 150, 0.10);
+    -fx-pref-width		 : 700;
+    -fx-alignment        : center;
+}
+
+#subVBox{
+    -fx-alignment        : center;
+}
+
+#subVBox > .button{
+    -fx-background-color  : rgba(158, 110, 74, 0.5);
+    -fx-pref-width		  : 250;
+}
+
+.grid-pane{
+    -fx-alignment        : center;
+}
+
+.spinner, .spinner > .text-field{
+    -fx-background-color  : rgba(158, 110, 74, 0.5);
+}
+
+.choice-box .label{
+    -fx-text-fill: rgba(255, 255, 255, 0.55);
+}
+
+.grid-pane > .text-field, .grid-pane >  .text-field:disabled,
+    /* .grid-pane >  .spinner*/ /*> .text-field:disabled *//*,*/
+.choice-box, .choice-box:disabled, .spinner, .spinner > .text-field,
+.text-area, .text-area > .content, .grid-pane > .button{
+    -fx-text-fill		  : white;
+    -fx-prompt-text-fill  : white;
+    -fx-pref-width		  : 450;
+    -fx-max-height		  : 30 ;
+    -fx-opacity           : 1.0;
+    -fx-prompt-text-fill  : lightGray;
+    -fx-background-color  : rgba(100, 100, 100, 0.5);
+    -fx-border-radius     : 0 0 0 0;
+    -fx-background-radius : 0 0 0 0;
+    /*    -fx-alignment        : center;*/
+}
+#rightGridPane > .text-field, #rightGridPane >  .text-field:disabled,
+    /* #rightGridPane >  .spinner *//*> .text-field:disabled *//*,*/
+#rightGridPane > .choice-box, #rightGridPane > .choice-box:disabled,
+#rightGridPane > .spinner > .text-field,
+#rightGridPane > .button, .scroll-pane, .scroll-pane:disabled,
+#rightGridPane > .spinner, #rightGridPane > .spinner > .text-field{
+    -fx-opacity           : 1.0;
+    -fx-background-color  : rgba(100, 100, 100, 0.30);/*rgba(124, 91, 88, 1);*/  /*0, 0, 0, 0.5*/
+}
+
+#graphArea .content{
+    -fx-opacity           : 1.0;
+    -fx-background-color : black;
+}
+
+#graphArea .label{
+    -fx-text-fill: whitesmoke;
+}
+
+.spinner > .text-field, #rightGridPane > .spinner > .text-field,
+#graphArea, .graphArea > .scroll-pane {
+    -fx-background-color  : null;
+}
+
+.choice-box .text, .spinner .label, .grid-pane .button .text, .grid-pane .label, #rightGridPane > .choice-box > .label,
+#rightGridPane .text{
+    -fx-text-fill		  : white;
+    -fx-prompt-text-fill  : white;
+    -fx-background-color  : rgba(0, 0, 0, 0);
+}
+
+#graphArea .content, #subVBox .button{
+    -fx-text-fill		  : white;
+    -fx-prompt-text-fill  : white;
+}
+
+#graphArea{
+    -fx-pref-width		  : 250;
+    -fx-pref-height		  : 250;
+    -fx-min-height		  : 150;
+    -fx-max-height		  : 250;
+}
+
+.choice-box{
+    -fx-mark-color       : wheat;
+}
+
+.grid-pane > .spinner > .button{    /*NOT WORKING WTFF WHAT TYPE OF BUTTON???????????*/
+    -fx-text-fill		 : wheat;
+    -fx-mark-color       : wheat;
+    -fx-prompt-text-fill : lightGray;
+    -fx-opacity          : 1.0;
+    -fx-border-radius     : 0 0 0 0;
+    -fx-background-radius : 0 0 0 0;
+}
+
+#guideLabel{
+    -fx-font-style		 : italic;
+    -fx-font-size		 : 14;
+    -fx-text-fill        : white;
+}
+
+#headerLabel{
+    -fx-font-weight		 : bold;
+    -fx-font-size		 : 40;
+    -fx-text-fill		 : #965929;
+}
+
+
+#centerPane > .label{
+    -fx-text-fill        : rgba(162, 189, 224, 1);
+    -fx-underline		 : true;
+    -fx-font-weight      : bold;
+    -fx-padding          : 0 0 20 0;
+}
+
+
+.hbox-custom {
+    -fx-font-weight      : bold;
+    -fx-alignment        : center_left;
+}
+
+
+.check-box *.box
+{
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-effect: dropshadow( one-pass-box , black, 0, 2.0 , 3.5, 3.5);
+}
+
+
+.headerText{
+    -fx-font-size		 : 25;
+    -fx-text-fill		 : wheat;
+    -fx-font-weight      : bold;
+}
+
+.guideText{
+    -fx-font-style		 : italic;
+    -fx-font-size		 : 13;
+    -fx-text-fill		 : wheat;
+}
+
+/* Menu Part */
+
+.menu-bar, .context-menu, .menu-item:focused, .menu:focused,
+.menu-bar:selected, .menu:selected
+{
+    -fx-background-color : rgba(0, 0, 0, 0.25);
+}
+
+.menu{
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+
+.menu .label{
+    -fx-text-fill: rgba(255, 255, 255, 0.73);
+}
+
+.menu .label:hover, .menu-item:hover .label, .menu:focused{
+    -fx-text-fill: white;
+}
+
+
+.title{
+    -fx-background-color : black;
+    -fx-text-fill	 	 : #D8D8D8;
+}
+
+
+/* TableView Part*/
+.table-view{
+    -fx-padding 		 : 100 100 100 100;
+    -fx-control-inner-background: transparent
+    derive(#1d1d1d, 80%)
+    transparent;
+    -fx-background-color: transparent
+    derive(#1d1d1d, 80%)
+    transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: derive(#1d1d1d, 20%)
+    transparent;
+    -fx-border-insets: 0 10 1 0;
+    -fx-alignment: center;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: transparent
+    derive(#1d1d1d, 20%)
+    transparent;
+}
+
+.table-view .table-row-cell{
+    -fx-alignment: center;
+}
+
+/* The main scrollbar CSS class of table-view
+ * http://blog.ngopal.com.np/2012/07/11/customize-scrollbar-via-css/
+*/
+.table-view .scroll-bar:horizontal ,
+.table-view  .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.table-view .increment-button ,.table-view .decrement-button {
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+}
+
+/* The main scrollbar **track** CSS class  */
+.table-view .scroll-bar:horizontal .track ,
+.table-view .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+}
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive(darkgray,10%)
+    transparent;
+    -fx-background-insets: 0, 10, 1, 0;
+    -fx-background-radius: 20em;
+    -fx-opacity: 5;
+}
+
+.table-view .scroll-bar:vertical > .increment-button,
+.table-view .scroll-bar:vertical > .decrement-button {
+    -fx-padding: 0.30em 0.1em  ;
+}
+
+
+/********************************************************************************************************************/
+
+.button{
+	-fx-text-fill		 : #FFFFFF;
+	-fx-pref-width		 : 100;
+	-fx-background-color : derive(peru,-20%) transparent transparent transparent;
+	-fx-background-radius: 15, 15, 45, 45;
+	
+}
+
+/*
+.scroll-bar:vertical {
+    -fx-opacity: 5;
+    -fx-padding:-9;
+}
+
+.scroll-bar:horizontal {
+    -fx-opacity: 5;
+    -fx-padding:-9;
+}
+*/
+
+.text-field {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-text-box-border, -fx-control-inner-background;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+    -fx-padding: 0.25em 0.416667em  0.333333em 0.416667em; /* 3 5 4 5 */
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-35%);
+    -fx-cursor: text;
+	-fx-pref-width		 : 250;
+	-fx-pref-height		 : 25 ;
+}
+
+.hbox{
+	-fx-alignment        :center;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, -fx-text-box-border, -fx-control-inner-background;
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+    -fx-prompt-text-fill: transparent;
+}
+
+/*Caspian CSS Separators*/
+.separator > .line {
+    -fx-border-width: 0.083333em; /* 1 */
+}
+
+.separator:horizontal > .line {
+    -fx-background-color: null;
+    -fx-padding: 0.083333em 0.0em 0.0em 0.0em; /* 1 0 0 0 */
+    -fx-border-color: derive(-fx-background,-20%) transparent transparent transparent;
+}
+
+.separator:vertical > .line {
+    -fx-background-color: null;
+    -fx-border-color:  transparent derive(-fx-background,-20%) transparent transparent;
+}
