@@ -60,7 +60,7 @@
 }
 
 #graphArea .label{
-    -fx-text-fill: #57737A;
+    -fx-text-fill: #ED6A5A;
 }
 
 #graphArea, .graphArea > .scroll-pane {
@@ -221,7 +221,39 @@
 	-fx-pref-width		 : 100;
 	-fx-background-color : #ED6A5A;
 	-fx-background-radius: 15, 15, 45, 45;
-	
+}
+
+.button:hover{
+    -fx-effect: innershadow(gaussian , rgba(0,0,0,0.3) , 0.5,0.5,0,1 );
+    -fx-background-color: firebrick;
+}
+
+.rightVBoxButton{
+    -fx-text-fill		 : dimgray;
+    -fx-pref-width		 : 100;
+    -fx-background-color : #DAFF7D;
+    -fx-background-radius: 15, 15, 45, 45;
+    -fx-text-alignment: center;
+}
+
+.rightVBoxButton:hover{
+    -fx-text-fill: whitesmoke;
+    -fx-background-color: #4E6E58;
+}
+
+.rightHBoxButton{
+    -fx-text-fill		 : white;
+    -fx-pref-width		 : 100;
+    -fx-background-color : #4E6E58;
+    -fx-background-radius: 15, 15, 45, 45;
+    -fx-text-alignment: center;
+}
+
+
+.text-area{
+    -fx-text-fill: black;
+    -fx-background-radius: 15, 15, 45, 45;
+    -fx-text-box-border: white;
 }
 
 .text-field {

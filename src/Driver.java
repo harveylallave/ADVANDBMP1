@@ -56,6 +56,8 @@ public class Driver extends Application{
     Label queryNum = new Label(),
           query    = new Label();
 
+    ChoiceBox<String> queryChoiceBox;
+
     //Rating rate = new Rating();
     Connection conn;
     private LineChart graphArea;
@@ -82,8 +84,61 @@ public class Driver extends Application{
     public void initMainScreen()
     {
         mainPane.getChildren().remove(mainPane.getCenter());
-//        mainPane.setRight(initRightVBox());
         mainPane.setCenter(initCenterVBox());
+        mainPane.setRight(initRightVBox());
+    }
+
+    public VBox initRightVBox()
+    {
+        VBox mainVBox = new VBox(15);
+
+        mainVBox.setAlignment(Pos.TOP_CENTER);
+        mainVBox.setPadding(new Insets(10, 0, 0, 0));
+
+        button = new Button("Edit Query");
+        button.getStyleClass().add("rightVBoxButton");
+        button.setMinWidth(150);
+        button.wrapTextProperty().setValue(true);
+
+        button.setOnAction(event -> {
+            TextArea queryEdit = new TextArea();
+            HBox subHBox = new HBox(10);
+//            subHBox.setPadding(new Insets(50, 50,50, 50));
+
+            queryEdit.setPrefColumnCount(10);
+//            queryEdit.setPrefWidth(100);
+            subHBox.getChildren().add(queryEdit);
+            System.out.println("\nEDIT QUERY: " +queryChoiceBox.getValue());
+            queryEdit.setText(queryChoiceBox.getValue().toString());
+
+            button = new Button("Update Query");
+            button.setOnAction(event1 -> {
+                mainVBox.getChildren().remove(3);
+            });
+
+            subHBox.getChildren().add(button);
+
+            mainVBox.getChildren().add(subHBox);
+        });
+
+        mainVBox.getChildren().add(button);
+
+        Button button = new Button("Optimize Query");
+        button.getStyleClass().add("rightVBoxButton");
+        button.setMinWidth(150);
+        button.wrapTextProperty().setValue(true);
+
+        mainVBox.getChildren().add(button);
+
+        button = new Button("Detailed Time Process");
+        button.getStyleClass().add("rightVBoxButton");
+        button.setMinWidth(150);
+        button.wrapTextProperty().setValue(true);
+
+        mainVBox.getChildren().add(button);
+
+        mainVBox.setMinWidth(200);
+        return mainVBox;
     }
 
     public VBox initCenterVBox()
@@ -104,7 +159,7 @@ public class Driver extends Application{
             queryIcon.setFitWidth(25);
             queryIcon.setPreserveRatio(true);
 
-            ChoiceBox<String> queryChoiceBox = new ChoiceBox<>();
+            queryChoiceBox = new ChoiceBox<>();
             queryChoiceBox.getItems().addAll("",
                     "SELECT PublisherName AS 'Publisher', Address\n" +
                             "FROM publisher\n" +
@@ -364,7 +419,7 @@ public class Driver extends Application{
         table.getColumns().addAll(pubColumn, addressColumn);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        vBox.getChildren().add(2, table);
+        vBox.getChildren().add(1, table);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
         System.out.println("GOTTEN PROCESS TIME == " + processTime + " || " + nQueryExec);
