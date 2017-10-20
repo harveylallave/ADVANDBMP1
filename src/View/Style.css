@@ -31,8 +31,7 @@
 
 .grid-pane > .text-field, .grid-pane >  .text-field:disabled,
     /* .grid-pane >  .spinner*/ /*> .text-field:disabled *//*,*/
-.choice-box, .choice-box:disabled, .spinner, .spinner > .text-field,
-.text-area, .text-area > .content, .grid-pane > .button{
+.choice-box, .choice-box:disabled, .spinner, .spinner > .text-field, .grid-pane > .button{
     -fx-text-fill		  : white;
     -fx-prompt-text-fill  : white;
     -fx-pref-width		  : 450;
@@ -43,6 +42,12 @@
     -fx-border-radius     : 0 0 0 0;
     -fx-background-radius : 0 0 0 0;
     /*    -fx-alignment        : center;*/
+}
+
+.text-area{
+    -fx-pref-width		  : 90;
+    -fx-start-margin: 10;
+    -fx-border-color: whitesmoke;
 }
 #rightGridPane > .text-field, #rightGridPane >  .text-field:disabled,
     /* #rightGridPane >  .spinner *//*> .text-field:disabled *//*,*/
@@ -223,22 +228,27 @@
 	-fx-background-radius: 15, 15, 45, 45;
 }
 
+.editQueryLabel{
+    -fx-padding: 15 15 15 15;
+    -fx-text-fill: #4E6E58;
+}
+
 .button:hover{
     -fx-effect: innershadow(gaussian , rgba(0,0,0,0.3) , 0.5,0.5,0,1 );
     -fx-background-color: firebrick;
 }
 
 .rightVBoxButton{
-    -fx-text-fill		 : dimgray;
+    -fx-text-fill		 : white;
     -fx-pref-width		 : 100;
-    -fx-background-color : #DAFF7D;
+    -fx-background-color : #7faab7;
     -fx-background-radius: 15, 15, 45, 45;
     -fx-text-alignment: center;
 }
 
 .rightVBoxButton:hover{
     -fx-text-fill: whitesmoke;
-    -fx-background-color: #4E6E58;
+    -fx-background-color: #4f6a72;
 }
 
 .rightHBoxButton{
@@ -254,6 +264,8 @@
     -fx-text-fill: black;
     -fx-background-radius: 15, 15, 45, 45;
     -fx-text-box-border: white;
+    -fx-start-margin: 10;
+    -fx-end-margin: 10;
 }
 
 .text-field {
@@ -268,7 +280,7 @@
 	-fx-pref-height		 : 25 ;
 }
 
-.hbox{
+.subVBox{
 	-fx-alignment        :center;
 }
 .text-field:focused {

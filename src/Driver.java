@@ -6,6 +6,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -17,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.math.BigDecimal;
@@ -24,25 +27,13 @@ import java.sql.*;
 import java.util.ArrayList;
 
 //import javafx.scene.input.KeyCombination;
-//import javafx.scene.control.Rating;
-
 
 public class Driver extends Application{
     Scene home;
 
-    String firstName,
-            lastName;
-
-    boolean userRider;
     Label label;
     Button button;
-    TextField textField,
-            startingTextField,
-            endingTextField,
-            minutesTextField,
-            fareTextField,
-            riderTextField,
-            ratingTextField;
+    TextField textField;
 
     TableView<ArrayList<String>> table;
 
@@ -51,14 +42,12 @@ public class Driver extends Application{
     MenuBar menuBar;
     Menu menu;
     HBox hBox;
-    VBox filterVBox;
 
     Label queryNum = new Label(),
           query    = new Label();
 
     ChoiceBox<String> queryChoiceBox;
 
-    //Rating rate = new Rating();
     Connection conn;
     private LineChart graphArea;
     private XYChart.Series dataSeries1;
@@ -69,23 +58,61 @@ public class Driver extends Application{
     public void start(Stage primaryStage) throws Exception
     {
         conn = getConnection();
-        initMainScreen();
+        initMainScreen(primaryStage);
 
         home = new Scene(mainPane, 1000, 600);
         home.getStylesheets().add("View/Style.css");
 
         primaryStage.setTitle("ADVANDB - MP1");
         primaryStage.setOnCloseRequest(e -> terminateProgram());
-        primaryStage.getIcons().add(new Image ("View/Images/uberLogo.png"));
         primaryStage.setScene(home);
         primaryStage.show();
     }
 
-    public void initMainScreen()
+    public VBox initOptimizeQuerySidebar(){
+        VBox mainVBox = new VBox(5);
+
+        Button button = new Button("Create Index");
+
+        return mainVBox;
+    }
+
+    public void initMainScreen(Stage primaryStage)
     {
         mainPane.getChildren().remove(mainPane.getCenter());
+        mainPane.setTop(initTopBar(primaryStage));
         mainPane.setCenter(initCenterVBox());
         mainPane.setRight(initRightVBox());
+    }
+
+    public MenuBar initTopBar(Stage primaryStage)
+    {
+        //Initializing menu items
+        Menu optimization = new Menu("_Optimization");
+//        Menu detailed_time_process = new Menu("_Detailed Time Process");
+        Menu exit = new Menu("_Exit");
+
+        optimization.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("wtf");
+                Stage dialog = new Stage();
+//                dialog.initModality(Modality.APPLICATION_MODAL);
+                dialog.initOwner(primaryStage);
+                VBox dialogVbox = new VBox(20);
+                dialogVbox.getChildren().add(new Text("This is a Dialog"));
+                Scene dialogScene = new Scene(dialogVbox, 300, 200);
+                dialog.setScene(dialogScene);
+                dialog.show();
+            }
+        });
+
+        exit.setOnAction(e -> terminateProgram());
+        menuBar = new MenuBar();
+
+        menuBar.getMenus().addAll(optimization, exit);
+
+        return menuBar;
     }
 
     public VBox initRightVBox()
@@ -101,39 +128,27 @@ public class Driver extends Application{
         button.wrapTextProperty().setValue(true);
 
         button.setOnAction(event -> {
-            TextArea queryEdit = new TextArea();
-            HBox subHBox = new HBox(10);
-//            subHBox.setPadding(new Insets(50, 50,50, 50));
+            Label label = new Label(queryChoiceBox.getValue().toString());
+            label.getStyleClass().add("editQueryLabel");
+            VBox subVBox = new VBox(10);
+            subVBox.getStyleClass().add("subVBox");
+//          subHBox.setPadding(new Insets(50, 50,50, 50));
 
-            queryEdit.setPrefColumnCount(10);
-//            queryEdit.setPrefWidth(100);
-            subHBox.getChildren().add(queryEdit);
-            System.out.println("\nEDIT QUERY: " +queryChoiceBox.getValue());
-            queryEdit.setText(queryChoiceBox.getValue().toString());
+            subVBox.getChildren().add(label);
+            System.out.println("\nEDIT QUERY: " + queryChoiceBox.getValue());
 
             button = new Button("Update Query");
+            button.setMinWidth(150);
+
+            subVBox.getChildren().add(button);
+            mainVBox.getChildren().add(subVBox);
+
             button.setOnAction(event1 -> {
-                mainVBox.getChildren().remove(3);
+                mainVBox.getChildren().remove(1);
+
             });
 
-            subHBox.getChildren().add(button);
-
-            mainVBox.getChildren().add(subHBox);
         });
-
-        mainVBox.getChildren().add(button);
-
-        Button button = new Button("Optimize Query");
-        button.getStyleClass().add("rightVBoxButton");
-        button.setMinWidth(150);
-        button.wrapTextProperty().setValue(true);
-
-        mainVBox.getChildren().add(button);
-
-        button = new Button("Detailed Time Process");
-        button.getStyleClass().add("rightVBoxButton");
-        button.setMinWidth(150);
-        button.wrapTextProperty().setValue(true);
 
         mainVBox.getChildren().add(button);
 
@@ -187,8 +202,8 @@ public class Driver extends Application{
                     graphArea.getData().add(dataSeries1);
                     nQueryExec = 1;
 
-                    if (vBox.getChildren().get(1) instanceof TableView)
-                        vBox.getChildren().remove(1);
+                    if (vBox.getChildren().get(2) instanceof TableView)
+                        vBox.getChildren().remove(2);
 
                     table = new TableView <>();
                     switch ((Integer)number2){
@@ -215,11 +230,16 @@ public class Driver extends Application{
 
             Button button = new Button("Run");
 
+            hBox.getChildren().addAll(queryIcon,queryChoiceBox,button);
+            vBox.getChildren().add(0, queryNum);
+            vBox.getChildren().add(1, hBox);
+
             button.setOnAction(e -> {
                 nQueryExec += 1;
                 String queryNumText = queryNum.getText();
                 VBox tempvBox = new VBox();
-                tempvBox.getChildren().add(new Label());
+                tempvBox.getChildren().addAll(new Label());
+                tempvBox.getChildren().addAll(new Label());
                 table = new TableView <>();
 
                 switch (queryNumText.charAt(queryNumText.length() - 1)){
@@ -233,10 +253,6 @@ public class Driver extends Application{
                     default : System.out.println("Repeating Query #" + queryNumText.charAt(queryNumText.length() - 1));
                 }
             });
-
-            hBox.getChildren().addAll(queryIcon,queryChoiceBox,button);
-            vBox.getChildren().add(0, queryNum);
-            vBox.getChildren().add(1, hBox);
 
             NumberAxis xAxis = new NumberAxis();
             xAxis.setLabel("Execution Number");
@@ -419,7 +435,7 @@ public class Driver extends Application{
         table.getColumns().addAll(pubColumn, addressColumn);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-        vBox.getChildren().add(1, table);
+        vBox.getChildren().add(2, table);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
         System.out.println("GOTTEN PROCESS TIME == " + processTime + " || " + nQueryExec);
