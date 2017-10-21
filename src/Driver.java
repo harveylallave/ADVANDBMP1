@@ -1,4 +1,5 @@
 import Model.Transaction;
+import com.sun.javafx.font.freetype.HBGlyphLayout;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -17,6 +18,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -28,23 +30,19 @@ import java.util.ArrayList;
 
 //import javafx.scene.input.KeyCombination;
 
-public class Driver extends Application{
+public class Driver extends Application {
     Scene home;
 
     Label label;
     Button button;
-    TextField textField;
-
     TableView<ArrayList<String>> table;
 
     TableView<Transaction> transactionTable;
     BorderPane mainPane = new BorderPane();
     MenuBar menuBar;
-    Menu menu;
-    HBox hBox;
 
     Label queryNum = new Label(),
-          query    = new Label();
+            query = new Label();
 
     ChoiceBox<String> queryChoiceBox;
 
@@ -55,10 +53,9 @@ public class Driver extends Application{
 
 
     @SuppressWarnings("unchecked")
-    public void start(Stage primaryStage) throws Exception
-    {
+    public void start(Stage primaryStage) throws Exception {
         conn = getConnection();
-        initMainScreen(primaryStage);
+        initMainScreen();
 
         home = new Scene(mainPane, 1000, 600);
         home.getStylesheets().add("View/Style.css");
@@ -69,45 +66,64 @@ public class Driver extends Application{
         primaryStage.show();
     }
 
-    public VBox initOptimizeQuerySidebar(){
-        VBox mainVBox = new VBox(5);
-
-        Button button = new Button("Create Index");
-
-        return mainVBox;
-    }
-
-    public void initMainScreen(Stage primaryStage)
-    {
+    public void initMainScreen() {
         mainPane.getChildren().remove(mainPane.getCenter());
-        mainPane.setTop(initTopBar(primaryStage));
+        mainPane.setTop(initTopBar());
         mainPane.setCenter(initCenterVBox());
         mainPane.setRight(initRightVBox());
     }
 
-    public MenuBar initTopBar(Stage primaryStage)
-    {
+    public MenuBar initTopBar() {
         //Initializing menu items
-        Menu optimization = new Menu("_Optimization");
-//        Menu detailed_time_process = new Menu("_Detailed Time Process");
-        Menu exit = new Menu("_Exit");
+        Menu optimization = new Menu();
 
-        optimization.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("wtf");
-                Stage dialog = new Stage();
-//                dialog.initModality(Modality.APPLICATION_MODAL);
-                dialog.initOwner(primaryStage);
-                VBox dialogVbox = new VBox(20);
-                dialogVbox.getChildren().add(new Text("This is a Dialog"));
-                Scene dialogScene = new Scene(dialogVbox, 300, 200);
-                dialog.setScene(dialogScene);
-                dialog.show();
-            }
+        Menu exit = new Menu();
+
+        Label menuLabel = new Label("Optimization");
+        menuLabel.setOnMouseClicked(e -> {
+            Stage myDialog = new Stage();
+            myDialog.initModality(Modality.WINDOW_MODAL);
+
+            GridPane optimizePane = new GridPane();
+            optimizePane.setPadding(new Insets(10, 10, 10, 10));
+            optimizePane.setVgap(20);
+            optimizePane.setHgap(25);
+
+            HBox itemRow = new HBox(10);
+            label = new Label("Method:");
+            Scene dialogScene = new Scene(optimizePane, 800, 400);
+            ChoiceBox optimizationType = new ChoiceBox<>();
+
+            optimizationType.getItems().addAll("Create Indexes", "Create Views", "Using JOIN statements");
+
+            itemRow.getChildren().addAll(label, optimizationType);
+            optimizePane.add(itemRow, 1, 0);
+
+            optimizationType.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+
+                    switch ((Integer) number2) {
+                        case 0:
+                            indexOptimization(optimizePane);
+                            break;
+                    }
+                }
+            });
+
+            myDialog.setTitle("Query Optimization");
+            dialogScene.getStylesheets().add("View/Style.css");
+            myDialog.setScene(dialogScene);
+            myDialog.show();
         });
 
-        exit.setOnAction(e -> terminateProgram());
+        optimization.setGraphic(menuLabel);
+
+        menuLabel = new Label("Exit");
+        exit.setGraphic(menuLabel);
+        menuLabel.setOnMouseClicked(e -> terminateProgram());
+
         menuBar = new MenuBar();
 
         menuBar.getMenus().addAll(optimization, exit);
@@ -115,8 +131,285 @@ public class Driver extends Application{
         return menuBar;
     }
 
-    public VBox initRightVBox()
-    {
+    public void indexOptimization(GridPane optimizePane){
+        ChoiceBox tableChoiceBox = new ChoiceBox<>();
+        HBox itemRow = new HBox(5);
+
+        tableChoiceBox.getItems().addAll("book", "book_author", "book_loans", "borrower", "library_branch", "publisher");
+        label = new Label("Table: ");
+        itemRow.getChildren().addAll(label, tableChoiceBox);
+
+        tableChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                label = new Label("Attribute:");
+                button = new Button("Optimize");
+
+                optimizePane.add(button, 2, 2);
+
+                optimizePane.add(new Label(""), 1, 2);
+
+                switch ((Integer) number2) {
+                    case 0: /* book */
+                        createIndexBook(optimizePane);
+                        break;
+
+                    case 1: /* book_author */
+                        createIndexBookAuthor(optimizePane);
+                        break;
+
+                    case 2: /* book_loans */
+                        createBookLoansIndex(optimizePane);
+                        break;
+
+                    case 3: /* borrower */
+                        createBorrowerIndex(optimizePane);
+                        break;
+
+                    case 4: /* library_branch */
+                        createLibraryBranchIndex(optimizePane);
+                        break;
+
+                    case 5: /* publisher */
+                        createPublisherIndex(optimizePane);
+                        break;
+
+                }
+            }
+        });
+
+        GridPane.setMargin(optimizePane, new Insets(10, 10, 10, 10));
+        optimizePane.add(itemRow, 1, 1);
+    }
+
+    public void createIndexBook(GridPane optimizePane) {
+        HBox tempHBox = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        System.out.println("book");
+
+        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
+            optimizePane.getChildren().remove(2);
+        }
+
+        attrChoiceBox.getItems().addAll("BookID", "Title", "PublisherName");
+
+        /* choose which attribute to create an index */
+        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                        /* sql script for  BookID index */
+                        break;
+                    case 1:
+                        /* sql script for  Title index */
+                        break;
+                    case 2:
+                        /* sql script for PublisherName index */
+                        break;
+                }
+            }
+        });
+
+        tempHBox.getChildren().addAll(label, attrChoiceBox);
+        optimizePane.add(tempHBox, 1, 2);
+    }
+
+    public void createIndexBookAuthor(GridPane optimizePane) {
+        HBox tempHBox = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        System.out.println("book_author");
+
+        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
+            optimizePane.getChildren().remove(2);
+        }
+
+        attrChoiceBox.getItems().addAll("BookID", "AuthorLastName", "AuthorFirstName");
+
+        /* choose which attribute to create an index */
+        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                            /* sql script for  BookID index */
+                        break;
+                    case 1:
+                            /* sql script for  AuthorLastName index */
+                        break;
+                    case 2:
+                            /* sql script for AuthorFirstName index */
+                        break;
+                }
+            }
+        });
+
+        tempHBox.getChildren().addAll(label, attrChoiceBox);
+        optimizePane.add(tempHBox, 1, 2);
+    }
+
+    public void createBookLoansIndex(GridPane optimizePane) {
+        HBox tempHBox = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        System.out.println("book_loans");
+
+        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
+            optimizePane.getChildren().remove(2);
+        }
+
+        attrChoiceBox.getItems().addAll("BookID", "BranchID", "CardNo", "DateOut", "DueDate", "DateReturned");
+
+        /* choose which attribute to create an index */
+        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                            /* sql script for BookID index */
+                        break;
+                    case 1:
+                            /* sql script for BranchID index */
+                        break;
+                    case 2:
+                            /* sql script for CardNo index */
+                        break;
+                    case 3:
+                            /* sql script for DateOut index */
+                        break;
+                    case 4:
+                            /* sql script for DueDate index */
+                        break;
+                    case 5:
+                            /* sql script for DateReturned index */
+                        break;
+                }
+            }
+        });
+
+        tempHBox.getChildren().addAll(label, attrChoiceBox);
+        optimizePane.add(tempHBox, 1, 2);
+    }
+
+    public void createBorrowerIndex(GridPane optimizePane) {
+        HBox tempHBox = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        System.out.println("borrower");
+
+        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
+            optimizePane.getChildren().remove(2);
+        }
+
+        attrChoiceBox.getItems().addAll("CardNo", "BorrowerLName", "BorrowerFName", "Address", "Phone");
+
+        /* choose which attribute to create an index */
+        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                            /* sql script for CardNo index */
+                        break;
+                    case 1:
+                            /* sql script for BorrowerLName index */
+                        break;
+                    case 2:
+                            /* sql script for BorrowerFName index */
+                        break;
+                    case 3:
+                            /* sql script for Address index */
+                        break;
+                    case 4:
+                            /* sql script for Phone index */
+                        break;
+                }
+            }
+        });
+
+        tempHBox.getChildren().addAll(label, attrChoiceBox);
+        optimizePane.add(tempHBox, 1, 2);
+    }
+
+    public void createLibraryBranchIndex(GridPane optimizePane) {
+        HBox tempHBox = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        System.out.println("borrower");
+
+        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
+            optimizePane.getChildren().remove(2);
+        }
+
+        attrChoiceBox.getItems().addAll("BranchID", "BranchName", "BranchAddress");
+
+        /* choose which attribute to create an index */
+        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                            /* sql script for BranchID index */
+                        break;
+                    case 1:
+                            /* sql script for BranchName index */
+                        break;
+                    case 2:
+                            /* sql script for BranchAddress index */
+                        break;
+                    case 3:
+                            /* sql script for Address index */
+                        break;
+                }
+            }
+        });
+
+        tempHBox.getChildren().addAll(label, attrChoiceBox);
+        optimizePane.add(tempHBox, 1, 2);
+    }
+
+    public void createPublisherIndex(GridPane optimizePane) {
+        HBox tempHBox = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        System.out.println("borrower");
+
+        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
+            optimizePane.getChildren().remove(2);
+        }
+
+        attrChoiceBox.getItems().addAll("PublisherName", "Address", "Phone");
+
+        /* choose which attribute to create an index */
+        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                            /* sql script for PublisherName index */
+                        break;
+                    case 1:
+                            /* sql script for Address index */
+                        break;
+                    case 2:
+                            /* sql script for Phone index */
+                        break;
+                    case 3:
+                            /* sql script for Address index */
+                        break;
+                }
+            }
+        });
+
+        tempHBox.getChildren().addAll(label, attrChoiceBox);
+        optimizePane.add(tempHBox, 1, 2);
+    }
+
+
+    public VBox initRightVBox() {
         VBox mainVBox = new VBox(15);
 
         mainVBox.setAlignment(Pos.TOP_CENTER);
@@ -132,7 +425,7 @@ public class Driver extends Application{
             label.getStyleClass().add("editQueryLabel");
             VBox subVBox = new VBox(10);
             subVBox.getStyleClass().add("subVBox");
-//          subHBox.setPadding(new Insets(50, 50,50, 50));
+
 
             subVBox.getChildren().add(label);
             System.out.println("\nEDIT QUERY: " + queryChoiceBox.getValue());
@@ -156,8 +449,7 @@ public class Driver extends Application{
         return mainVBox;
     }
 
-    public VBox initCenterVBox()
-    {
+    public VBox initCenterVBox() {
         VBox vBox = new VBox();
         HBox hBox;
 
@@ -166,7 +458,7 @@ public class Driver extends Application{
         Pane field = new Pane();
         field.setId("centerPane");
 
-        if(conn == null){
+        if (conn == null) {
             vBox.getChildren().add(new Label("Unable to connect to the database, check getConnection()"));
         } else {
             ImageView queryIcon = new ImageView("View/Images/queryIcon.png");
@@ -205,16 +497,21 @@ public class Driver extends Application{
                     if (vBox.getChildren().get(2) instanceof TableView)
                         vBox.getChildren().remove(2);
 
-                    table = new TableView <>();
-                    switch ((Integer)number2){
-                        case 0: break;
-                        case 1: updateTableQuery1(vBox);
-                                break;
-                        case 2: updateTableQuery2(vBox);
-                                break;
-                        case 3: updateTableQuery3(vBox);
-                                break;
-                        default: System.out.println("Query choice box selection model not in the range");
+                    table = new TableView<>();
+                    switch ((Integer) number2) {
+                        case 0:
+                            break;
+                        case 1:
+                            updateTableQuery1(vBox);
+                            break;
+                        case 2:
+                            updateTableQuery2(vBox);
+                            break;
+                        case 3:
+                            updateTableQuery3(vBox);
+                            break;
+                        default:
+                            System.out.println("Query choice box selection model not in the range");
                     }
 
                     System.out.println("\n" + queryChoiceBox.getItems().get((Integer) number2));
@@ -230,7 +527,7 @@ public class Driver extends Application{
 
             Button button = new Button("Run");
 
-            hBox.getChildren().addAll(queryIcon,queryChoiceBox,button);
+            hBox.getChildren().addAll(queryIcon, queryChoiceBox, button);
             vBox.getChildren().add(0, queryNum);
             vBox.getChildren().add(1, hBox);
 
@@ -240,17 +537,22 @@ public class Driver extends Application{
                 VBox tempvBox = new VBox();
                 tempvBox.getChildren().addAll(new Label());
                 tempvBox.getChildren().addAll(new Label());
-                table = new TableView <>();
+                table = new TableView<>();
 
-                switch (queryNumText.charAt(queryNumText.length() - 1)){
-                    case '0': break;
-                    case '1': updateTableQuery1(tempvBox);
+                switch (queryNumText.charAt(queryNumText.length() - 1)) {
+                    case '0':
                         break;
-                    case '2': updateTableQuery2(tempvBox);
+                    case '1':
+                        updateTableQuery1(tempvBox);
                         break;
-                    case '3': updateTableQuery3(tempvBox);
+                    case '2':
+                        updateTableQuery2(tempvBox);
                         break;
-                    default : System.out.println("Repeating Query #" + queryNumText.charAt(queryNumText.length() - 1));
+                    case '3':
+                        updateTableQuery3(tempvBox);
+                        break;
+                    default:
+                        System.out.println("Repeating Query #" + queryNumText.charAt(queryNumText.length() - 1));
                 }
             });
 
@@ -362,8 +664,7 @@ public class Driver extends Application{
         return vBox;
     }
 
-    private void restartProfiling()
-    {
+    private void restartProfiling() {
 
         Statement st = null;
         try {
@@ -377,16 +678,15 @@ public class Driver extends Application{
             st.close();
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: "		+ e.getSQLState());
-            System.out.println("VendorError: "  + e.getErrorCode());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
         }
     }
 
-    private BigDecimal getQueryProcessTime(int i)
-    {
+    private BigDecimal getQueryProcessTime(int i) {
 
-        Statement st    = null;
-        ResultSet rs    = null;
+        Statement st = null;
+        ResultSet rs = null;
 
         BigDecimal time = BigDecimal.valueOf(0);
         try {
@@ -395,11 +695,11 @@ public class Driver extends Application{
             rs = st.executeQuery("SHOW PROFILES ");
 
             int row = 1;
-            while(rs.next()){
+            while (rs.next()) {
                 System.out.println(rs.getInt("Query_ID") + " || " +
-                                   rs.getFloat("Duration") + " || " +
-                                   rs.getString("Query") + " ::::::: " + i + " || " + row);
-                if(row == i)
+                        rs.getFloat("Duration") + " || " +
+                        rs.getString("Query") + " ::::::: " + i + " || " + row);
+                if (row == i)
                     time = rs.getBigDecimal("Duration");
                 row++;
             }
@@ -407,15 +707,14 @@ public class Driver extends Application{
             rs.close();
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: "		+ e.getSQLState());
-            System.out.println("VendorError: "  + e.getErrorCode());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
         }// catch (ClassNotFoundException e){
 
         return time;
     }
 
-    private void updateTableQuery1(VBox vBox)
-    {
+    private void updateTableQuery1(VBox vBox) {
         TableColumn<ArrayList<String>, String> pubColumn = new TableColumn<>("Publisher");
 
         pubColumn.setMinWidth(100);
@@ -439,12 +738,11 @@ public class Driver extends Application{
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
         System.out.println("GOTTEN PROCESS TIME == " + processTime + " || " + nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data( nQueryExec, processTime));
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
 
     }
 
-    private void updateTableQuery2(VBox vBox)
-    {
+    private void updateTableQuery2(VBox vBox) {
         TableColumn<ArrayList<String>, String> borrowerLNameCol = new TableColumn<>("BorrowerLName");
         borrowerLNameCol.setMinWidth(100);
         borrowerLNameCol.setCellValueFactory(param -> {
@@ -473,14 +771,13 @@ public class Driver extends Application{
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data( nQueryExec, processTime));
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
 
         vBox.getChildren().add(2, table);
     }
 
 
-    private void updateTableQuery3(VBox vBox)
-    {
+    private void updateTableQuery3(VBox vBox) {
         TableColumn<ArrayList<String>, String> nameCol = new TableColumn<>("BorrowerName");
         nameCol.setMinWidth(100);
         nameCol.setCellValueFactory(param -> {
@@ -502,20 +799,19 @@ public class Driver extends Application{
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data( nQueryExec, processTime));
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
 
         vBox.getChildren().add(2, table);
     }
 
-    public ObservableList<ArrayList<String>> getQuery1()
-    {
+    public ObservableList<ArrayList<String>> getQuery1() {
         //Connection conn = getConnection();	called at the start
-        Statement st    = null;
-        ResultSet rs    = null;
-        String query    = "SELECT PublisherName AS 'Publisher', Address\n" +
-                          "FROM publisher\n" +
-                          "WHERE Address like '%Los Angeles%'\n" +
-                          "ORDER BY PublisherName;";
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT PublisherName AS 'Publisher', Address\n" +
+                "FROM publisher\n" +
+                "WHERE Address like '%Los Angeles%'\n" +
+                "ORDER BY PublisherName;";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -524,7 +820,7 @@ public class Driver extends Application{
             st = conn.createStatement();
             rs = st.executeQuery(query);
 
-            while(rs.next()){
+            while (rs.next()) {
                 ArrayList<String> rowData = new ArrayList<>();
                 rowData.add(rs.getString("Publisher"));
                 rowData.add(rs.getString("Address"));
@@ -535,21 +831,20 @@ public class Driver extends Application{
             rs.close();
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: "		+ e.getSQLState());
-            System.out.println("VendorError: "  + e.getErrorCode());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
         }// catch (ClassNotFoundException e){
 
         return arrayList;
     }
 
 
-    public ObservableList<ArrayList<String>> getQuery2()
-    {
+    public ObservableList<ArrayList<String>> getQuery2() {
 
         //Connection conn = getConnection();	called at the start
-        Statement st    = null;
-        ResultSet rs    = null;
-        String query    = "SELECT BorrowerLName, BorrowerFName, Address\n" +
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT BorrowerLName, BorrowerFName, Address\n" +
                 "FROM borrower\n" +
                 "WHERE Address LIKE '%Manila%'\n";
 
@@ -560,7 +855,7 @@ public class Driver extends Application{
             st = conn.createStatement();
             rs = st.executeQuery(query);
 
-            while(rs.next()){
+            while (rs.next()) {
                 ArrayList<String> rowData = new ArrayList<>();
                 rowData.add(rs.getString("BorrowerLName"));
                 rowData.add(rs.getString("BorrowerFName"));
@@ -571,25 +866,24 @@ public class Driver extends Application{
             rs.close();
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: "		+ e.getSQLState());
-            System.out.println("VendorError: "  + e.getErrorCode());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
         }// catch (ClassNotFoundException e){
 
         return arrayList;
     }
 
-    public ObservableList<ArrayList<String>> getQuery3()
-    {
+    public ObservableList<ArrayList<String>> getQuery3() {
 
         //Connection conn = getConnection();	called at the start
-        Statement st    = null;
-        ResultSet rs    = null;
-        String query    = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, COUNT(*) as NoBooksBor\n" +
-                          "FROM borrower BO, book_loans BL\n" +
-                          "WHERE BO.CardNo = BL.CardNo\n" +
-                          "GROUP BY BorrowerName\n" +
-                          "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
-                          "ORDER BY 2 DESC, 1;\n";
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, COUNT(*) as NoBooksBor\n" +
+                "FROM borrower BO, book_loans BL\n" +
+                "WHERE BO.CardNo = BL.CardNo\n" +
+                "GROUP BY BorrowerName\n" +
+                "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
+                "ORDER BY 2 DESC, 1;\n";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -598,7 +892,7 @@ public class Driver extends Application{
             st = conn.createStatement();
             rs = st.executeQuery(query);
 
-            while(rs.next()){
+            while (rs.next()) {
                 ArrayList<String> rowData = new ArrayList<>();
                 rowData.add(rs.getString("BorrowerName"));
                 rowData.add(rs.getString("NoBooksBor"));
@@ -608,18 +902,18 @@ public class Driver extends Application{
             rs.close();
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: "		+ e.getSQLState());
-            System.out.println("VendorError: "  + e.getErrorCode());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
         }// catch (ClassNotFoundException e){
 
         return arrayList;
     }
 
-    private void terminateProgram(){
-        if(conn != null)
-            try{
+    private void terminateProgram() {
+        if (conn != null)
+            try {
                 conn.close();
-            }catch(SQLException e){
+            } catch (SQLException e) {
                 System.out.println("SQLException: " + e.getMessage());
             }
         System.out.println("\nProgram has been terminated.");
@@ -627,24 +921,24 @@ public class Driver extends Application{
         System.exit(0);
     }
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         Connection tempConn = null;
 
-        String driver   = "com.mysql.jdbc.Driver";
-        String db       = "mco1_db";
-        String url      = "jdbc:mysql://localhost/" + db + "?useSSL=false";
-        String user     = "root";
-        String pass     = "hopekook";
+        String driver = "com.mysql.jdbc.Driver";
+        String db = "mco1_db";
+        String url = "jdbc:mysql://localhost/" + db + "?useSSL=false";
+        String user = "root";
+        String pass = "hopekook";
 
         try {
             Class.forName(driver);
-            tempConn = DriverManager.getConnection(url,user,pass);
+            tempConn = DriverManager.getConnection(url, user, pass);
             System.out.println("Connected to database : " + db);
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.getMessage());
-            System.out.println("SQLState: "		+ e.getSQLState());
-            System.out.println("VendorError: "  + e.getErrorCode());
-        } catch (ClassNotFoundException e){
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        } catch (ClassNotFoundException e) {
             System.out.println("ClassNotFoundException");
         }
 
