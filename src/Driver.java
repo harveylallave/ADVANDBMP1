@@ -146,7 +146,7 @@ public class Driver extends Application {
                 label = new Label("Attribute:");
                 button = new Button("Optimize");
 
-                optimizePane.add(button, 2, 2);
+                optimizePane.add(button, 2, 3);
 
                 optimizePane.add(new Label(""), 1, 2);
 
@@ -195,6 +195,8 @@ public class Driver extends Application {
 
         attrChoiceBox.getItems().addAll("BookID", "Title", "PublisherName");
 
+
+
         /* choose which attribute to create an index */
         attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
@@ -214,6 +216,10 @@ public class Driver extends Application {
         });
 
         tempHBox.getChildren().addAll(label, attrChoiceBox);
+
+        TextField indexValue = new TextField("Row to Index");
+
+        optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
     }
 
@@ -248,6 +254,10 @@ public class Driver extends Application {
         });
 
         tempHBox.getChildren().addAll(label, attrChoiceBox);
+
+        TextField indexValue = new TextField("Row to Index");
+
+        optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
     }
 
@@ -331,6 +341,10 @@ public class Driver extends Application {
         });
 
         tempHBox.getChildren().addAll(label, attrChoiceBox);
+
+        TextField indexValue = new TextField("Row to Index");
+
+        optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
     }
 
@@ -368,6 +382,10 @@ public class Driver extends Application {
         });
 
         tempHBox.getChildren().addAll(label, attrChoiceBox);
+
+        TextField indexValue = new TextField("Row to Index");
+
+        optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
     }
 
@@ -405,6 +423,10 @@ public class Driver extends Application {
         });
 
         tempHBox.getChildren().addAll(label, attrChoiceBox);
+
+        TextField indexValue = new TextField("Row to Index");
+
+        optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
     }
 
