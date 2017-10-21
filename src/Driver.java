@@ -94,10 +94,11 @@ public class Driver extends Application {
             Scene dialogScene = new Scene(optimizePane, 800, 400);
             ChoiceBox optimizationType = new ChoiceBox<>();
 
-            optimizationType.getItems().addAll("Create Indexes", "Create Views", "Using JOIN statements");
+            optimizationType.getItems().addAll("Create Indexes", "Create Views", "Using JOIN statements", "Drop Indexes", "Drop Views");
 
             itemRow.getChildren().addAll(label, optimizationType);
             optimizePane.add(itemRow, 1, 0);
+            optimizePane.add(new Label(""), 1,1 );
 
             optimizationType.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -106,7 +107,19 @@ public class Driver extends Application {
 
                     switch ((Integer) number2) {
                         case 0:
+                            if (optimizePane.getChildren().get(1) instanceof Label || optimizePane.getChildren().get(1) instanceof HBox) {
+                                optimizePane.getChildren().remove(1);
+                            }
+
                             indexOptimization(optimizePane);
+                            break;
+
+                        case 1:
+                            if (optimizePane.getChildren().get(1) instanceof Label || optimizePane.getChildren().get(1) instanceof HBox) {
+                                optimizePane.getChildren().remove(1);
+                            }
+
+                            createViews(optimizePane);
                             break;
                     }
                 }
@@ -129,6 +142,30 @@ public class Driver extends Application {
         menuBar.getMenus().addAll(optimization, exit);
 
         return menuBar;
+    }
+
+    public void createViews(GridPane optimizePane){
+        ChoiceBox queryChoices = new ChoiceBox<>();
+        queryChoices.getItems().addAll("",
+                "SELECT PublisherName AS 'Publisher', Address\n" +
+                        "FROM publisher\n" +
+                        "WHERE Address like '%Los Angeles%'\n" +
+                        "ORDER BY PublisherName;",
+                "SELECT BorrowerLName, BorrowerFName, Address\n" +
+                        "FROM borrower\n" +
+                        "WHERE Address LIKE '%Manila%'\n",
+                "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) \nAS BorrowerName, COUNT(*) as NoBooksBor\n" +
+                        "FROM borrower BO, book_loans BL\n" +
+                        "WHERE BO.CardNo = BL.CardNo\n" +
+                        "GROUP BY BorrowerName\n" +
+                        "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
+                        "ORDER BY 2 DESC, 1;\n");
+
+        optimizePane.add(queryChoices, 2,1);
+
+        label = new Label("Create View for: ");
+        optimizePane.add(label, 1,1);
+
     }
 
     public void indexOptimization(GridPane optimizePane){
@@ -194,8 +231,6 @@ public class Driver extends Application {
         }
 
         attrChoiceBox.getItems().addAll("BookID", "Title", "PublisherName");
-
-
 
         /* choose which attribute to create an index */
         attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
@@ -798,7 +833,6 @@ public class Driver extends Application {
         vBox.getChildren().add(2, table);
     }
 
-
     private void updateTableQuery3(VBox vBox) {
         TableColumn<ArrayList<String>, String> nameCol = new TableColumn<>("BorrowerName");
         nameCol.setMinWidth(100);
@@ -859,7 +893,6 @@ public class Driver extends Application {
 
         return arrayList;
     }
-
 
     public ObservableList<ArrayList<String>> getQuery2() {
 
