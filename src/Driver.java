@@ -767,8 +767,8 @@ public class Driver extends Application {
         });
 
         TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("Author");
-        pubNameCol.setMinWidth(100);
-        pubNameCol.setCellValueFactory(param -> {
+        authorCol.setMinWidth(100);
+        authorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
             return new SimpleStringProperty(x.get(0));
         });
@@ -814,7 +814,7 @@ public class Driver extends Application {
 
 
         table.setItems(getQuery5());
-        table.getColumns().addAll(bookIdCol, pubCol, authorCol, pubCol);
+        table.getColumns().addAll(bookIdCol, titleCol, authorCol, pubCol);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
@@ -1237,7 +1237,7 @@ public class Driver extends Application {
         }// catch (ClassNotFoundException e){
 
         return arrayList;
-    }
+    } // TODO update query
 
     public ObservableList<ArrayList<String>> getQuery8() {
 
