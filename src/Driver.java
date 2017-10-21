@@ -703,7 +703,7 @@ public class Driver extends Application {
         borrowerFNameCol.setMinWidth(100);
         borrowerFNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
         //End Point Column
@@ -711,7 +711,7 @@ public class Driver extends Application {
         addressColumn.setMinWidth(100);
         addressColumn.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(1));
+            return new SimpleStringProperty(x.get(2));
         });
 
         table.setItems(getQuery2());
@@ -737,7 +737,7 @@ public class Driver extends Application {
         noBooksBorCol.setMinWidth(100);
         noBooksBorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
 
@@ -763,14 +763,14 @@ public class Driver extends Application {
         pubNameCol.setMinWidth(100);
         pubNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
         TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("Author");
         authorCol.setMinWidth(100);
         authorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(2));
         });
 
         table.setItems(getQuery4());
@@ -795,21 +795,21 @@ public class Driver extends Application {
         titleCol.setMinWidth(100);
         titleCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
         TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("AuthorName");
         authorCol.setMinWidth(100);
         authorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(2));
         });
 
         TableColumn<ArrayList<String>, String> pubCol = new TableColumn<>("PublisherName");
         pubCol.setMinWidth(100);
         pubCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(3));
         });
 
 
@@ -835,13 +835,13 @@ public class Driver extends Application {
         borrowerNameCol.setMinWidth(100);
         borrowerNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
         TableColumn<ArrayList<String>, String> branchIdCol = new TableColumn<>("BranchID");
         branchIdCol.setMinWidth(100);
         branchIdCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(2));
         });
 
         //Starting Point Column
@@ -849,14 +849,14 @@ public class Driver extends Application {
         branchNameCol.setMinWidth(100);
         branchNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(3));
         });
 
         TableColumn<ArrayList<String>, String> branchAddressCol = new TableColumn<>("BranchAddress");
         branchAddressCol.setMinWidth(100);
         branchAddressCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(4));
         });
 
 
@@ -882,35 +882,35 @@ public class Driver extends Application {
         idCol.setMinWidth(100);
         idCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
         TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
         titleCol.setMinWidth(100);
         titleCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(2));
         });
 
         TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("AuthorName");
         authorCol.setMinWidth(100);
         authorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(3));
         });
 
         TableColumn<ArrayList<String>, String> dueDateCol = new TableColumn<>("DueDate");
         dueDateCol.setMinWidth(100);
         dueDateCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(4));
         });
 
         TableColumn<ArrayList<String>, String> dateReturnedCol = new TableColumn<>("DateReturned");
         dateReturnedCol.setMinWidth(100);
         dateReturnedCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(5));
         });
 
 
@@ -925,50 +925,64 @@ public class Driver extends Application {
     }
 
     private void updateTableQuery8(VBox vBox) {
-        TableColumn<ArrayList<String>, String> idCol = new TableColumn<>("BookID");
+
+        TableColumn<ArrayList<String>, String> idCol = new TableColumn<>("BranchID");
         idCol.setMinWidth(100);
         idCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
             return new SimpleStringProperty(x.get(0));
         });
 
-        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
-        titleCol.setMinWidth(100);
-        titleCol.setCellValueFactory(param -> {
-            ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
-        });
-
-        TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("Author");
-        authorCol.setMinWidth(100);
-        authorCol.setCellValueFactory(param -> {
-            ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
-        });
-
-        TableColumn<ArrayList<String>, String> branchIdCol = new TableColumn<>("BranchID");
-        branchIdCol.setMinWidth(100);
-        branchIdCol.setCellValueFactory(param -> {
-            ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
-        });
         TableColumn<ArrayList<String>, String> branchNameCol = new TableColumn<>("BranchName");
         branchNameCol.setMinWidth(100);
         branchNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
-        TableColumn<ArrayList<String>, String> noOfCopiesCol = new TableColumn<>("NoOfCopies");
-        noOfCopiesCol.setMinWidth(100);
-        noOfCopiesCol.setCellValueFactory(param -> {
+        TableColumn<ArrayList<String>, String> bookIdCol = new TableColumn<>("BookID");
+        bookIdCol.setMinWidth(100);
+        bookIdCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(2));
         });
 
+        TableColumn<ArrayList<String>, String> noTimesLoanedCol = new TableColumn<>("NoTimesLoaned");
+        noTimesLoanedCol.setMinWidth(100);
+        noTimesLoanedCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(3));
+        });
+
+        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
+        titleCol.setMinWidth(100);
+        titleCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(4));
+        });
+
+        TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("AuthorName");
+        authorCol.setMinWidth(100);
+        authorCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(5));
+        });
+
+        TableColumn<ArrayList<String>, String> publisherNameCol = new TableColumn<>("PublisherName");
+        publisherNameCol.setMinWidth(100);
+        publisherNameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(6));
+        });
+        TableColumn<ArrayList<String>, String> publisherAddressCol = new TableColumn<>("PublisherAddress");
+        publisherAddressCol.setMinWidth(100);
+        publisherAddressCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(7));
+        });
 
         table.setItems(getQuery8());
-        table.getColumns().addAll(idCol, titleCol, authorCol, branchIdCol, branchNameCol, noOfCopiesCol);
+        table.getColumns().addAll(idCol, branchNameCol, bookIdCol, noTimesLoanedCol, titleCol, authorCol, publisherNameCol, publisherAddressCol);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
@@ -1000,7 +1014,6 @@ public class Driver extends Application {
                 rowData.add(rs.getString("Publisher"));
                 rowData.add(rs.getString("Address"));
                 arrayList.add(rowData);
-                System.out.println("NEW DATA");
             }
             st.close();
             rs.close();
@@ -1244,7 +1257,31 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "";
+        String query = "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, " +
+                        "B.Title, CONCAT(BA.AuthorLastName, ', ', BA.AuthorFirstName) as " +
+                        "AuthorName, P.PublisherName, P.Address AS PublisherAddress\n" +
+                        "FROM book  B, book_authors BA, library_branch LB, publisher P, " +
+                        "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned\n" +
+                        "FROM book_loans\n" +
+                        "GROUP BY BranchID, BookID) AS BL,\n" +
+                        "(SELECT TEMP.BranchID,\n" +
+                        "MAX(TEMP.NoTimesLoaned)\n" +
+                        "AS NoTimesLoaned\n" +
+                        "FROM\n" +
+                        "(SELECT BranchID, BookID,\n" +
+                        "COUNT(*) AS NoTimesLoaned\n" +
+                        "FROM BOOK_LOANS\n" +
+                        "GROUP BY BranchID, BookID) AS TEMP\n" +
+                        "GROUP BY TEMP.BranchID) AS C\n" +
+                        "WHERE\n" +
+                        "BL.BranchID = C.BranchID AND\n" +
+                        "BL.NoTimesLoaned = C.NoTimesLoaned AND\n" +
+                        "BL.BranchID = LB.BranchID AND\n" +
+                        "BL.BookID = B.BookID AND\n" +
+                        "B.BookID = BA.BookID AND\n" +
+                        "B.PublisherName = P.PublisherName\n" +
+                        "GROUP BY BL.BranchID\n" +
+                        "ORDER BY 2, 5;\n";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1255,13 +1292,16 @@ public class Driver extends Application {
 
             while (rs.next()) {
                 ArrayList<String> rowData = new ArrayList<>();
-                rowData.add(rs.getInt("BookID") + "");
-                rowData.add(rs.getString("Title"));
-                rowData.add(rs.getString("Author"));
                 rowData.add(rs.getInt("BranchID") + "");
                 rowData.add(rs.getString("BranchName"));
-                rowData.add(rs.getString("NoOFCopies"));
+                rowData.add(rs.getInt("BookID") + "");
+                rowData.add(rs.getInt("NoTimesLoaned") + "");
+                rowData.add(rs.getString("Title"));
+                rowData.add(rs.getString("AuthorName"));
+                rowData.add(rs.getString("PublisherName"));
+                rowData.add(rs.getString("PublisherAddress"));
                 arrayList.add(rowData);
+
             }
             st.close();
             rs.close();
@@ -1272,7 +1312,7 @@ public class Driver extends Application {
         }// catch (ClassNotFoundException e){
 
         return arrayList;
-    } // TODO update query
+    }
 
 
     private void terminateProgram() {
