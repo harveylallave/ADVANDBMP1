@@ -20,7 +20,6 @@ import javafx.stage.Stage;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Random;
 
 //import javafx.scene.input.KeyCombination;
 
@@ -82,6 +81,7 @@ public class Driver extends Application {
 //            optimizePane.setPadding(new Insets(10, 10, 10, 10));
             optimizePane.setVgap(20);
             optimizePane.setHgap(25);
+            optimizePane.setAlignment(Pos.CENTER);
 
             Scene dialogScene = new Scene(optimizePane, 800, 400);
             ChoiceBox optimizationType = new ChoiceBox<>();
@@ -122,17 +122,18 @@ public class Driver extends Application {
         ChoiceBox attrChoiceBox = new ChoiceBox<>();
 
         optimizeButton = new Button("Optimize");
+        optimizeButton.setDisable(true);
         optimizeButton.setOnAction(e -> {
-            int randNum = new Random().nextInt(10000);
             Statement st = null;
-            String query = "ALTER TABLE 'mco1_db'.'book' " +
-                           "ADD INDEX 'i" + randNum +
-                           "' ('" + attrChoiceBox.getSelectionModel().getSelectedItem().toString() + "' ASC);";
+            String query = "ALTER TABLE " + tableChoiceBox.getSelectionModel().getSelectedItem().toString() + " " +
+                           "ADD INDEX 'i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString() +
+                           "' ('" + attrChoiceBox.getSelectionModel().getSelectedItem().toString() + "');";
              try{
                 st = conn.createStatement();
-                st.executeQuery(query);
+                st.executeUpdate(query);
                 st.close();
-                indexNames.add("i" + randNum);
+                indexNames.add("i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString());
+                 System.out.println("Added new index: i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString());
             } catch (SQLException e2) {
                 System.out.println("SQLException: " + e2.getMessage());
                 System.out.println("SQLState: " + e2.getSQLState());
@@ -157,7 +158,6 @@ public class Driver extends Application {
 
                 case 3: attrChoiceBox.getItems().addAll("CardNo", "BorrowerLName", "BorrowerFName", "Address", "Phone");
                         break;
-
 
                 case 4: attrChoiceBox.getItems().addAll("BranchID", "BranchName", "BranchAddress");
                         break;
@@ -1085,7 +1085,7 @@ public class Driver extends Application {
 
                     try {
                         st = conn.createStatement();
-                        st.executeQuery(query);
+                        st.executeUpdate(query);
                         st.close();
                     } catch (SQLException e2) {
                         System.out.println("SQLException: " + e2.getMessage());
