@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 //import javafx.scene.input.KeyCombination;
 
@@ -35,13 +36,14 @@ public class Driver extends Application {
 
     Label queryNum = new Label(),
             query = new Label();
-
+    Button optimizeButton;
     ChoiceBox<String> queryChoiceBox;
 
     Connection conn;
     private LineChart graphArea;
     private XYChart.Series dataSeries1;
     private int nQueryExec = 1;
+    private ArrayList<String> indexNames = new ArrayList<>();
 
 
     @SuppressWarnings("unchecked")
@@ -77,31 +79,22 @@ public class Driver extends Application {
             myDialog.initModality(Modality.WINDOW_MODAL);
 
             GridPane optimizePane = new GridPane();
-            optimizePane.setPadding(new Insets(10, 10, 10, 10));
+//            optimizePane.setPadding(new Insets(10, 10, 10, 10));
             optimizePane.setVgap(20);
             optimizePane.setHgap(25);
 
-            HBox itemRow = new HBox(10);
-            itemRow.setAlignment(Pos.CENTER);
-            label = new Label("Method");
             Scene dialogScene = new Scene(optimizePane, 800, 400);
             ChoiceBox optimizationType = new ChoiceBox<>();
 
             optimizationType.getItems().addAll("Create Indexes", "Create Views", "Using JOIN statements");
 
-            itemRow.getChildren().addAll(label, optimizationType);
-            optimizePane.add(itemRow, 1, 0);
+            optimizePane.add(new Label("Method"), 0, 0);
+            optimizePane.add(optimizationType, 1, 0);
+            optimizationType.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, number2) -> {
 
-            optimizationType.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-
-                @Override
-                public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-
-                    switch ((Integer) number2) {
-                        case 0:
-                            indexOptimization(optimizePane);
+                switch ((Integer) number2) {
+                    case 0: indexOptimization(optimizePane);
                             break;
-                    }
                 }
             });
 
@@ -126,302 +119,67 @@ public class Driver extends Application {
 
     public void indexOptimization(GridPane optimizePane){
         ChoiceBox tableChoiceBox = new ChoiceBox<>();
-        HBox itemRow = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
+
+        optimizeButton = new Button("Optimize");
+        optimizeButton.setOnAction(e -> {
+            int randNum = new Random().nextInt(10000);
+            Statement st = null;
+            String query = "ALTER TABLE 'mco1_db'.'book' " +
+                           "ADD INDEX 'i" + randNum +
+                           "' ('" + attrChoiceBox.getSelectionModel().getSelectedItem().toString() + "' ASC);";
+             try{
+                st = conn.createStatement();
+                st.executeQuery(query);
+                st.close();
+                indexNames.add("i" + randNum);
+            } catch (SQLException e2) {
+                System.out.println("SQLException: " + e2.getMessage());
+                System.out.println("SQLState: " + e2.getSQLState());
+                System.out.println("VendorError: " + e2.getErrorCode());
+            }
+        });
 
         tableChoiceBox.getItems().addAll("book", "book_author", "book_loans", "borrower", "library_branch", "publisher");
-        label = new Label("Table: ");
-        itemRow.getChildren().addAll(label, tableChoiceBox);
+        tableChoiceBox.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, number2) -> {
 
-        tableChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                label = new Label("Attribute:");
-                button = new Button("Optimize");
-
-                optimizePane.add(button, 2, 3);
-
-                optimizePane.add(new Label(""), 1, 2);
-
-                switch ((Integer) number2) {
-                    case 0: /* book */
-                        createIndexBook(optimizePane);
+            optimizeButton.setDisable(true);
+            attrChoiceBox.getItems().clear();
+            switch ((Integer) number2) {
+                case 0: attrChoiceBox.getItems().addAll("BookID", "Title", "PublisherName");
                         break;
 
-                    case 1: /* book_author */
-                        createIndexBookAuthor(optimizePane);
+                case 1: attrChoiceBox.getItems().addAll("BookID", "AuthorLastName", "AuthorFirstName");
                         break;
 
-                    case 2: /* book_loans */
-                        createBookLoansIndex(optimizePane);
+                case 2: attrChoiceBox.getItems().addAll("BookID", "BranchID", "CardNo", "DateOut", "DueDate", "DateReturned");
                         break;
 
-                    case 3: /* borrower */
-                        createBorrowerIndex(optimizePane);
+                case 3: attrChoiceBox.getItems().addAll("CardNo", "BorrowerLName", "BorrowerFName", "Address", "Phone");
                         break;
 
-                    case 4: /* library_branch */
-                        createLibraryBranchIndex(optimizePane);
+
+                case 4: attrChoiceBox.getItems().addAll("BranchID", "BranchName", "BranchAddress");
                         break;
 
-                    case 5: /* publisher */
-                        createPublisherIndex(optimizePane);
+                case 5: attrChoiceBox.getItems().addAll("PublisherName", "Address", "Phone");
                         break;
 
-                }
             }
+            attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener((observableValue1,
+                                                                                   oldNum,
+                                                                                   newNum) ->
+                                                                                   optimizeButton.setDisable(false));
+
         });
 
-        GridPane.setMargin(optimizePane, new Insets(10, 10, 10, 10));
-        optimizePane.add(itemRow, 1, 1);
+        optimizePane.add(new Label("Table"), 0, 1);
+        optimizePane.add(tableChoiceBox, 1, 1);
+        optimizePane.add(new Label("Attribute"), 0, 2);
+        optimizePane.add(attrChoiceBox, 1, 2);
+        optimizePane.add(optimizeButton, 1, 3);
+
     }
-
-    public void createIndexBook(GridPane optimizePane) {
-        HBox tempHBox = new HBox(5);
-        ChoiceBox attrChoiceBox = new ChoiceBox<>();
-
-        System.out.println("book");
-
-        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
-            optimizePane.getChildren().remove(2);
-        }
-
-        attrChoiceBox.getItems().addAll("BookID", "Title", "PublisherName");
-
-
-
-        /* choose which attribute to create an index */
-        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                switch ((Integer) number2) {
-                    case 0:
-                        /* sql script for  BookID index */
-                        break;
-                    case 1:
-                        /* sql script for  Title index */
-                        break;
-                    case 2:
-                        /* sql script for PublisherName index */
-                        break;
-                }
-            }
-        });
-
-        tempHBox.getChildren().addAll(label, attrChoiceBox);
-
-        TextField indexValue = new TextField("Row to Index");
-
-        optimizePane.add(indexValue, 1, 3);
-        optimizePane.add(tempHBox, 1, 2);
-    } // TODO index
-
-    public void createIndexBookAuthor(GridPane optimizePane) {
-        HBox tempHBox = new HBox(5);
-        ChoiceBox attrChoiceBox = new ChoiceBox<>();
-
-        System.out.println("book_author");
-
-        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
-            optimizePane.getChildren().remove(2);
-        }
-
-        attrChoiceBox.getItems().addAll("BookID", "AuthorLastName", "AuthorFirstName");
-
-        /* choose which attribute to create an index */
-        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                switch ((Integer) number2) {
-                    case 0:
-                            /* sql script for  BookID index */
-                        break;
-                    case 1:
-                            /* sql script for  AuthorLastName index */
-                        break;
-                    case 2:
-                            /* sql script for AuthorFirstName index */
-                        break;
-                }
-            }
-        });
-
-        tempHBox.getChildren().addAll(label, attrChoiceBox);
-
-        TextField indexValue = new TextField("Row to Index");
-
-        optimizePane.add(indexValue, 1, 3);
-        optimizePane.add(tempHBox, 1, 2);
-    } // TODO index
-
-    public void createBookLoansIndex(GridPane optimizePane) {
-        HBox tempHBox = new HBox(5);
-        ChoiceBox attrChoiceBox = new ChoiceBox<>();
-
-        System.out.println("book_loans");
-
-        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
-            optimizePane.getChildren().remove(2);
-        }
-
-        attrChoiceBox.getItems().addAll("BookID", "BranchID", "CardNo", "DateOut", "DueDate", "DateReturned");
-
-        /* choose which attribute to create an index */
-        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                switch ((Integer) number2) {
-                    case 0:
-                            /* sql script for BookID index */
-                        break;
-                    case 1:
-                            /* sql script for BranchID index */
-                        break;
-                    case 2:
-                            /* sql script for CardNo index */
-                        break;
-                    case 3:
-                            /* sql script for DateOut index */
-                        break;
-                    case 4:
-                            /* sql script for DueDate index */
-                        break;
-                    case 5:
-                            /* sql script for DateReturned index */
-                        break;
-                }
-            }
-        });
-
-        tempHBox.getChildren().addAll(label, attrChoiceBox);
-        optimizePane.add(tempHBox, 1, 2);
-    } // TODO index
-
-    public void createBorrowerIndex(GridPane optimizePane) {
-        HBox tempHBox = new HBox(5);
-        ChoiceBox attrChoiceBox = new ChoiceBox<>();
-
-        System.out.println("borrower");
-
-        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
-            optimizePane.getChildren().remove(2);
-        }
-
-        attrChoiceBox.getItems().addAll("CardNo", "BorrowerLName", "BorrowerFName", "Address", "Phone");
-
-        /* choose which attribute to create an index */
-        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                switch ((Integer) number2) {
-                    case 0:
-                            /* sql script for CardNo index */
-                        break;
-                    case 1:
-                            /* sql script for BorrowerLName index */
-                        break;
-                    case 2:
-                            /* sql script for BorrowerFName index */
-                        break;
-                    case 3:
-                            /* sql script for Address index */
-                        break;
-                    case 4:
-                            /* sql script for Phone index */
-                        break;
-                }
-            }
-        });
-
-        tempHBox.getChildren().addAll(label, attrChoiceBox);
-
-        TextField indexValue = new TextField("Row to Index");
-
-        optimizePane.add(indexValue, 1, 3);
-        optimizePane.add(tempHBox, 1, 2);
-    } // TODO index
-
-    public void createLibraryBranchIndex(GridPane optimizePane) {
-        HBox tempHBox = new HBox(5);
-        ChoiceBox attrChoiceBox = new ChoiceBox<>();
-
-        System.out.println("borrower");
-
-        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
-            optimizePane.getChildren().remove(2);
-        }
-
-        attrChoiceBox.getItems().addAll("BranchID", "BranchName", "BranchAddress");
-
-        /* choose which attribute to create an index */
-        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                switch ((Integer) number2) {
-                    case 0:
-                            /* sql script for BranchID index */
-                        break;
-                    case 1:
-                            /* sql script for BranchName index */
-                        break;
-                    case 2:
-                            /* sql script for BranchAddress index */
-                        break;
-                    case 3:
-                            /* sql script for Address index */
-                        break;
-                }
-            }
-        });
-
-        tempHBox.getChildren().addAll(label, attrChoiceBox);
-
-        TextField indexValue = new TextField("Row to Index");
-
-        optimizePane.add(indexValue, 1, 3);
-        optimizePane.add(tempHBox, 1, 2);
-    }// TODO index
-
-    public void createPublisherIndex(GridPane optimizePane) {
-        HBox tempHBox = new HBox(5);
-        ChoiceBox attrChoiceBox = new ChoiceBox<>();
-
-        System.out.println("borrower");
-
-        if (optimizePane.getChildren().get(2) instanceof Label || optimizePane.getChildren().get(2) instanceof HBox) {
-            optimizePane.getChildren().remove(2);
-        }
-
-        attrChoiceBox.getItems().addAll("PublisherName", "Address", "Phone");
-
-        /* choose which attribute to create an index */
-        attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                switch ((Integer) number2) {
-                    case 0:
-                            /* sql script for PublisherName index */
-                        break;
-                    case 1:
-                            /* sql script for Address index */
-                        break;
-                    case 2:
-                            /* sql script for Phone index */
-                        break;
-                    case 3:
-                            /* sql script for Address index */
-                        break;
-                }
-            }
-        });
-
-        tempHBox.getChildren().addAll(label, attrChoiceBox);
-
-        TextField indexValue = new TextField("Row to Index");
-
-        optimizePane.add(indexValue, 1, 3);
-        optimizePane.add(tempHBox, 1, 2);
-    }// TODO index
 
 
     public VBox initRightVBox() {
@@ -998,9 +756,9 @@ public class Driver extends Application {
         Statement st = null;
         ResultSet rs = null;
         String query = "SELECT PublisherName AS 'Publisher', Address\n" +
-                "FROM publisher\n" +
-                "WHERE Address like '%Los Angeles%'\n" +
-                "ORDER BY PublisherName;";
+                        "FROM publisher\n" +
+                        "WHERE Address like '%Los Angeles%'\n" +
+                        "ORDER BY PublisherName;";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1318,6 +1076,24 @@ public class Driver extends Application {
     private void terminateProgram() {
         if (conn != null)
             try {
+                if(indexNames.size() > 0) {
+                    Statement st = null;
+                    String query = "ALTER TABLE table";
+
+                    for (int i = 0; i < indexNames.size(); i++)
+                        query += " DROP INDEX " + indexNames.get(i) + (indexNames.size() == i + 1 ? "" : ",");
+
+                    try {
+                        st = conn.createStatement();
+                        st.executeQuery(query);
+                        st.close();
+                    } catch (SQLException e2) {
+                        System.out.println("SQLException: " + e2.getMessage());
+                        System.out.println("SQLState: " + e2.getSQLState());
+                        System.out.println("VendorError: " + e2.getErrorCode());
+                    }
+                }
+
                 conn.close();
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.getMessage());

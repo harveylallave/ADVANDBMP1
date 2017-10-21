@@ -29,30 +29,25 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="984" column="57" lean-forward="true" selection-start-line="984" selection-start-column="57" selection-end-line="984" selection-end-column="57" />
+            <state relative-caret-position="261">
+              <caret line="146" column="45" lean-forward="true" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#Driver#0" expanded="false" />
                 <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-                <element signature="method#changed#0;class#4348:5621" expanded="false" />
-                <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-                <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-                <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-                <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-                <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-                <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-                <element signature="class#14286:15029" expanded="false" />
                 <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-                <element signature="method#changed#0;class#17796:19900" expanded="false" />
+                <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+                <element signature="method#changed#0;class#9143:11247" expanded="false" />
                 <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+                <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+                <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -60,30 +55,31 @@
                 <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-                <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
                 <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-                <element signature="e#52248#52305#0" expanded="false" />
-                <element signature="e#58682#58764#0" expanded="false" />
-                <element signature="e#59798#59885#0" expanded="false" />
-                <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-                <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-                <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-                <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-                <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-                <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-                <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-                <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-                <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-                <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-                <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-                <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-                <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-                <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-                <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-                <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-                <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-                <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-                <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+                <element signature="e#44427#44484#0" expanded="false" />
+                <element signature="e#50861#50943#0" expanded="false" />
+                <element signature="e#51977#52064#0" expanded="false" />
+                <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+                <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+                <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+                <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+                <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+                <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+                <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+                <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+                <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+                <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+                <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+                <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+                <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+                <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+                <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+                <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+                <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+                <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+                <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+                <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+                <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
               </folding>
             </state>
           </provider>
@@ -110,10 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>center</find>
-      <find>add</find>
-      <find>texTaREA</find>
-      <find>hbox</find>
       <find>text-area</find>
       <find>border</find>
       <find>getConn</find>
@@ -125,7 +117,6 @@
       <find>e</find>
       <find>getStyle</find>
       <find>drop</find>
-      <find>GridPane</find>
       <find>header</find>
       <find>initRightVBox</find>
       <find>optimize</find>
@@ -140,6 +131,11 @@
       <find>create</find>
       <find>button</find>
       <find>all qu</find>
+      <find>GridPane\.</find>
+      <find>gridPane\.</find>
+      <find>getChildren</find>
+      <find>GridPane</find>
+      <find>Attribute</find>
     </findStrings>
     <replaceStrings>
       <replace>View/Style.css</replace>
@@ -393,12 +389,12 @@
       <workItem from="1508576496769" duration="8738000" />
       <workItem from="1508590118527" duration="5000" />
       <workItem from="1508591066060" duration="20000" />
-      <workItem from="1508591145607" duration="11997000" />
+      <workItem from="1508591145607" duration="18645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109443000" />
+    <option name="totallyTimeSpent" value="116091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,7 +449,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Driver.java</url>
-          <line>1354</line>
+          <line>1130</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -475,24 +471,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -500,30 +491,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -544,24 +536,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -569,30 +556,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -613,24 +601,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -638,30 +621,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -682,24 +666,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -707,30 +686,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -751,24 +731,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -776,30 +751,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -820,24 +796,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -845,30 +816,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -889,24 +861,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -914,30 +881,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -958,24 +926,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -983,30 +946,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1027,24 +991,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1052,30 +1011,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1096,24 +1056,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1121,30 +1076,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1165,24 +1121,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1190,30 +1141,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1241,24 +1193,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1266,30 +1213,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1340,24 +1288,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1365,30 +1308,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1401,24 +1345,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1426,30 +1365,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1500,24 +1440,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1525,30 +1460,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1561,24 +1497,19 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1586,30 +1517,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
@@ -1665,30 +1597,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="984" column="57" lean-forward="true" selection-start-line="984" selection-start-column="57" selection-end-line="984" selection-end-column="57" />
+        <state relative-caret-position="261">
+          <caret line="146" column="45" lean-forward="true" selection-start-line="146" selection-start-column="45" selection-end-line="146" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#4348:5621" expanded="false" />
-            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
-            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
-            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
-            <element signature="class#14286:15029" expanded="false" />
             <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
-            <element signature="method#changed#0;class#17796:19900" expanded="false" />
+            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
+            <element signature="method#changed#0;class#9143:11247" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery4#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery7#0;class#Driver#0" expanded="false" />
+            <element signature="method#updateTableQuery8#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery1#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery2#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
@@ -1696,30 +1623,31 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
-            <element signature="e#52248#52305#0" expanded="false" />
-            <element signature="e#58682#58764#0" expanded="false" />
-            <element signature="e#59798#59885#0" expanded="false" />
-            <marker date="1508606654182" expanded="true" signature="24025:50975" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="24026:37748" ph="..." />
-            <marker date="1508606654182" expanded="true" signature="37976:38159" ph="SELECT Publi... publisher" />
-            <marker date="1508606654182" expanded="true" signature="39182:39314" ph="SELECT Borro... borrower" />
-            <marker date="1508606654182" expanded="true" signature="40402:40750" ph="SELECT CONCA... borrower" />
-            <marker date="1508606654182" expanded="true" signature="41716:42126" ph="SELECT B.Tit... book" />
-            <marker date="1508606654182" expanded="true" signature="41855:42020" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="41855:42021" ph="SELECT * \n book_authors" />
-            <marker date="1508606654182" expanded="true" signature="43206:43651" ph="SELECT B.Boo... book" />
-            <marker date="1508606654182" expanded="true" signature="43451:43558" ph="SELECT BookI... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="44790:45303" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508606654182" expanded="true" signature="45079:45145" ph="SELECT CardN... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="46506:47041" ph="SELECT BO.Bo... book" />
-            <marker date="1508606654182" expanded="true" signature="48312:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48313:49805" ph="SELECT BL.Br... book" />
-            <marker date="1508606654182" expanded="true" signature="48681:48833" ph="SELECT Branc... book_loans" />
-            <marker date="1508606654182" expanded="true" signature="48873:49306" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508606654182" expanded="true" signature="49062:49244" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508606654182" expanded="true" signature="50977:52182" ph="..." />
+            <element signature="e#44427#44484#0" expanded="false" />
+            <element signature="e#50861#50943#0" expanded="false" />
+            <element signature="e#51977#52064#0" expanded="false" />
+            <marker date="1508615071867" expanded="true" signature="4056:4251" ph="ALTER TABLE " />
+            <marker date="1508615071867" expanded="true" signature="15372:42346" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="15373:29095" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="29323:29530" ph="SELECT Publi... publisher" />
+            <marker date="1508615071867" expanded="true" signature="30553:30685" ph="SELECT Borro... borrower" />
+            <marker date="1508615071867" expanded="true" signature="31773:32121" ph="SELECT CONCA... borrower" />
+            <marker date="1508615071867" expanded="true" signature="33087:33497" ph="SELECT B.Tit... book" />
+            <marker date="1508615071867" expanded="true" signature="33226:33391" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="33226:33392" ph="SELECT * \n book_authors" />
+            <marker date="1508615071867" expanded="true" signature="34577:35022" ph="SELECT B.Boo... book" />
+            <marker date="1508615071867" expanded="true" signature="34822:34929" ph="SELECT BookI... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="36161:36674" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508615071867" expanded="true" signature="36450:36516" ph="SELECT CardN... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="37877:38412" ph="SELECT BO.Bo... book" />
+            <marker date="1508615071867" expanded="true" signature="39683:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="39684:41176" ph="SELECT BL.Br... book" />
+            <marker date="1508615071867" expanded="true" signature="40052:40204" ph="SELECT Branc... book_loans" />
+            <marker date="1508615071867" expanded="true" signature="40244:40677" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508615071867" expanded="true" signature="40433:40615" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508615071867" expanded="true" signature="42348:44361" ph="..." />
+            <marker date="1508615071867" expanded="true" signature="42552:42569" ph="ALTER TABLE table... " />
           </folding>
         </state>
       </provider>
