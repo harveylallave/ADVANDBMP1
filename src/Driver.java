@@ -10,7 +10,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -47,6 +49,8 @@ public class Driver extends Application {
     ChoiceBox<String> queryChoiceBox;
 
     Connection conn;
+    TextField input, input_2;
+
     private LineChart graphArea;
     private XYChart.Series dataSeries1;
     private int nQueryExec = 1;
@@ -94,11 +98,11 @@ public class Driver extends Application {
             Scene dialogScene = new Scene(optimizePane, 800, 400);
             ChoiceBox optimizationType = new ChoiceBox<>();
 
-            optimizationType.getItems().addAll("Create Indexes", "Create Views", "Using JOIN statements", "Drop Indexes", "Drop Views");
+            optimizationType.getItems().addAll("Create Indexes", "Create Views", "Drop Indexes", "Drop Views");
 
             itemRow.getChildren().addAll(label, optimizationType);
             optimizePane.add(itemRow, 1, 0);
-            optimizePane.add(new Label(""), 1,1 );
+            optimizePane.add(new Label(""), 1, 1);
 
             optimizationType.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
@@ -120,6 +124,13 @@ public class Driver extends Application {
                             }
 
                             createViews(optimizePane);
+                            break;
+
+                        case 2:
+                            if (optimizePane.getChildren().get(1) instanceof Label || optimizePane.getChildren().get(1) instanceof HBox) {
+                                optimizePane.getChildren().remove(1);
+                            }
+
                             break;
                     }
                 }
@@ -144,31 +155,109 @@ public class Driver extends Application {
         return menuBar;
     }
 
-    public void createViews(GridPane optimizePane){
+    public void createViews(GridPane optimizePane) {
         ChoiceBox queryChoices = new ChoiceBox<>();
         queryChoices.getItems().addAll("",
-                "SELECT PublisherName AS 'Publisher', Address\n" +
-                        "FROM publisher\n" +
-                        "WHERE Address like '%Los Angeles%'\n" +
-                        "ORDER BY PublisherName;",
-                "SELECT BorrowerLName, BorrowerFName, Address\n" +
-                        "FROM borrower\n" +
-                        "WHERE Address LIKE '%Manila%'\n",
-                "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) \nAS BorrowerName, COUNT(*) as NoBooksBor\n" +
-                        "FROM borrower BO, book_loans BL\n" +
-                        "WHERE BO.CardNo = BL.CardNo\n" +
-                        "GROUP BY BorrowerName\n" +
-                        "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
-                        "ORDER BY 2 DESC, 1;\n");
+                "All publishers located in Los Angeles",
+                "All borrowers living in Manila",
+                "All borrowers who have borrowed at most 2 books",
+                "All books written by Burningpeak, Loni",
+                "All books which were never loaned out (nobody borrowed them)",
+                "All borrowers who have loaned books in their own branch",
+                "All book loans that were returned exactly on their due date",
+                "Most popular title (most loaned out title) for each branch");
 
-        optimizePane.add(queryChoices, 2,1);
+        optimizePane.add(queryChoices, 2, 1);
 
         label = new Label("Create View for: ");
-        optimizePane.add(label, 1,1);
+        optimizePane.add(label, 1, 1);
 
+        label = new Label("SQL Query");
+        optimizePane.add(label, 1, 2);
+
+        TextArea sqlQuery = new TextArea();
+
+        queryChoices.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                switch ((Integer) number2) {
+                    case 0:
+                        sqlQuery.setText("SELECT PublisherName, Address\n" +
+                                "FROM publisher\n" +
+                                "WHERE Address like '%Los Angeles%'\n" +
+                                "ORDER BY PublisherName;\n");
+                        break;
+
+                    case 1:
+                        sqlQuery.setText("SELECT BorrowerLName, BorrowerFName, Address\n" +
+                                "FROM borrower\n" +
+                                "WHERE Address LIKE ‘%Manila%’\n");
+                        break;
+
+                    case 2:
+                        sqlQuery.setText("SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as BorrowerName , COUNT(*) as NoBooksBor\n" +
+                                "FROM borrower BO, book_loans BL\n" +
+                                "WHERE BO.CardNo = BL.CardNo\n" +
+                                "GROUP BY BorrowerName\n" +
+                                "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
+                                "ORDER BY 2 DESC, 1;\n");
+                        break;
+
+                    case 3:
+                        sqlQuery.setText("SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                                "FROM book B, (SELECT * \n" +
+                                "\t\t\tFROM book_authors\n" +
+                                "\t\t\tWHERE AuthorLastName =  ‘Burningpeak’ and AuthorFirstName = ‘Loni’ ) as BA\n" +
+                                "WHERE BA.BookID = B.BookID\n" +
+                                "ORDER BY 1;\n");
+                        break;
+
+                    case 4:
+                        sqlQuery.setText("SELECT B.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, B.PublisherName\n" +
+                                "FROM book B, book_authors BA\n" +
+                                "WHERE B.BookID NOT IN (SELECT BookID\n" +
+                                "\t\t\tFROM book_loans)\n" +
+                                "GROUP BY B.BookID\n" +
+                                "ORDER BY 3, 2;\n");
+                        break;
+
+                    case 5:
+                        sqlQuery.setText("\n" +
+                                "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ‘, ‘, BO.BorrowerFName) as BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                                "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                                "WHERE BO.CardNo IN (SELECT CardNo \n" +
+                                "\t\t\t\tFROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
+                                "GROUP BY BorrowerName\n" +
+                                "ORDER BY 2;\n");
+                        break;
+
+                    case 6:
+                        sqlQuery.setText("SELECT CONCAT(BO.BorrowerFName, \", \" , BO.BorrowerLName) AS BorrowerName, BL.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                                "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
+                                "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
+                                "ORDER BY 1, 3;\n");
+                        break;
+
+                    case 7:
+                        sqlQuery.setText("CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, P.PublisherName, P.Address AS PublisherAddress\n" +
+                                "FROM book  B, book_authors BA, library_branch LB, publisher P, (SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned FROM book_loans GROUP BY BranchID, BookID) AS BL, (SELECT TEMP.BranchID, MAX(TEMP.NoTimesLoaned) AS NoTimesLoaned FROM\n" +
+                                "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned FROM BOOK_LOANS GROUP BY BranchID, BookID) AS TEMP  GROUP BY TEMP.BranchID) AS C\n" +
+                                "WHERE BL.BranchID = C.BranchID AND BL.NoTimesLoaned = C.NoTimesLoaned AND BL.BranchID = LB.BranchID AND BL.BookID = B.BookID AND B.BookID = BA.BookID AND B.PublisherName = P.PublisherName\n" +
+                                "GROUP BY BL.BranchID\n" +
+                                "ORDER BY 2, 5;");
+
+                }
+            }
+        });
+
+        optimizePane.add(sqlQuery, 2, 2);
+        button = new Button("Create View");
+
+        optimizePane.add(button, 2, 3);
     }
 
-    public void indexOptimization(GridPane optimizePane){
+    public void indexOptimization(GridPane optimizePane) {
         ChoiceBox tableChoiceBox = new ChoiceBox<>();
         HBox itemRow = new HBox(5);
 
@@ -483,24 +572,524 @@ public class Driver extends Application {
             VBox subVBox = new VBox(10);
             subVBox.getStyleClass().add("subVBox");
 
-
             subVBox.getChildren().add(label);
             System.out.println("\nEDIT QUERY: " + queryChoiceBox.getValue());
 
             button = new Button("Update Query");
             button.setMinWidth(150);
 
-            subVBox.getChildren().add(button);
             mainVBox.getChildren().add(subVBox);
+            VBox editQueryVBox;
+//            TextField input;
 
-            button.setOnAction(event1 -> {
-                mainVBox.getChildren().remove(1);
+            System.out.println(queryChoiceBox.getSelectionModel().getSelectedItem().toString());
 
-            });
+            switch (queryChoiceBox.getSelectionModel().getSelectedItem().toString()) {
+                case "All publishers located in Los Angeles":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT PublisherName, Address\n" +
+                            "FROM publisher\n" +
+                            "WHERE Address like '%\n");
+                    input = new TextField("Los Angeles");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("%'\nORDER BY PublisherName;");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+                        String x = input.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+
+                        String query = "SELECT PublisherName AS 'Publisher', Address\n" +
+                                "FROM publisher\n" +
+                                "WHERE Address like '%" + x + "%'\n" +
+                                "ORDER BY PublisherName;";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("Publisher"));
+                                rowData.add(rs.getString("Address"));
+                                arrayList.add(rowData);
+                                System.out.println("NEW DATA");
+                            }
+                            st.close();
+                            rs.close();
+
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        } // catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+                case "All borrowers living in Manila":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT BorrowerLName, BorrowerFName, Address\n" +
+                            "FROM borrower\n" +
+                            "WHERE Address LIKE ‘%\n");
+                    input = new TextField("Manila");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("%';");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+                        String x = input.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT BorrowerLName, BorrowerFName, Address\n" +
+                                "FROM borrower\n" +
+                                "WHERE Address LIKE '%" + x + "'\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("BorrowerLName"));
+                                rowData.add(rs.getString("BorrowerFName"));
+                                rowData.add(rs.getString("Address"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+                case "All borrowers who have borrowed at most 2 books":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as BorrowerName , COUNT(*) as NoBooksBor\n" +
+                            "FROM borrower BO, book_loans BL\n" +
+                            "WHERE BO.CardNo = BL.CardNo\n" +
+                            "GROUP BY BorrowerName\n" +
+                            "HAVING NoBooksBor \n");
+                    input = new TextField(">= 0");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("and NoBooksBor");
+                    input_2 = new TextField("<= 2");
+                    editQueryVBox.getChildren().addAll(label, input_2);
+                    label = new Label("ORDER BY 2 DESC, 1;");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+                        String x = input.getText(), y = input_2.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, COUNT(*) as NoBooksBor\n" +
+                                "FROM borrower BO, book_loans BL\n" +
+                                "WHERE BO.CardNo = BL.CardNo\n" +
+                                "GROUP BY BorrowerName\n" +
+                                "HAVING NoBooksBor" + x + " and " + y + "\n" +
+                                "ORDER BY 2 DESC, 1;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("BorrowerName"));
+                                rowData.add(rs.getString("NoBooksBor"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+                    });
+                    break;
+
+                case "All books written by Burningpeak, Loni":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                            "FROM book B, (SELECT * \n" +
+                            "\t\tFROM book_authors\n" +
+                            "\t\tWHERE AuthorLastName =  ‘\n");
+                    input = new TextField("Burningpeak");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("’ and AuthorFirstName = ‘");
+                    input_2 = new TextField("Loni");
+                    editQueryVBox.getChildren().addAll(label, input_2);
+                    label = new Label("’ ) as BA\n" +
+                            "WHERE BA.BookID = B.BookID\n" +
+                            "ORDER BY 1;\n");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        String x = input.getText(), y = input_2.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                                "FROM book B, (SELECT * \n" +
+                                "      FROM book_authors\n" +
+                                "      WHERE AuthorLastName =  '" + x + "' and AuthorFirstName = '" + y + "') as BA\n" +
+                                "WHERE BA.BookID = B.BookID\n" +
+                                "ORDER BY 1;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("PublisherName"));
+                                rowData.add(rs.getString("Author"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+                    });
+                    break;
+
+                case "All books which were never loaned out (nobody borrowed them)":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
+                            "BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                            "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                            "WHERE BO.CardNo NOT IN (SELECT CardNo \n" +
+                            "\t\tFROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
+                            "GROUP BY BorrowerName\n" +
+                            "ORDER BY 2;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
+                                "BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                                "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                                "WHERE BO.CardNo NOT IN (SELECT CardNo \n" +
+                                "      FROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
+                                "GROUP BY BorrowerName\n" +
+                                "ORDER BY 2;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getInt("CardNo") + "");
+                                rowData.add(rs.getString("BorrowerName"));
+                                rowData.add(rs.getInt("BranchID") + "");
+                                rowData.add(rs.getString("BranchName"));
+                                rowData.add(rs.getString("BranchAddress"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+
+                case "All borrowers who have loaned books in their own branch":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
+                            "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
+                            "FROM book B, book_authors BA\n" +
+                            "WHERE B.BookID NOT IN (SELECT BookID\n" +
+                            "\t\t\tFROM book_loans)\n" +
+                            "GROUP BY B.BookID\n" +
+                            "ORDER BY 3, 2;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(e->{
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
+                                "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
+                                "FROM book B, book_authors BA\n" +
+                                "WHERE B.BookID NOT IN (SELECT BookID\n" +
+                                "                                                FROM book_loans)\n" +
+                                "GROUP BY B.BookID\n" +
+                                "ORDER BY 3, 2;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getInt("BookID") + "");
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("AuthorName"));
+                                rowData.add(rs.getString("PublisherName"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException ev) {
+                            System.out.println("SQLException: " + ev.getMessage());
+                            System.out.println("SQLState: " + ev.getSQLState());
+                            System.out.println("VendorError: " + ev.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+                case "All book loans that were returned exactly on their due date":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT CONCAT(BO.BorrowerFName, \", \" , BO.BorrowerLName) AS BorrowerName, BL.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                            "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
+                            "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
+                            "ORDER BY 1, 3;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, " +
+                                "BL.BookID, B.Title, CONCAT(BA.AuthorLastName, ', ', " +
+                                "BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                                "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
+                                "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND " +
+                                "BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
+                                "ORDER BY 1, 3;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("BorrowerName"));
+                                rowData.add(rs.getInt("BookID") + "");
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("AuthorName"));
+                                rowData.add(rs.getString("DueDate"));
+                                rowData.add(rs.getString("DateReturned"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+
+                    });
+                    break;
+
+                case "Most popular title (most loaned out title) for each branch":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("\n" +
+                            "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName\n, P.PublisherName, P.Address AS PublisherAddress\n" +
+                            "FROM book  B, book_authors BA, library_branch LB, publisher P, \n(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned FROM book_loans GROUP BY BranchID, BookID) AS BL, (SELECT TEMP.BranchID, MAX(TEMP.NoTimesLoaned) AS NoTimesLoaned \nFROM" +
+                            "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned FROM BOOK_LOANS GROUP BY BranchID, BookID) AS TEMP  \nGROUP BY TEMP.BranchID) AS C\n" +
+                            "WHERE BL.BranchID = C.BranchID AND BL.NoTimesLoaned = C.NoTimesLoaned AND BL.BranchID = LB.BranchID AND BL.BookID = B.BookID AND B.BookID = BA.BookID AND B.PublisherName = P.PublisherName\n" +
+                            "GROUP BY BL.BranchID\n" +
+                            "ORDER BY 2, 5;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, " +
+                                "B.Title, CONCAT(BA.AuthorLastName, ', ', BA.AuthorFirstName) as " +
+                                "AuthorName, P.PublisherName, P.Address AS PublisherAddress\n" +
+                                "FROM book  B, book_authors BA, library_branch LB, publisher P, " +
+                                "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned\n" +
+                                "FROM book_loans\n" +
+                                "GROUP BY BranchID, BookID) AS BL,\n" +
+                                "(SELECT TEMP.BranchID,\n" +
+                                "MAX(TEMP.NoTimesLoaned)\n" +
+                                "AS NoTimesLoaned\n" +
+                                "FROM\n" +
+                                "(SELECT BranchID, BookID,\n" +
+                                "COUNT(*) AS NoTimesLoaned\n" +
+                                "FROM BOOK_LOANS\n" +
+                                "GROUP BY BranchID, BookID) AS TEMP\n" +
+                                "GROUP BY TEMP.BranchID) AS C\n" +
+                                "WHERE\n" +
+                                "BL.BranchID = C.BranchID AND\n" +
+                                "BL.NoTimesLoaned = C.NoTimesLoaned AND\n" +
+                                "BL.BranchID = LB.BranchID AND\n" +
+                                "BL.BookID = B.BookID AND\n" +
+                                "B.BookID = BA.BookID AND\n" +
+                                "B.PublisherName = P.PublisherName\n" +
+                                "GROUP BY BL.BranchID\n" +
+                                "ORDER BY 2, 5;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getInt("BranchID") + "");
+                                rowData.add(rs.getString("BranchName"));
+                                rowData.add(rs.getInt("BookID") + "");
+                                rowData.add(rs.getInt("NoTimesLoaned") + "");
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("AuthorName"));
+                                rowData.add(rs.getString("PublisherName"));
+                                rowData.add(rs.getString("PublisherAddress"));
+                                arrayList.add(rowData);
+
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+            }
+
 
         });
 
-        mainVBox.getChildren().add(button);
+        ToggleGroup radioButtonGroup = new ToggleGroup();
+
+        RadioButton normal = new RadioButton("Normal");
+        normal.setToggleGroup(radioButtonGroup);
+        normal.setUserData("Normal");
+        normal.setSelected(true);
+
+        RadioButton union = new RadioButton("Union");
+        union.setToggleGroup(radioButtonGroup);
+        union.setUserData("Union");
+
+        RadioButton join = new RadioButton("Join");
+        join.setToggleGroup(radioButtonGroup);
+        join.setUserData("Join");
+
+        RadioButton subquery = new RadioButton("Subquery");
+        subquery.setToggleGroup(radioButtonGroup);
+        subquery.setUserData("Subquery");
+
+        radioButtonGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
+                System.out.println(new_toggle.getUserData().toString());
+                switch (new_toggle.getUserData().toString()) {
+                    case "Normal": /* normal queries */
+                        break;
+
+                    case "Union":
+                        break;
+
+                    case "Join":
+                        break;
+
+                    case "Subquery":
+                        break;
+                }
+            }
+
+        });
+
+        VBox radioButtonVBox = new VBox(5);
+        radioButtonVBox.setPadding(new Insets(0, 10, 0, 10));
+        radioButtonVBox.getChildren().addAll(normal, union, join, subquery);
+
+        mainVBox.getChildren().addAll(radioButtonVBox, new Separator(Orientation.HORIZONTAL), button);
 
         mainVBox.setMinWidth(200);
         return mainVBox;
@@ -525,19 +1114,14 @@ public class Driver extends Application {
 
             queryChoiceBox = new ChoiceBox<>();
             queryChoiceBox.getItems().addAll("",
-                    "SELECT PublisherName AS 'Publisher', Address\n" +
-                            "FROM publisher\n" +
-                            "WHERE Address like '%Los Angeles%'\n" +
-                            "ORDER BY PublisherName;",
-                    "SELECT BorrowerLName, BorrowerFName, Address\n" +
-                            "FROM borrower\n" +
-                            "WHERE Address LIKE '%Manila%'\n",
-                    "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) \nAS BorrowerName, COUNT(*) as NoBooksBor\n" +
-                            "FROM borrower BO, book_loans BL\n" +
-                            "WHERE BO.CardNo = BL.CardNo\n" +
-                            "GROUP BY BorrowerName\n" +
-                            "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
-                            "ORDER BY 2 DESC, 1;\n");
+                    "All publishers located in Los Angeles",
+                    "All borrowers living in Manila",
+                    "All borrowers who have borrowed at most 2 books",
+                    "All books written by Burningpeak, Loni",
+                    "All books which were never loaned out (nobody borrowed them)",
+                    "All borrowers who have loaned books in their own branch",
+                    "All book loans that were returned exactly on their due date",
+                    "Most popular title (most loaned out title) for each branch");
             queryChoiceBox.setValue("");
 
             queryChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
@@ -566,6 +1150,21 @@ public class Driver extends Application {
                             break;
                         case 3:
                             updateTableQuery3(vBox);
+                            break;
+                        case 4:
+                            updateTableQuery4(vBox);
+                            break;
+                        case 5:
+                            updateTableQuery5(vBox);
+                            break;
+                        case 6:
+                            updateTableQuery6(vBox);
+                            break;
+                        case 7:
+                            updateTableQuery7(vBox);
+                            break;
+                        case 8:
+                            updateTableQuery8(vBox);
                             break;
                         default:
                             System.out.println("Query choice box selection model not in the range");
@@ -608,6 +1207,21 @@ public class Driver extends Application {
                     case '3':
                         updateTableQuery3(tempvBox);
                         break;
+                    case '4':
+                        updateTableQuery4(tempvBox);
+                        break;
+                    case '5':
+                        updateTableQuery5(tempvBox);
+                        break;
+                    case '6':
+                        updateTableQuery6(tempvBox);
+                        break;
+                    case '7':
+                        updateTableQuery7(tempvBox);
+                        break;
+                    case '8':
+                        updateTableQuery8(tempvBox);
+                        break;
                     default:
                         System.out.println("Repeating Query #" + queryNumText.charAt(queryNumText.length() - 1));
                 }
@@ -624,99 +1238,6 @@ public class Driver extends Application {
             graphArea.setLegendVisible(false);
             vBox.getChildren().add(graphArea);
         }
-//        book.setOnAction(e -> {
-//            ObservableList<Route> routeSelected, allRoutes;
-//
-//            allRoutes = userRider ? routesTable.getItems() : driverTable.getItems();
-//            routeSelected = userRider? routesTable.getSelectionModel().getSelectedItems() : driverTable.getSelectionModel().getSelectedItems();
-//
-//            Route r = routeSelected.get(0);
-//            int riderId = 0,
-//                    routeId = 0,
-//                    driverId = 0;
-//
-//            if(r != null){
-//                Statement st    = null;
-//                ResultSet rs    = null;
-//                int transactionId = 0;
-//                String  query   = "SELECT r.riderId as `Id` " +
-//                        "FROM riderInfo r " +
-//                        "WHERE r.firstName = \"" + firstName + "\" AND r.lastName = \"" + lastName + "\";",
-//                        query1  = "SELECT d.driverId as `Id` " +
-//                                "FROM driverInfo d " +
-//                                "WHERE d.firstName = \"" + firstName + "\" AND d.lastName = \"" + lastName + "\";",
-//                        query2  = "SELECT r.routeId as `Id` " +
-//                                "FROM route r, landmarks l, landmarks l2 " +
-//                                "WHERE l.landmarkName = \"" + r.getStart() + "\" AND r.pickupLoc = l.landmarkID AND l2.landmarkName = \"" +
-//                                r.getEnd() + "\" AND r.dropOffLoc = l2.landmarkID;",
-//                        query3  = " ";
-//
-//                try {
-//                    st = conn.createStatement();
-//                    rs = st.executeQuery(query2);
-//                    rs.next();
-//                    routeId = Integer.parseInt(rs.getString("Id"));
-//
-//                    if(userRider){
-//                        rs = st.executeQuery(query);
-//                        rs.next();
-//                        riderId = Integer.parseInt(rs.getString("Id"));
-//
-//                    }
-//                    else {
-//                        query   = "SELECT r.riderId as `Id` " +
-//                                "FROM riderInfo r " +
-//                                "WHERE r.firstName = \"" + r.getRider().split(" ")[0] + "\" AND r.lastName = \"" + r.getRider().split(" ")[1] + "\";";
-//
-//                        rs = st.executeQuery(query);
-//                        rs.next();
-//                        riderId = Integer.parseInt(rs.getString("Id"));
-//
-//                        query3  = "SELECT transactionId AS `transactionId` FROM transaction where riderId = " +
-//                                riderId + " AND routeId = " + routeId + " AND driverId = 0;";
-//                        rs = st.executeQuery(query1);
-//                        rs.next();
-//                        driverId = Integer.parseInt(rs.getString("Id"));
-//                        rs = st.executeQuery(query3);
-//                        rs.next();
-//                        transactionId = Integer.parseInt(rs.getString("transactionId"));
-//                    }
-//                    st.close();
-//                    rs.close();
-//                } catch (SQLException e2) {
-//                    System.out.println("SQLException: " + e2.getMessage());
-//                    System.out.println("SQLState: "		+ e2.getSQLState());
-//                    System.out.println("VendorError: "  + e2.getErrorCode());
-//                }
-//
-//
-//                st    = null;
-//                if(userRider)
-//                    query = "INSERT INTO transaction (`fare`, `uberType`, `routeId`, `driverId`, `riderId`, `date`)" +
-//                            "VALUES ('" + r.getFare() + "', 'uberX', '" + routeId + "', '0', '" + riderId + "', '0000-00-00 00:00:00');";
-//                else {
-//                    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-//                    Date date = new Date();
-//                    query = "UPDATE transaction SET driverId = '" + driverId + "', date = '" + dateFormat.format(date) +"' WHERE `transactionId`='" + transactionId + "'";
-//                }
-//                try {
-//                    System.out.println("Processing...");
-//                    st = conn.createStatement();
-//                    st.executeUpdate(query);
-//
-//                    st.close();
-//                    if(userRider)
-//                        System.out.println("You have booked " + r.getStart() + " - " + r.getEnd());
-//                    else System.out.println("You have accepted " + r.getRider() + "'s request for route " + r.getStart() + " to " + r.getEnd());
-//                } catch (SQLException e2) {
-//                    System.out.println("SQLException: " + e2.getMessage());
-//                    System.out.println("SQLState: "		+ e2.getSQLState());
-//                    System.out.println("VendorError: "  + e2.getErrorCode());
-//                }
-//
-//                routeSelected.forEach(allRoutes :: remove);	//Deletes the row selected
-//            }
-//        });
 
         return vBox;
     }
@@ -771,6 +1292,7 @@ public class Driver extends Application {
         return time;
     }
 
+    // Update table queries
     private void updateTableQuery1(VBox vBox) {
         TableColumn<ArrayList<String>, String> pubColumn = new TableColumn<>("Publisher");
 
@@ -812,7 +1334,7 @@ public class Driver extends Application {
         borrowerFNameCol.setMinWidth(100);
         borrowerFNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
         //End Point Column
@@ -820,7 +1342,7 @@ public class Driver extends Application {
         addressColumn.setMinWidth(100);
         addressColumn.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(1));
+            return new SimpleStringProperty(x.get(2));
         });
 
         table.setItems(getQuery2());
@@ -846,12 +1368,252 @@ public class Driver extends Application {
         noBooksBorCol.setMinWidth(100);
         noBooksBorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(0));
+            return new SimpleStringProperty(x.get(1));
         });
 
 
         table.setItems(getQuery3());
         table.getColumns().addAll(nameCol, noBooksBorCol);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        BigDecimal processTime = getQueryProcessTime(nQueryExec);
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+
+        vBox.getChildren().add(2, table);
+    }
+
+    private void updateTableQuery4(VBox vBox) {
+        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
+        titleCol.setMinWidth(100);
+        titleCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(0));
+        });
+
+        TableColumn<ArrayList<String>, String> pubNameCol = new TableColumn<>("PublisherName");
+        pubNameCol.setMinWidth(100);
+        pubNameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(1));
+        });
+
+        TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("Author");
+        authorCol.setMinWidth(100);
+        authorCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(2));
+        });
+
+        table.setItems(getQuery4());
+        table.getColumns().addAll(titleCol, pubNameCol, authorCol);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        BigDecimal processTime = getQueryProcessTime(nQueryExec);
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+
+        vBox.getChildren().add(2, table);
+    }
+
+    private void updateTableQuery5(VBox vBox) {
+        TableColumn<ArrayList<String>, String> bookIdCol = new TableColumn<>("BookID");
+        bookIdCol.setMinWidth(100);
+        bookIdCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(0));
+        });
+
+        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
+        titleCol.setMinWidth(100);
+        titleCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(1));
+        });
+
+        TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("AuthorName");
+        authorCol.setMinWidth(100);
+        authorCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(2));
+        });
+
+        TableColumn<ArrayList<String>, String> pubCol = new TableColumn<>("PublisherName");
+        pubCol.setMinWidth(100);
+        pubCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(3));
+        });
+
+
+        table.setItems(getQuery5());
+        table.getColumns().addAll(bookIdCol, titleCol, authorCol, pubCol);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        BigDecimal processTime = getQueryProcessTime(nQueryExec);
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+
+        vBox.getChildren().add(2, table);
+    }
+
+    private void updateTableQuery6(VBox vBox) {
+        TableColumn<ArrayList<String>, String> cardNoCol = new TableColumn<>("CardNo");
+        cardNoCol.setMinWidth(100);
+        cardNoCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(0));
+        });
+
+        TableColumn<ArrayList<String>, String> borrowerNameCol = new TableColumn<>("BorrowerName");
+        borrowerNameCol.setMinWidth(100);
+        borrowerNameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(1));
+        });
+        TableColumn<ArrayList<String>, String> branchIdCol = new TableColumn<>("BranchID");
+        branchIdCol.setMinWidth(100);
+        branchIdCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(2));
+        });
+
+        //Starting Point Column
+        TableColumn<ArrayList<String>, String> branchNameCol = new TableColumn<>("BranchName");
+        branchNameCol.setMinWidth(100);
+        branchNameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(3));
+        });
+
+        TableColumn<ArrayList<String>, String> branchAddressCol = new TableColumn<>("BranchAddress");
+        branchAddressCol.setMinWidth(100);
+        branchAddressCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(4));
+        });
+
+
+        table.setItems(getQuery6());
+        table.getColumns().addAll(cardNoCol, borrowerNameCol, branchIdCol, branchNameCol, branchAddressCol);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        BigDecimal processTime = getQueryProcessTime(nQueryExec);
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+
+        vBox.getChildren().add(2, table);
+    }
+
+    private void updateTableQuery7(VBox vBox) {
+        TableColumn<ArrayList<String>, String> nameCol = new TableColumn<>("BorrowerName");
+        nameCol.setMinWidth(100);
+        nameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(0));
+        });
+
+        TableColumn<ArrayList<String>, String> idCol = new TableColumn<>("BookID");
+        idCol.setMinWidth(100);
+        idCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(1));
+        });
+
+        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
+        titleCol.setMinWidth(100);
+        titleCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(2));
+        });
+
+        TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("AuthorName");
+        authorCol.setMinWidth(100);
+        authorCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(3));
+        });
+
+        TableColumn<ArrayList<String>, String> dueDateCol = new TableColumn<>("DueDate");
+        dueDateCol.setMinWidth(100);
+        dueDateCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(4));
+        });
+
+        TableColumn<ArrayList<String>, String> dateReturnedCol = new TableColumn<>("DateReturned");
+        dateReturnedCol.setMinWidth(100);
+        dateReturnedCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(5));
+        });
+
+
+        table.setItems(getQuery7());
+        table.getColumns().addAll(nameCol, idCol, titleCol, authorCol, dueDateCol, dateReturnedCol);
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+        BigDecimal processTime = getQueryProcessTime(nQueryExec);
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+
+        vBox.getChildren().add(2, table);
+    }
+
+    private void updateTableQuery8(VBox vBox) {
+
+        TableColumn<ArrayList<String>, String> idCol = new TableColumn<>("BranchID");
+        idCol.setMinWidth(100);
+        idCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(0));
+        });
+
+        TableColumn<ArrayList<String>, String> branchNameCol = new TableColumn<>("BranchName");
+        branchNameCol.setMinWidth(100);
+        branchNameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(1));
+        });
+
+        TableColumn<ArrayList<String>, String> bookIdCol = new TableColumn<>("BookID");
+        bookIdCol.setMinWidth(100);
+        bookIdCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(2));
+        });
+
+        TableColumn<ArrayList<String>, String> noTimesLoanedCol = new TableColumn<>("NoTimesLoaned");
+        noTimesLoanedCol.setMinWidth(100);
+        noTimesLoanedCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(3));
+        });
+
+        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
+        titleCol.setMinWidth(100);
+        titleCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(4));
+        });
+
+        TableColumn<ArrayList<String>, String> authorCol = new TableColumn<>("AuthorName");
+        authorCol.setMinWidth(100);
+        authorCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(5));
+        });
+
+        TableColumn<ArrayList<String>, String> publisherNameCol = new TableColumn<>("PublisherName");
+        publisherNameCol.setMinWidth(100);
+        publisherNameCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(6));
+        });
+        TableColumn<ArrayList<String>, String> publisherAddressCol = new TableColumn<>("PublisherAddress");
+        publisherAddressCol.setMinWidth(100);
+        publisherAddressCol.setCellValueFactory(param -> {
+            ArrayList<String> x = param.getValue();
+            return new SimpleStringProperty(x.get(7));
+        });
+
+        table.setItems(getQuery8());
+        table.getColumns().addAll(idCol, branchNameCol, bookIdCol, noTimesLoanedCol, titleCol, authorCol, publisherNameCol, publisherAddressCol);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
@@ -952,6 +1714,224 @@ public class Driver extends Application {
                 rowData.add(rs.getString("BorrowerName"));
                 rowData.add(rs.getString("NoBooksBor"));
                 arrayList.add(rowData);
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+
+        return arrayList;
+    }
+
+    public ObservableList<ArrayList<String>> getQuery4() {
+
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                "FROM book B, (SELECT * \n" +
+                "      FROM book_authors\n" +
+                "      WHERE AuthorLastName =  'Burningpeak' and AuthorFirstName = 'Loni') as BA\n" +
+                "WHERE BA.BookID = B.BookID\n" +
+                "ORDER BY 1;\n";
+
+        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+        try {
+
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                ArrayList<String> rowData = new ArrayList<>();
+                rowData.add(rs.getString("Title"));
+                rowData.add(rs.getString("PublisherName"));
+                rowData.add(rs.getString("Author"));
+                arrayList.add(rowData);
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+
+        return arrayList;
+    }
+
+    public ObservableList<ArrayList<String>> getQuery5() {
+
+        //Connection conn = getConnection();	called at the start
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
+                "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
+                "FROM book B, book_authors BA\n" +
+                "WHERE B.BookID NOT IN (SELECT BookID\n" +
+                "                                                FROM book_loans)\n" +
+                "GROUP BY B.BookID\n" +
+                "ORDER BY 3, 2;\n";
+
+        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+        try {
+
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                ArrayList<String> rowData = new ArrayList<>();
+                rowData.add(rs.getInt("BookID") + "");
+                rowData.add(rs.getString("Title"));
+                rowData.add(rs.getString("AuthorName"));
+                rowData.add(rs.getString("PublisherName"));
+                arrayList.add(rowData);
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+
+        return arrayList;
+    }
+
+    public ObservableList<ArrayList<String>> getQuery6() {
+
+        //Connection conn = getConnection();	called at the start
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
+                "BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                "WHERE BO.CardNo IN (SELECT CardNo \n" +
+                "      FROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
+                "GROUP BY BorrowerName\n" +
+                "ORDER BY 2;\n";
+
+        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+        try {
+
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                ArrayList<String> rowData = new ArrayList<>();
+                rowData.add(rs.getInt("CardNo") + "");
+                rowData.add(rs.getString("BorrowerName"));
+                rowData.add(rs.getInt("BranchID") + "");
+                rowData.add(rs.getString("BranchName"));
+                rowData.add(rs.getString("BranchAddress"));
+                arrayList.add(rowData);
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+
+        return arrayList;
+    }
+
+    public ObservableList<ArrayList<String>> getQuery7() {
+
+        //Connection conn = getConnection();	called at the start
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, " +
+                "BL.BookID, B.Title, CONCAT(BA.AuthorLastName, ', ', " +
+                "BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
+                "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND " +
+                "BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
+                "ORDER BY 1, 3;\n";
+
+        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+        try {
+
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                ArrayList<String> rowData = new ArrayList<>();
+                rowData.add(rs.getString("BorrowerName"));
+                rowData.add(rs.getInt("BookID") + "");
+                rowData.add(rs.getString("Title"));
+                rowData.add(rs.getString("AuthorName"));
+                rowData.add(rs.getString("DueDate"));
+                rowData.add(rs.getString("DateReturned"));
+                arrayList.add(rowData);
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+
+        return arrayList;
+    } // TODO update query
+
+    public ObservableList<ArrayList<String>> getQuery8() {
+
+        //Connection conn = getConnection();	called at the start
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, " +
+                "B.Title, CONCAT(BA.AuthorLastName, ', ', BA.AuthorFirstName) as " +
+                "AuthorName, P.PublisherName, P.Address AS PublisherAddress\n" +
+                "FROM book  B, book_authors BA, library_branch LB, publisher P, " +
+                "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned\n" +
+                "FROM book_loans\n" +
+                "GROUP BY BranchID, BookID) AS BL,\n" +
+                "(SELECT TEMP.BranchID,\n" +
+                "MAX(TEMP.NoTimesLoaned)\n" +
+                "AS NoTimesLoaned\n" +
+                "FROM\n" +
+                "(SELECT BranchID, BookID,\n" +
+                "COUNT(*) AS NoTimesLoaned\n" +
+                "FROM BOOK_LOANS\n" +
+                "GROUP BY BranchID, BookID) AS TEMP\n" +
+                "GROUP BY TEMP.BranchID) AS C\n" +
+                "WHERE\n" +
+                "BL.BranchID = C.BranchID AND\n" +
+                "BL.NoTimesLoaned = C.NoTimesLoaned AND\n" +
+                "BL.BranchID = LB.BranchID AND\n" +
+                "BL.BookID = B.BookID AND\n" +
+                "B.BookID = BA.BookID AND\n" +
+                "B.PublisherName = P.PublisherName\n" +
+                "GROUP BY BL.BranchID\n" +
+                "ORDER BY 2, 5;\n";
+
+        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+        try {
+
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                ArrayList<String> rowData = new ArrayList<>();
+                rowData.add(rs.getInt("BranchID") + "");
+                rowData.add(rs.getString("BranchName"));
+                rowData.add(rs.getInt("BookID") + "");
+                rowData.add(rs.getInt("NoTimesLoaned") + "");
+                rowData.add(rs.getString("Title"));
+                rowData.add(rs.getString("AuthorName"));
+                rowData.add(rs.getString("PublisherName"));
+                rowData.add(rs.getString("PublisherAddress"));
+                arrayList.add(rowData);
+
             }
             st.close();
             rs.close();
