@@ -29,12 +29,22 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="265" column="19" lean-forward="true" selection-start-line="265" selection-start-column="19" selection-end-line="265" selection-end-column="19" />
+            <state relative-caret-position="44">
+              <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#Driver#0" expanded="false" />
                 <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+                <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+                <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+                <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+                <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+                <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+                <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+                <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+                <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+                <element signature="class#14357:15100" expanded="false" />
+                <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
                 <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
                 <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -46,6 +56,12 @@
                 <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
                 <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
                 <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+                <element signature="e#36943#37000#0" expanded="false" />
+                <element signature="e#43377#43459#0" expanded="false" />
+                <element signature="e#44493#44580#0" expanded="false" />
+                <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+                <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+                <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
               </folding>
             </state>
           </provider>
@@ -355,12 +371,12 @@
       <workItem from="1508576496769" duration="8738000" />
       <workItem from="1508590118527" duration="5000" />
       <workItem from="1508591066060" duration="20000" />
-      <workItem from="1508591145607" duration="2000" />
+      <workItem from="1508591145607" duration="259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97448000" />
+    <option name="totallyTimeSpent" value="97705000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -377,12 +393,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3219697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32163742" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -399,7 +416,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -415,18 +431,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Driver.java</url>
-          <line>1080</line>
-          <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Driver.java</url>
-          <line>970</line>
+          <line>965</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Driver.java</url>
-          <line>591</line>
+          <line>586</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -456,6 +467,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -467,6 +488,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -487,6 +514,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -498,6 +535,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -518,6 +561,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -529,6 +582,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -549,6 +608,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -560,6 +629,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -580,6 +655,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -591,6 +676,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -611,6 +702,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -622,6 +723,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -642,6 +749,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -653,6 +770,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -673,6 +796,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -684,6 +817,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -704,6 +843,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -715,6 +864,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -735,6 +890,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -746,6 +911,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -766,6 +937,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -777,6 +958,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -804,6 +991,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -815,6 +1012,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -865,6 +1068,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -876,6 +1089,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -888,6 +1107,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -899,6 +1128,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -949,6 +1184,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -960,6 +1205,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -972,6 +1223,16 @@
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -983,6 +1244,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>
@@ -1030,12 +1297,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="265" column="19" lean-forward="true" selection-start-line="265" selection-start-column="19" selection-end-line="265" selection-end-column="19" />
+        <state relative-caret-position="44">
+          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#Driver#0" expanded="false" />
             <element signature="method#initMainScreen#0;class#Driver#0" expanded="false" />
+            <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
+            <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBook#0;class#Driver#0" expanded="false" />
+            <element signature="method#createIndexBookAuthor#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBookLoansIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createBorrowerIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createLibraryBranchIndex#0;class#Driver#0" expanded="false" />
+            <element signature="method#createPublisherIndex#0;class#Driver#0" expanded="false" />
+            <element signature="class#14357:15100" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
@@ -1047,6 +1324,12 @@
             <element signature="method#getQuery3#0;class#Driver#0" expanded="false" />
             <element signature="method#terminateProgram#0;class#Driver#0" expanded="false" />
             <element signature="method#getConnection#0;class#Driver#0" expanded="false" />
+            <element signature="e#36943#37000#0" expanded="false" />
+            <element signature="e#43377#43459#0" expanded="false" />
+            <element signature="e#44493#44580#0" expanded="false" />
+            <marker date="1508591377001" expanded="true" signature="32026:32209" ph="SELECT Publi... publisher" />
+            <marker date="1508591377001" expanded="true" signature="33281:33413" ph="SELECT Borro... borrower" />
+            <marker date="1508591377001" expanded="true" signature="34501:34849" ph="SELECT CONCA... borrower" />
           </folding>
         </state>
       </provider>

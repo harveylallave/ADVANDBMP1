@@ -1,5 +1,4 @@
 import Model.Transaction;
-import com.sun.javafx.font.freetype.HBGlyphLayout;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -7,8 +6,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,11 +13,8 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -90,7 +84,8 @@ public class Driver extends Application {
             optimizePane.setHgap(25);
 
             HBox itemRow = new HBox(10);
-            label = new Label("Method:");
+            itemRow.setAlignment(Pos.CENTER);
+            label = new Label("Method");
             Scene dialogScene = new Scene(optimizePane, 800, 400);
             ChoiceBox optimizationType = new ChoiceBox<>();
 
@@ -221,7 +216,7 @@ public class Driver extends Application {
 
         optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
-    }
+    } // TODO index
 
     public void createIndexBookAuthor(GridPane optimizePane) {
         HBox tempHBox = new HBox(5);
@@ -259,7 +254,7 @@ public class Driver extends Application {
 
         optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
-    }
+    } // TODO index
 
     public void createBookLoansIndex(GridPane optimizePane) {
         HBox tempHBox = new HBox(5);
@@ -302,7 +297,7 @@ public class Driver extends Application {
 
         tempHBox.getChildren().addAll(label, attrChoiceBox);
         optimizePane.add(tempHBox, 1, 2);
-    }
+    } // TODO index
 
     public void createBorrowerIndex(GridPane optimizePane) {
         HBox tempHBox = new HBox(5);
@@ -346,7 +341,7 @@ public class Driver extends Application {
 
         optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
-    }
+    } // TODO index
 
     public void createLibraryBranchIndex(GridPane optimizePane) {
         HBox tempHBox = new HBox(5);
@@ -387,7 +382,7 @@ public class Driver extends Application {
 
         optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
-    }
+    }// TODO index
 
     public void createPublisherIndex(GridPane optimizePane) {
         HBox tempHBox = new HBox(5);
@@ -428,7 +423,7 @@ public class Driver extends Application {
 
         optimizePane.add(indexValue, 1, 3);
         optimizePane.add(tempHBox, 1, 2);
-    }
+    }// TODO index
 
 
     public VBox initRightVBox() {
@@ -950,7 +945,7 @@ public class Driver extends Application {
         String db = "mco1_db";
         String url = "jdbc:mysql://localhost/" + db + "?useSSL=false";
         String user = "root";
-        String pass = "hopekook";
+        String pass = "1234";
 
         try {
             Class.forName(driver);
