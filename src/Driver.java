@@ -1,5 +1,4 @@
 import Model.Transaction;
-import com.sun.javafx.font.freetype.HBGlyphLayout;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -12,7 +11,6 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -47,6 +45,8 @@ public class Driver extends Application {
             query = new Label();
 
     ChoiceBox<String> queryChoiceBox;
+
+    Button optimizeButton;
 
     Connection conn;
     TextField input, input_2;
@@ -257,56 +257,67 @@ public class Driver extends Application {
         optimizePane.add(button, 2, 3);
     }
 
-    public void indexOptimization(GridPane optimizePane) {
+    public void indexOptimization(GridPane optimizePane){
         ChoiceBox tableChoiceBox = new ChoiceBox<>();
-        HBox itemRow = new HBox(5);
+        ChoiceBox attrChoiceBox = new ChoiceBox<>();
 
-        tableChoiceBox.getItems().addAll("book", "book_author", "book_loans", "borrower", "library_branch", "publisher");
-        label = new Label("Table: ");
-        itemRow.getChildren().addAll(label, tableChoiceBox);
-
-        tableChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-                label = new Label("Attribute:");
-                button = new Button("Optimize");
-
-                optimizePane.add(button, 2, 3);
-
-                optimizePane.add(new Label(""), 1, 2);
-
-                switch ((Integer) number2) {
-                    case 0: /* book */
-                        createIndexBook(optimizePane);
-                        break;
-
-                    case 1: /* book_author */
-                        createIndexBookAuthor(optimizePane);
-                        break;
-
-                    case 2: /* book_loans */
-                        createBookLoansIndex(optimizePane);
-                        break;
-
-                    case 3: /* borrower */
-                        createBorrowerIndex(optimizePane);
-                        break;
-
-                    case 4: /* library_branch */
-                        createLibraryBranchIndex(optimizePane);
-                        break;
-
-                    case 5: /* publisher */
-                        createPublisherIndex(optimizePane);
-                        break;
-
-                }
+        optimizeButton = new Button("Optimize");
+        optimizeButton.setDisable(true);
+        optimizeButton.setOnAction(e -> {
+            Statement st = null;
+            String query = "create index i" +attrChoiceBox.getSelectionModel().getSelectedItem().toString() + " on " +
+                    tableChoiceBox.getSelectionModel().getSelectedItem().toString()+ "(" +
+                    attrChoiceBox.getSelectionModel().getSelectedItem().toString() + ") ";
+            try{
+                st = conn.createStatement();
+                st.executeUpdate(query);
+                st.close();
+                System.out.println("Added new index: i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString());
+            } catch (SQLException e2) {
+                System.out.println("SQLException: " + e2.getMessage());
+                System.out.println("SQLState: " + e2.getSQLState());
+                System.out.println("VendorError: " + e2.getErrorCode());
             }
         });
 
-        GridPane.setMargin(optimizePane, new Insets(10, 10, 10, 10));
-        optimizePane.add(itemRow, 1, 1);
+        tableChoiceBox.getItems().addAll("book", "book_author", "book_loans", "borrower", "library_branch", "publisher");
+        tableChoiceBox.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, number2) -> {
+
+            optimizeButton.setDisable(true);
+            attrChoiceBox.getItems().clear();
+            switch ((Integer) number2) {
+                case 0: attrChoiceBox.getItems().addAll("BookID", "Title", "PublisherName");
+                    break;
+
+                case 1: attrChoiceBox.getItems().addAll("BookID", "AuthorLastName", "AuthorFirstName");
+                    break;
+
+                case 2: attrChoiceBox.getItems().addAll("BookID", "BranchID", "CardNo", "DateOut", "DueDate", "DateReturned");
+                    break;
+
+                case 3: attrChoiceBox.getItems().addAll("CardNo", "BorrowerLName", "BorrowerFName", "Address", "Phone");
+                    break;
+
+                case 4: attrChoiceBox.getItems().addAll("BranchID", "BranchName", "BranchAddress");
+                    break;
+
+                case 5: attrChoiceBox.getItems().addAll("PublisherName", "Address", "Phone");
+                    break;
+
+            }
+            attrChoiceBox.getSelectionModel().selectedIndexProperty().addListener((observableValue1,
+                                                                                   oldNum,
+                                                                                   newNum) ->
+                    optimizeButton.setDisable(false));
+
+        });
+
+        optimizePane.add(new Label("Table"), 0, 1);
+        optimizePane.add(tableChoiceBox, 1, 1);
+        optimizePane.add(new Label("Attribute"), 0, 2);
+        optimizePane.add(attrChoiceBox, 1, 2);
+        optimizePane.add(optimizeButton, 1, 3);
+
     }
 
     public void createIndexBook(GridPane optimizePane) {
@@ -1944,6 +1955,36 @@ public class Driver extends Application {
         return arrayList;
     }
 
+    private void deleteAllIndex() {
+        //Connection conn = getConnection();	called at the start
+        Statement st = null;
+        Statement st2 = null;
+        ResultSet rs = null;
+        String query = "SELECT DISTINCT\n" +
+                "    TABLE_NAME,\n" +
+                "    INDEX_NAME\n" +
+                "FROM INFORMATION_SCHEMA.STATISTICS\n" +
+                "WHERE TABLE_SCHEMA = 'mco1_db' AND INDEX_NAME != 'PRIMARY';";
+
+        try {
+
+            st = conn.createStatement();
+            st2 = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                query = "DROP INDEX " + rs.getString("INDEX_NAME") + " ON " + rs.getString("TABLE_NAME");
+                st2.executeUpdate(query);
+                System.out.println("Deleted index: " + rs.getString("INDEX_NAME"));
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+    }
+
     private void terminateProgram() {
         if (conn != null)
             try {
@@ -2102,16 +2143,7 @@ public class Driver extends Application {
 //                if(e.getCharacter().matches("[0-9.]")){
 //                    if(txt_TextField.getText().contains(".") && e.getCharacter().matches("[.]")){
 //                        e.consume();
-//                    }else if(txt_TextField.getText().length() == 0 && e.getCharacter().matches("[.]")){
-//                        e.consume();
-//                    }
-//                }else{
-//                    e.consume();
-//                }
-//            }
-//        };
-//    }
-    /*****************************************************************************************/
+//                    }else if(txt_TextField.getText().length() == 0 && e.getCharacter().matches(*************************************************************************************/
 
 	 /* Letters Validation Limit the  characters to maxLength AND to ONLY Letters *************************************/
 //    public EventHandler<KeyEvent> numOfLetters_Validation(final Integer max_Length) {
@@ -2127,6 +2159,15 @@ public class Driver extends Application {
 //            }
 //        };
 //    }
-    /*****************************************************************************************/
+    /**"[.]")){
+//                        e.consume();
+//                    }
+//                }else{
+//                    e.consume();
+//                }
+//            }
+//        };
+//    }
+    /*******************************************************************************************/
 
 }
