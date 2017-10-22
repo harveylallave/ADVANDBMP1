@@ -6,6 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
@@ -42,6 +43,8 @@ public class Driver extends Application {
     private LineChart graphArea;
     private XYChart.Series dataSeries1;
     private int nQueryExec = 1;
+    private TextField input,
+                      input_2;
 
     @SuppressWarnings("unchecked")
     public void start(Stage primaryStage) throws Exception {
@@ -196,24 +199,524 @@ public class Driver extends Application {
             VBox subVBox = new VBox(10);
             subVBox.getStyleClass().add("subVBox");
 
-
             subVBox.getChildren().add(label);
             System.out.println("\nEDIT QUERY: " + queryChoiceBox.getValue());
 
             button = new Button("Update Query");
             button.setMinWidth(150);
 
-            subVBox.getChildren().add(button);
             mainVBox.getChildren().add(subVBox);
+            VBox editQueryVBox;
+//            TextField input;
 
-            button.setOnAction(event1 -> {
-                mainVBox.getChildren().remove(1);
+            System.out.println(queryChoiceBox.getSelectionModel().getSelectedItem().toString());
 
-            });
+            switch (queryChoiceBox.getSelectionModel().getSelectedItem().toString()) {
+                case "All publishers located in Los Angeles":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT PublisherName, Address\n" +
+                            "FROM publisher\n" +
+                            "WHERE Address like '%\n");
+                    input = new TextField("Los Angeles");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("%'\nORDER BY PublisherName;");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+                        String x = input.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+
+                        String query = "SELECT PublisherName AS 'Publisher', Address\n" +
+                                "FROM publisher\n" +
+                                "WHERE Address like '%" + x + "%'\n" +
+                                "ORDER BY PublisherName;";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("Publisher"));
+                                rowData.add(rs.getString("Address"));
+                                arrayList.add(rowData);
+                                System.out.println("NEW DATA");
+                            }
+                            st.close();
+                            rs.close();
+
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        } // catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+                case "All borrowers living in Manila":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT BorrowerLName, BorrowerFName, Address\n" +
+                            "FROM borrower\n" +
+                            "WHERE Address LIKE ‘%\n");
+                    input = new TextField("Manila");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("%';");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+                        String x = input.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT BorrowerLName, BorrowerFName, Address\n" +
+                                "FROM borrower\n" +
+                                "WHERE Address LIKE '%" + x + "'\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("BorrowerLName"));
+                                rowData.add(rs.getString("BorrowerFName"));
+                                rowData.add(rs.getString("Address"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+                case "All borrowers who have borrowed at most 2 books":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as BorrowerName , COUNT(*) as NoBooksBor\n" +
+                            "FROM borrower BO, book_loans BL\n" +
+                            "WHERE BO.CardNo = BL.CardNo\n" +
+                            "GROUP BY BorrowerName\n" +
+                            "HAVING NoBooksBor \n");
+                    input = new TextField(">= 0");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("and NoBooksBor");
+                    input_2 = new TextField("<= 2");
+                    editQueryVBox.getChildren().addAll(label, input_2);
+                    label = new Label("ORDER BY 2 DESC, 1;");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+                        String x = input.getText(), y = input_2.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, COUNT(*) as NoBooksBor\n" +
+                                "FROM borrower BO, book_loans BL\n" +
+                                "WHERE BO.CardNo = BL.CardNo\n" +
+                                "GROUP BY BorrowerName\n" +
+                                "HAVING NoBooksBor" + x + " and " + y + "\n" +
+                                "ORDER BY 2 DESC, 1;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("BorrowerName"));
+                                rowData.add(rs.getString("NoBooksBor"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+                    });
+                    break;
+
+                case "All books written by Burningpeak, Loni":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                            "FROM book B, (SELECT * \n" +
+                            "\t\tFROM book_authors\n" +
+                            "\t\tWHERE AuthorLastName =  ‘\n");
+                    input = new TextField("Burningpeak");
+                    editQueryVBox.getChildren().addAll(label, input);
+                    label = new Label("’ and AuthorFirstName = ‘");
+                    input_2 = new TextField("Loni");
+                    editQueryVBox.getChildren().addAll(label, input_2);
+                    label = new Label("’ ) as BA\n" +
+                            "WHERE BA.BookID = B.BookID\n" +
+                            "ORDER BY 1;\n");
+                    editQueryVBox.getChildren().add(label);
+
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        String x = input.getText(), y = input_2.getText();
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                                "FROM book B, (SELECT * \n" +
+                                "      FROM book_authors\n" +
+                                "      WHERE AuthorLastName =  '" + x + "' and AuthorFirstName = '" + y + "') as BA\n" +
+                                "WHERE BA.BookID = B.BookID\n" +
+                                "ORDER BY 1;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("PublisherName"));
+                                rowData.add(rs.getString("Author"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+                    });
+                    break;
+
+                case "All books which were never loaned out (nobody borrowed them)":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
+                            "BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                            "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                            "WHERE BO.CardNo NOT IN (SELECT CardNo \n" +
+                            "\t\tFROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
+                            "GROUP BY BorrowerName\n" +
+                            "ORDER BY 2;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
+                                "BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                                "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                                "WHERE BO.CardNo NOT IN (SELECT CardNo \n" +
+                                "      FROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
+                                "GROUP BY BorrowerName\n" +
+                                "ORDER BY 2;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getInt("CardNo") + "");
+                                rowData.add(rs.getString("BorrowerName"));
+                                rowData.add(rs.getInt("BranchID") + "");
+                                rowData.add(rs.getString("BranchName"));
+                                rowData.add(rs.getString("BranchAddress"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+
+                case "All borrowers who have loaned books in their own branch":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
+                            "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
+                            "FROM book B, book_authors BA\n" +
+                            "WHERE B.BookID NOT IN (SELECT BookID\n" +
+                            "\t\t\tFROM book_loans)\n" +
+                            "GROUP BY B.BookID\n" +
+                            "ORDER BY 3, 2;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(e->{
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
+                                "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
+                                "FROM book B, book_authors BA\n" +
+                                "WHERE B.BookID NOT IN (SELECT BookID\n" +
+                                "                                                FROM book_loans)\n" +
+                                "GROUP BY B.BookID\n" +
+                                "ORDER BY 3, 2;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getInt("BookID") + "");
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("AuthorName"));
+                                rowData.add(rs.getString("PublisherName"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException ev) {
+                            System.out.println("SQLException: " + ev.getMessage());
+                            System.out.println("SQLState: " + ev.getSQLState());
+                            System.out.println("VendorError: " + ev.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+                case "All book loans that were returned exactly on their due date":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("SELECT CONCAT(BO.BorrowerFName, \", \" , BO.BorrowerLName) AS BorrowerName, BL.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                            "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
+                            "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
+                            "ORDER BY 1, 3;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, " +
+                                "BL.BookID, B.Title, CONCAT(BA.AuthorLastName, ', ', " +
+                                "BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                                "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
+                                "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND " +
+                                "BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
+                                "ORDER BY 1, 3;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getString("BorrowerName"));
+                                rowData.add(rs.getInt("BookID") + "");
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("AuthorName"));
+                                rowData.add(rs.getString("DueDate"));
+                                rowData.add(rs.getString("DateReturned"));
+                                arrayList.add(rowData);
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+
+                    });
+                    break;
+
+                case "Most popular title (most loaned out title) for each branch":
+                    editQueryVBox = new VBox(2);
+                    editQueryVBox.setPadding(new Insets(0, 10, 0, 10));
+                    label = new Label("\n" +
+                            "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName\n, P.PublisherName, P.Address AS PublisherAddress\n" +
+                            "FROM book  B, book_authors BA, library_branch LB, publisher P, \n(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned FROM book_loans GROUP BY BranchID, BookID) AS BL, (SELECT TEMP.BranchID, MAX(TEMP.NoTimesLoaned) AS NoTimesLoaned \nFROM" +
+                            "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned FROM BOOK_LOANS GROUP BY BranchID, BookID) AS TEMP  \nGROUP BY TEMP.BranchID) AS C\n" +
+                            "WHERE BL.BranchID = C.BranchID AND BL.NoTimesLoaned = C.NoTimesLoaned AND BL.BranchID = LB.BranchID AND BL.BookID = B.BookID AND B.BookID = BA.BookID AND B.PublisherName = P.PublisherName\n" +
+                            "GROUP BY BL.BranchID\n" +
+                            "ORDER BY 2, 5;\n");
+
+                    editQueryVBox.getChildren().add(label);
+                    subVBox.getChildren().addAll(editQueryVBox, button);
+
+                    button.setOnAction(event1 -> {
+                        mainVBox.getChildren().remove(3);
+
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String query = "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, " +
+                                "B.Title, CONCAT(BA.AuthorLastName, ', ', BA.AuthorFirstName) as " +
+                                "AuthorName, P.PublisherName, P.Address AS PublisherAddress\n" +
+                                "FROM book  B, book_authors BA, library_branch LB, publisher P, " +
+                                "(SELECT BranchID, BookID, COUNT(*) AS NoTimesLoaned\n" +
+                                "FROM book_loans\n" +
+                                "GROUP BY BranchID, BookID) AS BL,\n" +
+                                "(SELECT TEMP.BranchID,\n" +
+                                "MAX(TEMP.NoTimesLoaned)\n" +
+                                "AS NoTimesLoaned\n" +
+                                "FROM\n" +
+                                "(SELECT BranchID, BookID,\n" +
+                                "COUNT(*) AS NoTimesLoaned\n" +
+                                "FROM BOOK_LOANS\n" +
+                                "GROUP BY BranchID, BookID) AS TEMP\n" +
+                                "GROUP BY TEMP.BranchID) AS C\n" +
+                                "WHERE\n" +
+                                "BL.BranchID = C.BranchID AND\n" +
+                                "BL.NoTimesLoaned = C.NoTimesLoaned AND\n" +
+                                "BL.BranchID = LB.BranchID AND\n" +
+                                "BL.BookID = B.BookID AND\n" +
+                                "B.BookID = BA.BookID AND\n" +
+                                "B.PublisherName = P.PublisherName\n" +
+                                "GROUP BY BL.BranchID\n" +
+                                "ORDER BY 2, 5;\n";
+
+                        ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
+
+                        try {
+
+                            st = conn.createStatement();
+                            rs = st.executeQuery(query);
+
+                            while (rs.next()) {
+                                ArrayList<String> rowData = new ArrayList<>();
+                                rowData.add(rs.getInt("BranchID") + "");
+                                rowData.add(rs.getString("BranchName"));
+                                rowData.add(rs.getInt("BookID") + "");
+                                rowData.add(rs.getInt("NoTimesLoaned") + "");
+                                rowData.add(rs.getString("Title"));
+                                rowData.add(rs.getString("AuthorName"));
+                                rowData.add(rs.getString("PublisherName"));
+                                rowData.add(rs.getString("PublisherAddress"));
+                                arrayList.add(rowData);
+
+                            }
+                            st.close();
+                            rs.close();
+                            table.setItems(arrayList);
+                        } catch (SQLException e) {
+                            System.out.println("SQLException: " + e.getMessage());
+                            System.out.println("SQLState: " + e.getSQLState());
+                            System.out.println("VendorError: " + e.getErrorCode());
+                        }// catch (ClassNotFoundException e){
+
+                    });
+                    break;
+
+            }
+
 
         });
 
-        mainVBox.getChildren().add(button);
+        ToggleGroup radioButtonGroup = new ToggleGroup();
+
+        RadioButton normal = new RadioButton("Normal");
+        normal.setToggleGroup(radioButtonGroup);
+        normal.setUserData("Normal");
+        normal.setSelected(true);
+
+        RadioButton union = new RadioButton("Union");
+        union.setToggleGroup(radioButtonGroup);
+        union.setUserData("Union");
+
+        RadioButton join = new RadioButton("Join");
+        join.setToggleGroup(radioButtonGroup);
+        join.setUserData("Join");
+
+        RadioButton subquery = new RadioButton("Subquery");
+        subquery.setToggleGroup(radioButtonGroup);
+        subquery.setUserData("Subquery");
+
+        radioButtonGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
+                System.out.println(new_toggle.getUserData().toString());
+                switch (new_toggle.getUserData().toString()) {
+                    case "Normal": /* normal queries */
+                        break;
+
+                    case "Union":
+                        break;
+
+                    case "Join":
+                        break;
+
+                    case "Subquery":
+                        break;
+                }
+            }
+
+        });
+
+        VBox radioButtonVBox = new VBox(5);
+        radioButtonVBox.setPadding(new Insets(0, 10, 0, 10));
+        radioButtonVBox.getChildren().addAll(normal, union, join, subquery);
+
+        mainVBox.getChildren().addAll(radioButtonVBox, new Separator(Orientation.HORIZONTAL), button);
 
         mainVBox.setMinWidth(200);
         return mainVBox;
