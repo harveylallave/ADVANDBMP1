@@ -27,12 +27,10 @@ import java.util.ArrayList;
 public class Driver extends Application {
     Scene home;
 
-    Label label;
     Button button;
     TableView<ArrayList<String>> table;
 
     BorderPane mainPane = new BorderPane();
-    MenuBar menuBar;
 
     Label queryNum = new Label(),
             query = new Label();
@@ -45,6 +43,7 @@ public class Driver extends Application {
     private int nQueryExec = 1;
     private TextField input,
                       input_2;
+    private ToggleGroup queryTypeToggleGroup;
 
     @SuppressWarnings("unchecked")
     public void start(Stage primaryStage) throws Exception {
@@ -70,17 +69,19 @@ public class Driver extends Application {
 
     public MenuBar initTopBar() {
         //Initializing menu items
-        Menu optimization = new Menu();
+        Menu refreshIndex = new Menu(),
+             optimization = new Menu(),
+             exit         = new Menu();
 
-        Menu exit = new Menu();
+        Label refreshLabelMenu = new Label("Refresh"),
+              optimizationLabelMenu = new Label("Optimization");
 
-        Label menuLabel = new Label("Optimization");
-        menuLabel.setOnMouseClicked(e -> {
+        refreshLabelMenu.setOnMouseClicked(e -> deleteAllIndex());
+        optimizationLabelMenu.setOnMouseClicked(e -> {
             Stage myDialog = new Stage();
             myDialog.initModality(Modality.WINDOW_MODAL);
 
             GridPane optimizePane = new GridPane();
-//            optimizePane.setPadding(new Insets(10, 10, 10, 10));
             optimizePane.setVgap(20);
             optimizePane.setHgap(25);
             optimizePane.setAlignment(Pos.CENTER);
@@ -88,7 +89,7 @@ public class Driver extends Application {
             Scene dialogScene = new Scene(optimizePane, 800, 400);
             ChoiceBox optimizationType = new ChoiceBox<>();
 
-            optimizationType.getItems().addAll("Create Indexes", "Create Views", "Using JOIN statements");
+            optimizationType.getItems().addAll("Create Indexes");
 
             optimizePane.add(new Label("Method"), 0, 0);
             optimizePane.add(optimizationType, 1, 0);
@@ -106,15 +107,15 @@ public class Driver extends Application {
             myDialog.show();
         });
 
-        optimization.setGraphic(menuLabel);
+        refreshIndex.setGraphic(refreshLabelMenu);
+        optimization.setGraphic(optimizationLabelMenu);
 
-        menuLabel = new Label("Exit");
-        exit.setGraphic(menuLabel);
-        menuLabel.setOnMouseClicked(e -> terminateProgram());
+        optimizationLabelMenu = new Label("Exit");
+        exit.setGraphic(optimizationLabelMenu);
+        optimizationLabelMenu.setOnMouseClicked(e -> terminateProgram());
 
-        menuBar = new MenuBar();
-
-        menuBar.getMenus().addAll(optimization, exit);
+        MenuBar menuBar = new MenuBar();
+        menuBar.getMenus().addAll(refreshIndex, optimization, exit);
 
         return menuBar;
     }
@@ -672,34 +673,27 @@ public class Driver extends Application {
 
         });
 
-        ToggleGroup radioButtonGroup = new ToggleGroup();
+        queryTypeToggleGroup = new ToggleGroup();
 
         RadioButton normal = new RadioButton("Normal");
-        normal.setToggleGroup(radioButtonGroup);
+        normal.setToggleGroup(queryTypeToggleGroup);
         normal.setUserData("Normal");
         normal.setSelected(true);
 
-        RadioButton union = new RadioButton("Union");
-        union.setToggleGroup(radioButtonGroup);
-        union.setUserData("Union");
-
         RadioButton join = new RadioButton("Join");
-        join.setToggleGroup(radioButtonGroup);
+        join.setToggleGroup(queryTypeToggleGroup);
         join.setUserData("Join");
 
         RadioButton subquery = new RadioButton("Subquery");
-        subquery.setToggleGroup(radioButtonGroup);
+        subquery.setToggleGroup(queryTypeToggleGroup);
         subquery.setUserData("Subquery");
 
-        radioButtonGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+        queryTypeToggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) {
                 System.out.println(new_toggle.getUserData().toString());
                 switch (new_toggle.getUserData().toString()) {
                     case "Normal": /* normal queries */
-                        break;
-
-                    case "Union":
                         break;
 
                     case "Join":
@@ -714,7 +708,7 @@ public class Driver extends Application {
 
         VBox radioButtonVBox = new VBox(5);
         radioButtonVBox.setPadding(new Insets(0, 10, 0, 10));
-        radioButtonVBox.getChildren().addAll(normal, union, join, subquery);
+        radioButtonVBox.getChildren().addAll(normal, join, subquery);
 
         mainVBox.getChildren().addAll(radioButtonVBox, new Separator(Orientation.HORIZONTAL), button);
 
@@ -757,7 +751,7 @@ public class Driver extends Application {
                     restartProfiling();
                     queryNum.setText("Query #" + number2);
                     query.setText(queryChoiceBox.getItems().get((Integer) number2));
-                    graphArea.getData().remove(dataSeries1);
+                    graphArea.getData().clear();
                     dataSeries1 = new XYChart.Series();
                     graphArea.getData().add(dataSeries1);
                     nQueryExec = 1;
@@ -815,6 +809,7 @@ public class Driver extends Application {
             vBox.getChildren().add(1, hBox);
 
             button.setOnAction(e -> {
+                refreshTable();
                 nQueryExec += 1;
                 String queryNumText = queryNum.getText();
                 VBox tempvBox = new VBox();
@@ -869,6 +864,26 @@ public class Driver extends Application {
         return vBox;
     }
 
+    // Irrelevant query to refresh stored table
+    private void refreshTable() {
+
+        Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM Book B";
+        System.out.println("\n\n ... \n\n");
+        nQueryExec += 1;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+    }
+
     private void restartProfiling() {
 
         Statement st = null;
@@ -901,9 +916,8 @@ public class Driver extends Application {
 
             int row = 1;
             while (rs.next()) {
-                System.out.println(rs.getInt("Query_ID") + " || " +
-                        rs.getFloat("Duration") + " || " +
-                        rs.getString("Query") + " :: " + i + " || " + row);
+                System.out.println("Line #: " + i + " || Row #:" + row +
+                                   " || Time: " + rs.getFloat("Duration"));
                 if (row == i)
                     time = rs.getBigDecimal("Duration");
                 row++;
@@ -943,8 +957,11 @@ public class Driver extends Application {
         vBox.getChildren().add(2, table);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        System.out.println("GOTTEN PROCESS TIME == " + processTime + " || " + nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+        // clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
     }
 
@@ -960,7 +977,11 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+// clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
         vBox.getChildren().add(2, table);
     }
@@ -987,7 +1008,11 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+        // clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
         vBox.getChildren().add(2, table);
     }
@@ -1019,8 +1044,13 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+        System.out.println((nQueryExec - nQueryExec/2) + " || " + processTime);
 
+        // clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
         vBox.getChildren().add(2, table);
     }
 
@@ -1059,7 +1089,11 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+// clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
         vBox.getChildren().add(2, table);
     }
@@ -1106,7 +1140,11 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+// clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
         vBox.getChildren().add(2, table);
     }
@@ -1160,7 +1198,11 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+// clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
         vBox.getChildren().add(2, table);
     }
@@ -1227,7 +1269,11 @@ public class Driver extends Application {
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
-        dataSeries1.getData().add(new XYChart.Data(nQueryExec, processTime));
+// clear current data
+        dataSeries1.getData().clear();
+
+        // add new data
+        dataSeries1.getData().add(new XYChart.Data(nQueryExec - nQueryExec/2, processTime));
 
         vBox.getChildren().add(2, table);
     }
@@ -1304,12 +1350,27 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, COUNT(*) as NoBooksBor\n" +
-                "FROM borrower BO, book_loans BL\n" +
-                "WHERE BO.CardNo = BL.CardNo\n" +
-                "GROUP BY BorrowerName\n" +
-                "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
-                "ORDER BY 2 DESC, 1;\n";
+        String queryToggleString = queryTypeToggleGroup.getSelectedToggle().getUserData().toString();
+        String query =  queryToggleString.equals("Normal") ?
+                        "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, COUNT(*) as NoBooksBor\n" +
+                        "FROM borrower BO, book_loans BL\n" +
+                        "WHERE BO.CardNo = BL.CardNo\n" +
+                        "GROUP BY BorrowerName\n" +
+                        "HAVING NoBooksBor >= 0 and NoBooksBor <=2\n" +
+                        "ORDER BY 2 DESC, 1;\n" : queryToggleString.equals("Join") ?
+                            "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as BorrowerName , COUNT(*) as NoBooksBor\n" +
+                            "\tFROM borrower BO join book_loans BL on BO.CardNo = BL.CardNo\n" +
+                            "\tGROUP BY BorrowerName\n" +
+                            "\tHAVING NoBooksBor <=2\n" +
+                            "\tORDER BY 2 DESC, 1;" : /*SubQuery*/
+                                "SELECT CONCAT(BorrowerLName, \", \", BorrowerFName) as BorrowerName, BO2.NoBooksBor\n" +
+                                "\tFROM borrower, (SELECT BL.CardNo, COUNT(CardNo) as NoBooksBor\n" +
+                                "\t\t\t\t\tFROM book_loans BL\n" +
+                                "\t\t\t\t\tGROUP BY BL.CardNo\n" +
+                                "\t\t\t\t\tHAVING COUNT(CardNo) >= 0 and COUNT(CardNo) <=2\n" +
+                                "\t\t\t\t\tORDER BY 1) as BO2\n" +
+                                "WHERE borrower.CardNo = BO2.CardNo\n" +
+                                "\tORDER BY 2 DESC;";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1339,12 +1400,27 @@ public class Driver extends Application {
 
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+        String queryToggleString = queryTypeToggleGroup.getSelectedToggle().getUserData().toString();
+        String query =  queryToggleString.equals("Normal") ?
+                        "SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
                         "FROM book B, (SELECT * \n" +
                         "      FROM book_authors\n" +
                         "      WHERE AuthorLastName =  'Burningpeak' and AuthorFirstName = 'Loni') as BA\n" +
                         "WHERE BA.BookID = B.BookID\n" +
-                        "ORDER BY 1;\n";
+                        "ORDER BY 1;\n" : queryToggleString.equals("Join") ?
+                            "SELECT B.Title, B.PublisherName, CONCAT(BA.AuthorLastName, '. ', BA.AuthorFirstName) as Author\n" +
+                            "FROM book B join (SELECT * \n" +
+                            "                   FROM book_authors\n" +
+                            "                   WHERE AuthorLastName =  'Burningpeak' and " +
+                            "                   AuthorFirstName = 'Loni' ) as BA on BA.BookID = B.BookID\n" +
+                            "ORDER BY 1;"   : /*Subquery*/
+                                "SELECT B.Title, B.PublisherName, \n" +
+                                        "\t\tCONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as Author\n" +
+                                        "\t\tFROM book B, (SELECT * \n" +
+                                        "\t\t      FROM book_authors\n" +
+                                        "\t\t      WHERE AuthorLastName = 'Burningpeak' and AuthorFirstName = 'Loni' ) as BA\n" +
+                                        "\t\tWHERE BA.BookID = B.BookID\n" +
+                                        "\t\tORDER BY 1;";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1376,14 +1452,24 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
+        String queryToggleString = queryTypeToggleGroup.getSelectedToggle().getUserData().toString();
+        String query =  queryToggleString.equals("Normal") ?
+                        "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLName, \", \", " +
                         "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
                         "FROM book B, book_authors BA\n" +
                         "WHERE B.BookID NOT IN (SELECT BookID\n" +
                         "                       FROM book_loans)\n" +
                         "   and B.BookID = BA.BookID" +
                         "GROUP BY B.BookID\n" +
-                        "ORDER BY 3, 2;\n";
+                        "ORDER BY 3, 2;\n" : queryToggleString.equals("Join") ?
+                            "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, B.PublisherName\n" +
+                            "\tFROM book B inner join book_authors BA on \n" +
+                            "\tB.BookID NOT IN (SELECT BookID\n" +
+                            "\tFROM book_loans) and B.BookID = BA.BookID" : /*Subquery*/
+                                "SELECT B.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName, B.PublisherName\n" +
+                                "\t\tFROM book B inner join book_authors BA on \n" +
+                                "\t\tB.BookID NOT IN (SELECT BookID\n" +
+                                "\tFROM book_loans) and B.BookID = BA.BookID;";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1416,13 +1502,25 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
+        String queryToggleString = queryTypeToggleGroup.getSelectedToggle().getUserData().toString();
+        String query =  queryToggleString.equals("Normal") ?
+                        "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) as " +
                         "BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
                         "FROM borrower BO, book_loans BL, library_branch LB\n" +
                         "WHERE BO.CardNo IN (SELECT CardNo \n" +
                         "      FROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID\n" +
                         "GROUP BY BorrowerName\n" +
-                        "ORDER BY 2;\n";
+                        "ORDER BY 2;\n" : queryToggleString.equals("Join") ?
+                            "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, \", \", BO.BorrowerFName) " +
+                            "as BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                            "FROM borrower BO join book_loans BL on BO.CardNo IN (SELECT CardNo \n" +
+                            "FROM book_loans) join library_branch LB on BO.Address = " +
+                            "LB.BranchAddress and BL.BranchID = LB.BranchID\n" : /*Subquery*/
+                                "SELECT BO.CardNo, CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) " +
+                                "as BorrowerName, LB.BranchID, LB.BranchName, LB.BranchAddress\n" +
+                                "FROM borrower BO, book_loans BL, library_branch LB\n" +
+                                "WHERE BO.CardNo IN (SELECT CardNo \n" +
+                                "     FROM book_loans) AND BO.Address = LB.BranchAddress AND BL.BranchID = LB.BranchID";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1456,13 +1554,32 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, " +
+        String queryToggleString = queryTypeToggleGroup.getSelectedToggle().getUserData().toString();
+        String query =  queryToggleString.equals("Normal") ?
+                        "SELECT CONCAT(BO.BorrowerLName, ', ', BO.BorrowerFName) AS BorrowerName, " +
                         "BL.BookID, B.Title, CONCAT(BA.AuthorLastName, ', ', " +
                         "BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
                         "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
                         "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND " +
                         "BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
-                        "LIMIT 100;\n";
+                        "LIMIT 100;\n" : queryToggleString.equals("Join") ?
+                            "SELECT CONCAT(BO.BorrowerFName, \", \" , BO.BorrowerLName) AS " +
+                            "BorrowerName, BL.BookID, B.Title, CONCAT(BA.AuthorLastName, \", \", " +
+                            "BA.AuthorFirstName) as AuthorName, BL.DueDate, BL.DateReturned\n" +
+                            "FROM book B join book_authors BA on B.BookID = BA.BookID join book_loans " +
+                            "BL on BA.BookID = BL.BookID join borrower BO on BL.DueDate = BL.DateReturned\n" +
+                            "LIMIT 0, 100;" : /*Subquery*/
+                                "SELECT O.BorrowerName, A.AuthorName, D.BookID, D.DueDate, D.DateReturned\n" +
+                                "FROM (SELECT BL.BookID, BL.DateReturned, BL.DueDate, BL.CardNo\n" +
+                                "   FROM book_loans BL\n" +
+                                "   WHERE BL.DateReturned = BL.DueDate) AS D, (SELECT BA.BookID, " +
+                                "       CONCAT(BA.AuthorLastName, \", \", BA.AuthorFirstName) as AuthorName\n" +
+                                "       FROM book_authors BA) as A, (SELECT B.BookID, B.Title\n" +
+                                "       FROM book B) as B, (SELECT BO.CardNo, " +
+                                "       CONCAT(BO.BorrowerFName, \", \" , BO.BorrowerLName) AS BorrowerName\n" +
+                                "       FROM borrower BO) as O\n" +
+                                "WHERE D.BookID = A.BookID AND B.BookID = D.BookID AND O.CardNo = D.CardNo \n" +
+                                "LIMIT 100;";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1490,14 +1607,16 @@ public class Driver extends Application {
         }// catch (ClassNotFoundException e){
 
         return arrayList;
-    } // TODO update query
+    }
 
     public ObservableList<ArrayList<String>> getQuery8() {
 
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, " +
+        String queryToggleString = queryTypeToggleGroup.getSelectedToggle().getUserData().toString();
+        String query =  /*queryToggleString.equals("Normal") ?*/
+                       "SELECT BL.BranchID, LB.BranchName, BL.BookID, BL.NoTimesLoaned, " +
                         "B.Title, CONCAT(BA.AuthorLastName, ', ', BA.AuthorFirstName) as " +
                         "AuthorName, P.PublisherName, P.Address AS PublisherAddress\n" +
                         "FROM book  B, book_authors BA, library_branch LB, publisher P, " +
@@ -1552,7 +1671,7 @@ public class Driver extends Application {
         }// catch (ClassNotFoundException e){
 
         return arrayList;
-    }
+    }   // TODO Update
 
 
     private void deleteAllIndex() {
