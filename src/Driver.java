@@ -903,7 +903,7 @@ public class Driver extends Application {
             while (rs.next()) {
                 System.out.println(rs.getInt("Query_ID") + " || " +
                         rs.getFloat("Duration") + " || " +
-                        rs.getString("Query") + " ::::::: " + i + " || " + row);
+                        rs.getString("Query") + " :: " + i + " || " + row);
                 if (row == i)
                     time = rs.getBigDecimal("Duration");
                 row++;
@@ -921,23 +921,23 @@ public class Driver extends Application {
 
     // Update table queries
     private void updateTableQuery1(VBox vBox) {
-        TableColumn<ArrayList<String>, String> pubColumn = new TableColumn<>("Publisher");
+        TableColumn<ArrayList<String>, String> titleCol = new TableColumn<>("Title");
 
-        pubColumn.setMinWidth(100);
-        pubColumn.setCellValueFactory(param -> {
+        titleCol.setMinWidth(100);
+        titleCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
             return new SimpleStringProperty(x.get(0));
         });
 
-        TableColumn<ArrayList<String>, String> addressColumn = new TableColumn<>("Address");
-        addressColumn.setMinWidth(100);
-        addressColumn.setCellValueFactory(param -> {
+        TableColumn<ArrayList<String>, String> pubNameCol = new TableColumn<>("PublisherName");
+        pubNameCol.setMinWidth(100);
+        pubNameCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
             return new SimpleStringProperty(x.get(1));
         });
 
         table.setItems(getQuery1());
-        table.getColumns().addAll(pubColumn, addressColumn);
+        table.getColumns().addAll(titleCol, pubNameCol);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         vBox.getChildren().add(2, table);
@@ -949,31 +949,14 @@ public class Driver extends Application {
     }
 
     private void updateTableQuery2(VBox vBox) {
-        TableColumn<ArrayList<String>, String> borrowerLNameCol = new TableColumn<>("BorrowerLName");
-        borrowerLNameCol.setMinWidth(100);
-        borrowerLNameCol.setCellValueFactory(param -> {
+        TableColumn<ArrayList<String>, String> noBooksBorCol = new TableColumn<>("NoBooksBor");
+        noBooksBorCol.setMinWidth(100);
+        noBooksBorCol.setCellValueFactory(param -> {
             ArrayList<String> x = param.getValue();
             return new SimpleStringProperty(x.get(0));
         });
-
-        //Starting Point Column
-        TableColumn<ArrayList<String>, String> borrowerFNameCol = new TableColumn<>("BorrowerFName");
-        borrowerFNameCol.setMinWidth(100);
-        borrowerFNameCol.setCellValueFactory(param -> {
-            ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(1));
-        });
-
-        //End Point Column
-        TableColumn<ArrayList<String>, String> addressColumn = new TableColumn<>("Address");
-        addressColumn.setMinWidth(100);
-        addressColumn.setCellValueFactory(param -> {
-            ArrayList<String> x = param.getValue();
-            return new SimpleStringProperty(x.get(2));
-        });
-
         table.setItems(getQuery2());
-        table.getColumns().addAll(borrowerLNameCol, borrowerFNameCol, addressColumn);
+        table.getColumns().addAll(noBooksBorCol);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         BigDecimal processTime = getQueryProcessTime(nQueryExec);
@@ -1255,10 +1238,10 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT PublisherName AS 'Publisher', Address\n" +
-                        "FROM publisher\n" +
-                        "WHERE Address like '%Los Angeles%'\n" +
-                        "ORDER BY PublisherName;";
+        String query = "SELECT Title, PublisherName\n" +
+                        "FROM book\n" +
+                        "WHERE  PublisherName like '%Doubleday%'\n" +
+                        "ORDER BY PublisherName;\n";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1269,8 +1252,8 @@ public class Driver extends Application {
 
             while (rs.next()) {
                 ArrayList<String> rowData = new ArrayList<>();
-                rowData.add(rs.getString("Publisher"));
-                rowData.add(rs.getString("Address"));
+                rowData.add(rs.getString("Title"));
+                rowData.add(rs.getString("PublisherName"));
                 arrayList.add(rowData);
             }
             st.close();
@@ -1289,9 +1272,9 @@ public class Driver extends Application {
         //Connection conn = getConnection();	called at the start
         Statement st = null;
         ResultSet rs = null;
-        String query = "SELECT BorrowerLName, BorrowerFName, Address\n" +
-                "FROM borrower\n" +
-                "WHERE Address LIKE '%Manila%'\n";
+        String query = "SELECT COUNT(*) AS NoBooksBor\n" +
+                        "FROM book_loans\n" +
+                        "WHERE YEAR(DateOut) = 2017;\n";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
@@ -1302,9 +1285,7 @@ public class Driver extends Application {
 
             while (rs.next()) {
                 ArrayList<String> rowData = new ArrayList<>();
-                rowData.add(rs.getString("BorrowerLName"));
-                rowData.add(rs.getString("BorrowerFName"));
-                rowData.add(rs.getString("Address"));
+                rowData.add(rs.getString("NoBooksBor"));
                 arrayList.add(rowData);
             }
             st.close();
@@ -1399,7 +1380,8 @@ public class Driver extends Application {
                         "BA.AuthorFName) as AuthorName, B.PublisherName\n" +
                         "FROM book B, book_authors BA\n" +
                         "WHERE B.BookID NOT IN (SELECT BookID\n" +
-                        "                                                FROM book_loans)\n" +
+                        "                       FROM book_loans)\n" +
+                        "   and B.BookID = BA.BookID" +
                         "GROUP BY B.BookID\n" +
                         "ORDER BY 3, 2;\n";
 
@@ -1480,7 +1462,7 @@ public class Driver extends Application {
                         "FROM book B, book_authors BA, book_loans BL, borrower BO\n" +
                         "WHERE B.BookID = BA.BookID AND BA.BookID = BL.BookID AND " +
                         "BL.CardNo AND BL.DueDate = BL.DateReturned\n" +
-                        "ORDER BY 1, 3;\n";
+                        "LIMIT 100;\n";
 
         ObservableList<ArrayList<String>> arrayList = FXCollections.observableArrayList();
 
