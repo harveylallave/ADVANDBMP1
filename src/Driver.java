@@ -42,12 +42,11 @@ public class Driver extends Application {
     private LineChart graphArea;
     private XYChart.Series dataSeries1;
     private int nQueryExec = 1;
-    private ArrayList<String> indexNames = new ArrayList<>();
-
 
     @SuppressWarnings("unchecked")
     public void start(Stage primaryStage) throws Exception {
         conn = getConnection();
+        deleteAllIndex();
         initMainScreen();
 
         home = new Scene(mainPane, 1000, 600);
@@ -125,15 +124,14 @@ public class Driver extends Application {
         optimizeButton.setDisable(true);
         optimizeButton.setOnAction(e -> {
             Statement st = null;
-            String query = "ALTER TABLE " + tableChoiceBox.getSelectionModel().getSelectedItem().toString() + " " +
-                           "ADD INDEX 'i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString() +
-                           "' ('" + attrChoiceBox.getSelectionModel().getSelectedItem().toString() + "');";
-             try{
+            String query = "create index i" +attrChoiceBox.getSelectionModel().getSelectedItem().toString() + " on " +
+                            tableChoiceBox.getSelectionModel().getSelectedItem().toString()+ "(" +
+                            attrChoiceBox.getSelectionModel().getSelectedItem().toString() + ") ";
+            try{
                 st = conn.createStatement();
                 st.executeUpdate(query);
                 st.close();
-                indexNames.add("i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString());
-                 System.out.println("Added new index: i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString());
+                System.out.println("Added new index: i" + attrChoiceBox.getSelectionModel().getSelectedItem().toString());
             } catch (SQLException e2) {
                 System.out.println("SQLException: " + e2.getMessage());
                 System.out.println("SQLState: " + e2.getSQLState());
@@ -180,7 +178,6 @@ public class Driver extends Application {
         optimizePane.add(optimizeButton, 1, 3);
 
     }
-
 
     public VBox initRightVBox() {
         VBox mainVBox = new VBox(15);
@@ -1073,27 +1070,40 @@ public class Driver extends Application {
     }
 
 
+    private void deleteAllIndex() {
+        //Connection conn = getConnection();	called at the start
+        Statement st = null;
+        Statement st2 = null;
+        ResultSet rs = null;
+        String query = "SELECT DISTINCT\n" +
+                        "    TABLE_NAME,\n" +
+                        "    INDEX_NAME\n" +
+                        "FROM INFORMATION_SCHEMA.STATISTICS\n" +
+                        "WHERE TABLE_SCHEMA = 'mco1_db' AND INDEX_NAME != 'PRIMARY';";
+
+        try {
+
+            st = conn.createStatement();
+            st2 = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                query = "DROP INDEX " + rs.getString("INDEX_NAME") + " ON " + rs.getString("TABLE_NAME");
+                st2.executeUpdate(query);
+                System.out.println("Deleted index: " + rs.getString("INDEX_NAME"));
+            }
+            st.close();
+            rs.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
+            System.out.println("SQLState: " + e.getSQLState());
+            System.out.println("VendorError: " + e.getErrorCode());
+        }// catch (ClassNotFoundException e){
+    }
+
     private void terminateProgram() {
         if (conn != null)
             try {
-                if(indexNames.size() > 0) {
-                    Statement st = null;
-                    String query = "ALTER TABLE table";
-
-                    for (int i = 0; i < indexNames.size(); i++)
-                        query += " DROP INDEX " + indexNames.get(i) + (indexNames.size() == i + 1 ? "" : ",");
-
-                    try {
-                        st = conn.createStatement();
-                        st.executeUpdate(query);
-                        st.close();
-                    } catch (SQLException e2) {
-                        System.out.println("SQLException: " + e2.getMessage());
-                        System.out.println("SQLState: " + e2.getSQLState());
-                        System.out.println("VendorError: " + e2.getErrorCode());
-                    }
-                }
-
+                deleteAllIndex();
                 conn.close();
             } catch (SQLException e) {
                 System.out.println("SQLException: " + e.getMessage());
