@@ -741,14 +741,14 @@ public class Driver extends Application {
 
             queryChoiceBox = new ChoiceBox<>();
             queryChoiceBox.getItems().addAll("",
-                    "All publishers located in Los Angeles",
-                    "All borrowers living in Manila",
-                    "All borrowers who have borrowed at most 2 books",
-                    "All books written by Burningpeak, Loni",
-                    "All books which were never loaned out (nobody borrowed them)",
-                    "All borrowers who have loaned books in their own branch",
-                    "All book loans that were returned exactly on their due date",
-                    "Most popular title (most loaned out title) for each branch");
+                    "1. All books published by Doubleday",
+                    "2. Number of books loaned in 2017",
+                    "3. All borrowers who have borrowed at most 2 books",
+                    "4. All books written by Burningpeak, Loni",
+                    "5. All books which were never loaned out (nobody borrowed them)",
+                    "6. All borrowers who have loaned books in their own branch",
+                    "7. First 100 book loans that were returned exactly on their due date",
+                    "8. Most popular title (most loaned out title) for each branch");
             queryChoiceBox.setValue("");
 
             queryChoiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {

@@ -29,14 +29,14 @@
       <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10667">
-              <caret line="950" column="46" lean-forward="false" selection-start-line="950" selection-start-column="46" selection-end-line="950" selection-end-column="46" />
+            <state relative-caret-position="604">
+              <caret line="749" column="33" lean-forward="false" selection-start-line="749" selection-start-column="33" selection-end-line="749" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
                 <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-                <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-                <element signature="e#38553#40080#0" expanded="false" />
+                <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+                <element signature="e#38578#40105#0" expanded="false" />
                 <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
                 <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -54,37 +54,37 @@
                 <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
                 <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-                <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-                <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-                <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-                <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-                <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-                <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-                <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-                <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-                <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-                <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-                <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-                <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-                <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-                <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-                <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-                <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-                <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-                <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-                <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-                <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-                <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-                <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-                <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-                <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-                <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+                <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+                <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+                <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+                <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+                <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+                <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+                <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+                <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+                <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+                <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+                <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+                <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+                <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+                <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+                <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+                <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+                <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+                <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+                <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+                <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+                <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+                <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+                <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+                <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+                <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
               </folding>
             </state>
           </provider>
@@ -395,12 +395,12 @@
       <workItem from="1508590118527" duration="5000" />
       <workItem from="1508591066060" duration="20000" />
       <workItem from="1508591145607" duration="26895000" />
-      <workItem from="1508665101568" duration="2085000" />
+      <workItem from="1508665101568" duration="2302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127897000" />
+    <option name="totallyTimeSpent" value="128114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,8 +477,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -496,37 +496,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -547,8 +547,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -566,37 +566,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -617,8 +617,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -636,37 +636,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -687,8 +687,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -706,37 +706,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -757,8 +757,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -776,37 +776,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -827,8 +827,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -846,37 +846,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -897,8 +897,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -916,37 +916,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -967,8 +967,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -986,37 +986,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1037,8 +1037,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1056,37 +1056,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1107,8 +1107,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1126,37 +1126,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1177,8 +1177,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1196,37 +1196,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1254,8 +1254,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1273,37 +1273,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1354,8 +1354,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1373,37 +1373,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1416,8 +1416,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1435,37 +1435,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1516,8 +1516,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1535,37 +1535,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1578,8 +1578,8 @@
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1597,37 +1597,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
@@ -1683,14 +1683,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10667">
-          <caret line="950" column="46" lean-forward="false" selection-start-line="950" selection-start-column="46" selection-end-line="950" selection-end-column="46" />
+        <state relative-caret-position="604">
+          <caret line="749" column="33" lean-forward="false" selection-start-line="749" selection-start-column="33" selection-end-line="749" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initTopBar#0;class#Driver#0" expanded="false" />
             <element signature="method#indexOptimization#0;class#Driver#0" expanded="false" />
-            <element signature="method#initCenterVBox#0;class#Driver#0" expanded="false" />
-            <element signature="e#38553#40080#0" expanded="false" />
+            <element signature="method#initRightVBox#0;class#Driver#0" expanded="false" />
+            <element signature="e#38578#40105#0" expanded="false" />
             <element signature="method#restartProfiling#0;class#Driver#0" expanded="false" />
             <element signature="method#getQueryProcessTime#0;class#Driver#0" expanded="false" />
             <element signature="method#updateTableQuery1#0;class#Driver#0" expanded="false" />
@@ -1708,37 +1708,37 @@
             <element signature="method#getQuery5#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery6#0;class#Driver#0" expanded="false" />
             <element signature="method#getQuery7#0;class#Driver#0" expanded="false" />
-            <marker date="1508678253988" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
-            <marker date="1508678253988" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="55390:55580" ph="SELECT Title... book" />
-            <marker date="1508678253988" expanded="true" signature="56606:56740" ph="SELECT Borro... borrower" />
-            <marker date="1508678253988" expanded="true" signature="56607:56739" ph="SELECT COUNT... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="57711:58059" ph="SELECT CONCA... borrower" />
-            <marker date="1508678253988" expanded="true" signature="59025:59435" ph="SELECT B.Tit... book" />
-            <marker date="1508678253988" expanded="true" signature="59164:59330" ph="SELECT * \n book_authors" />
-            <marker date="1508678253988" expanded="true" signature="60515:60991" ph="SELECT B.Boo... book" />
-            <marker date="1508678253988" expanded="true" signature="60760:60842" ph="SELECT BookI... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="62130:62643" ph="SELECT BO.Ca... borrower" />
-            <marker date="1508678253988" expanded="true" signature="62419:62485" ph="SELECT CardN... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="63846:64368" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="63846:64377" ph="SELECT CONCA... book" />
-            <marker date="1508678253988" expanded="true" signature="65649:67141" ph="SELECT BL.Br... book" />
-            <marker date="1508678253988" expanded="true" signature="66017:66169" ph="SELECT Branc... book_loans" />
-            <marker date="1508678253988" expanded="true" signature="66209:66642" ph="SELECT TEMP.... BranchID" />
-            <marker date="1508678253988" expanded="true" signature="66398:66580" ph="SELECT Branc... BOOK_LOANS" />
-            <marker date="1508678253988" expanded="true" signature="68527:68787" ph="SELECT DISTI... STATISTICS" />
+            <marker date="1508678702213" expanded="true" signature="8966:9195" ph="SELECT Publi... publisher" />
+            <marker date="1508678702213" expanded="true" signature="11388:11554" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="14184:14611" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="17159:17612" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="17306:17491" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="20012:20577" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="20329:20403" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="23010:23503" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="23279:23394" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="25908:26491" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="29560:31244" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="29960:30128" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="30176:30673" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="30397:30603" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="55415:55605" ph="SELECT Title... book" />
+            <marker date="1508678702213" expanded="true" signature="56631:56765" ph="SELECT Borro... borrower" />
+            <marker date="1508678702213" expanded="true" signature="56632:56764" ph="SELECT COUNT... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="57736:58084" ph="SELECT CONCA... borrower" />
+            <marker date="1508678702213" expanded="true" signature="59050:59460" ph="SELECT B.Tit... book" />
+            <marker date="1508678702213" expanded="true" signature="59189:59355" ph="SELECT * \n book_authors" />
+            <marker date="1508678702213" expanded="true" signature="60540:61016" ph="SELECT B.Boo... book" />
+            <marker date="1508678702213" expanded="true" signature="60785:60867" ph="SELECT BookI... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="62155:62668" ph="SELECT BO.Ca... borrower" />
+            <marker date="1508678702213" expanded="true" signature="62444:62510" ph="SELECT CardN... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="63871:64393" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="63871:64402" ph="SELECT CONCA... book" />
+            <marker date="1508678702213" expanded="true" signature="65674:67166" ph="SELECT BL.Br... book" />
+            <marker date="1508678702213" expanded="true" signature="66042:66194" ph="SELECT Branc... book_loans" />
+            <marker date="1508678702213" expanded="true" signature="66234:66667" ph="SELECT TEMP.... BranchID" />
+            <marker date="1508678702213" expanded="true" signature="66423:66605" ph="SELECT Branc... BOOK_LOANS" />
+            <marker date="1508678702213" expanded="true" signature="68552:68812" ph="SELECT DISTI... STATISTICS" />
           </folding>
         </state>
       </provider>
