@@ -12,6 +12,7 @@
     -fx-background-color : rgba(67, 67, 67, 0.25);
     -fx-background-blend-mode: soft-light,screen;
     -fx-pref-width		 : 300;
+    -fx-max-width		 : 300;
     -fx-alignment        : center;
 }
 
